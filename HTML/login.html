@@ -1,0 +1,115 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <!--Made with love by Mutiullah Samim -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+    <!--Bootsrap 4 CDN-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/login.css">
+
+<style>
+
+</style>
+    <!--Custom styles-->
+
+</head>
+<body>
+
+<video autoplay muted loop>
+    <source src="../video/gfp-astro-timelapse.mp4" type="video/mp4">
+</video>
+
+<!--<video playsinline autoplay muted loop>-->
+<!--    <source src="polina.webm" type="video/webm">-->
+<!--    <source src="https://res.cloudinary.com/dn4nxz7f0/video/upload/v1594348575/Pexels_Videos_1093655_pr26ax.mp4" type="video/mp4">-->
+<!--</video>-->
+
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+                <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="username">
+
+                </div>
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="password">
+                </div>
+                <div class="row align-items-center remember">
+                    <input type="checkbox">Remember Me
+                </div>
+                <div class="form-group">
+                    <input type="button"  value="Login" class="btn float-right login_btn">
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account?<a href="#">Sign Up</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // function login() {
+    //     let account = {
+    //         "username": document.getElementById("username").value,
+    //         "password": $("#password").val()
+    //     }
+    //
+    //     $.ajax({
+    //         type: "Post",
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         url: "http://localhost:8081/login",
+    //         data: JSON.stringify(account),
+    //         //xử lý khi thành công
+    //         success: function (data) {
+    //             localStorage.setItem("token", data.token);
+    //             localStorage.setItem("user", JSON.stringify(data));
+    //             alert("Đăng nhập thành công")
+    //             location.href = "index.html";
+    //         },
+    //         error: function (err) {
+    //             console.log(err)
+    //         }
+    //     })
+    // }
+
+
+</script>
