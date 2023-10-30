@@ -124,90 +124,90 @@
     flex-direction: column;
 }
 
-
 /* ANH NEN CHI SO */
+
 #report-cover .report-report-cover {
-    background: url(http://www.elle.vn/wp-content/uploads/2017/07/25/hinh-anh-dep-1.jpg);
+    background: url('/img/cac_con_so/hinh-anh-dep-1.jpg');
 }
 
 #report-duongdoi .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_duongdoi-20221216073327-luss-.png);
+    background: url('/img/cac_con_so/bg_duongdoi-20221216073327-luss-.png');
 }
 
 #report-sumenh .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_sumenh-20221216073350-ma1e1.png);
+    background: url('/img/cac_con_so/bg_sumenh.png');
 }
 
 #report-noitam .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_linhhon-20221216073328-dyzud.png);
+    background: url('/img/cac_con_so/bg_linhhon.png');
 }
 
 #report-noicam .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_damme-20221216073327-chqp9.png);
+    background: url('/img/cac_con_so/bg_damme.png');
 }
 
 #report-tuongtac .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_nhancach-20221216073350-pxyqi.png);
+    background: url('/img/cac_con_so/bg_nhancach.png');
 }
 
 #report-thaido .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_thaido-20221216073350-apsw0.png);
+    background: url('/img/cac_con_so/bg_nhancach.png');
 }
 
 #report-ngaysinh .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_ngaysinh-20221216073350-qui3l.png);
+    background: url('/img/cac_con_so/bg_ngaysinh.png');
 }
 
 #report-logic .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_logic-20221216073327-pevj0.png);
+    background: url('/img/cac_con_so/bg_logic-20221216073327-pevj0.png');
 }
 
 #report-camxuc .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_camxuc-20221216073327-ioyxp.png);
+    background: url('/img/cac_con_so/bg_camxuc.png');
 }
 
 #report-trucgiac .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_trucgiac-20221216073350-ygrpy.png);
+    background: url('/img/cac_con_so/trucgiac-20221216073350.png');
 }
 
 #report-trainghiem .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_trainghiem-20221216073350-nsrgn.png);
+    background: url('/img/cac_con_so/trainghiem-20221216073350.png');
 }
 
 #report-bosung .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_bosung-20221216073327-ovt1n.png);
+    background: url('/img/cac_con_so/bosung-20221216073327.png');
 }
 
 #report-nttt .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_ketnoi2-20221216073327-wzdyi.png);
+    background: url('/img/cac_con_so/ketnoi2-20221216073327.png');
 }
 
 #report-ddsm .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_ketnoi1-20221216073327-dhch8.png);
+    background: url('/img/cac_con_so/ddsm-20221216073327.png');
 }
 
 #report-canbang .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_canbang-20221216073327-nzbac.png);
+    background: url('/img/cac_con_so/canbang-20221216073327.png');
 }
 
 #report-truongthanh .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_truongthanh-20221216073350-zgeq3.png);
+    background: url('/img/cac_con_so/truongthanh-20221216073350.png');
 }
 
 #report-namsinh .report-report-top {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/bg_nam-20221216073349-ewhlz.png);
+    background: url('/img/cac_con_so/nam-20221216073349.png');
 }
 
 #report-thangcanhan .report-report-top {
-    background: url(https://w.ladicdn.com/s250x250/5ebf76b51e398e6f1670261b/bg_thang-20221216073350-qfkjg.png);
+    background: url('/img/cac_con_so/thang-20221216073350.png');
 }
 
 #report-dinhcao .report-report-top {
-    background: url(https://w.ladicdn.com/s250x250/5ebf76b51e398e6f1670261b/bg_chang-20221216073327-apfnw.png);
+    background: url('/img/cac_con_so/chang-20221216073327.png');
 }
 
 #report-thachthuc .report-report-top {
-    background: url(https://w.ladicdn.com/s250x250/5ebf76b51e398e6f1670261b/thachthuc-20221223093620-zinoe.jpg);
+    background: url('/img/cac_con_so/thachthuc-20221223093620.jpg');
 }
 
 

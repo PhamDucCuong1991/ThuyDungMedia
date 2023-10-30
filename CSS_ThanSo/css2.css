@@ -1,5 +1,4 @@
-
- @media (min-width: 768px) {
+@media (min-width: 768px) {
     #SECTION_POPUP {
         height: 0px;
     }
@@ -29,7 +28,7 @@
     #DataInput {
         width: 400px;
         height: 128px;
-        top: 202.034px;
+        top: 100px;
         left: 68px;
     }
 
@@ -99,13 +98,18 @@
         left: 0px;
     }
 
-    #input_day {
-        width: 130px;
+    #input_birthDay {
+        width: 400px;
         height: 36px;
         top: 46px;
         left: 0px;
     }
-
+    #input_day {
+        width: 400px;
+        height: 36px;
+        top: 46px;
+        left: 0px;
+    }
     #input_month {
         width: 130px;
         height: 36px;
@@ -160,7 +164,7 @@
     }
 
     #INTRO {
-        height: 490.017px;
+        height: 200px;
     }
 
     #INTRO > .ladi-overlay {
@@ -230,7 +234,8 @@
     }
 
     #CONTACT {
-        height: 433px;
+        height: 300px;
+        background-color: white;
     }
 
     #CONTACT.ladi-animation {
@@ -280,9 +285,9 @@
     }
 
     #GROUP1629 {
-        width: 251px;
-        height: 291.837px;
-        top: 743px;
+        width: 180px;
+        height: 214px;
+        top: 550px;
         left: 425px;
     }
 
@@ -308,8 +313,8 @@
 
     #GROUP1632 {
         width: 251px;
-        height: 291.837px;
-        top: 743px;
+        height: 291px;
+        top: 550px;
         left: 709px;
     }
 
@@ -348,7 +353,7 @@
     }
 
     #REPORT {
-        height: 1109.84px;
+        height: 900px;
     }
 
     #REPORT .ladi-section-arrow-down {
@@ -735,7 +740,7 @@
     #BOX1706 {
         width: 960px;
         height: 75px;
-        top: 1034.84px;
+        top: 634px;
         left: 0px;
     }
 
@@ -941,26 +946,21 @@
 
     #GROUP1819 {
         width: 536px;
-        height: 330.034px;
-        top: 159.983px;
+        height: 130px;
+        top: 50px;
         left: 212px;
     }
 
+    #REGISTER .ladi-element {
+        width: 536px;
+        height: 130px;
+        top: 1px;
+        left: 212px;
+
+    }
+
     #REGISTER {
-        height: 854px;
-    }
-
-    #REGISTER > .ladi-section-background {
-        background-size: cover;
-        background-attachment: scroll;
-        background-origin: content-box;
-        background-image: url("https://w.ladicdn.com/s1440x854/5ebf76b51e398e6f1670261b/cloudy-20221210120035-enumo.png");
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-    #REGISTER .ladi-section-arrow-down {
-        background-image: url("data:image/svg+xml;utf8, %3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23fff%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M2.00015%205.58594L12.0002%2015.5859L22.0002%205.58594L23.4144%207.00015L12.0002%2018.4144L0.585938%207.00015L2.00015%205.58594Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+        margin-bottom: 100px;
     }
 
     #GROUP1821 {
@@ -2726,20 +2726,17 @@
         background-size: cover;
         background-attachment: scroll;
         background-origin: content-box;
-        background-image: url("");
+
         background-position: center bottom;
         background-repeat: no-repeat;
         opacity: 0.33;
     }
 
-    #BODY_BACKGROUND .ladi-section-arrow-down {
-        background-image: url("");
-    }
 
     #DataInput {
         width: 350px;
         height: 139px;
-        top: 230px;
+        top: 130px;
         left: 15px;
     }
 
@@ -2803,14 +2800,14 @@
     }
 
     #input_name {
-        width: 350px;
+        width: 400px;
         height: 36px;
         top: 0px;
         left: 0px;
     }
 
     #input_day {
-        width: 115px;
+        width: 400px;
         height: 36px;
         top: 46px;
         left: 0px;
@@ -2869,9 +2866,6 @@
         line-height: 1;
     }
 
-    #INTRO {
-        height: 410px;
-    }
 
     #INTRO > .ladi-overlay {
         background: rgba(242, 214, 221, 1.0);
@@ -2939,10 +2933,6 @@
         line-height: 1.4;
     }
 
-    #CONTACT {
-        height: 638.418px;
-    }
-
     #CONTACT.ladi-animation {
         animation-iteration-count: infinite;
         -webkit-animation-iteration-count: infinite;
@@ -2952,7 +2942,6 @@
         background-size: cover;
         background-attachment: scroll;
         background-origin: content-box;
-        background-image: url("https://w.ladicdn.com/s768x638/5ebf76b51e398e6f1670261b/cloudy-20221210120035-enumo.png");
         background-position: center top;
         background-repeat: repeat;
     }
@@ -2991,8 +2980,8 @@
 
     #GROUP1629 {
         width: 180px;
-        height: 215.077px;
-        top: 694.205px;
+        height: 214px;
+        top: 550px;
         left: 17.5px;
     }
 
@@ -3018,8 +3007,8 @@
 
     #GROUP1632 {
         width: 180px;
-        height: 214.077px;
-        top: 695.205px;
+        height: 214px;
+        top: 550px;
         left: 222.5px;
     }
 
@@ -3087,7 +3076,7 @@
     }
 
     #BOX1644 > .ladi-box {
-        background-color: rgb(241, 243, 244);
+        background-color: #842029;
         border-radius: 5px;
     }
 
@@ -3446,7 +3435,7 @@
     #BOX1706 {
         width: 420px;
         height: 50px;
-        top: 1652px;
+        top: 652px;
         left: 0px;
     }
 
@@ -3654,20 +3643,16 @@
 
     #GROUP1819 {
         width: 380px;
-        height: 369px;
-        top: 30px;
+        height: 169px;
+        top: 10px;
         left: 20px;
     }
 
-    #REGISTER {
-        height: 1102px;
-    }
 
     #REGISTER > .ladi-section-background {
         background-size: cover;
         background-attachment: scroll;
         background-origin: content-box;
-        background-image: url("https://w.ladicdn.com/s768x1102/5ebf76b51e398e6f1670261b/cloudy-20221210120035-enumo.png");
         background-position: center center;
         background-repeat: no-repeat;
     }

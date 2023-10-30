@@ -1,5 +1,6 @@
 body {
     direction: ltr;
+    font-family: "PoppinsVN-400.ttf"
 }
 
 @media (min-width: 768px) {
@@ -27,8 +28,4 @@ body {
 @font-face {
     font-family: "PoppinsVN-400.ttf";
     src: url("https://w.ladicdn.com/5ebf76b51e398e6f1670261b/poppinsvn-400-20221216051841-tt1an.ttf") format("truetype");
-}
-
-body {
-    font-family: "PoppinsVN-400.ttf"
 }

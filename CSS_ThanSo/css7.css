@@ -141,6 +141,7 @@
     background-repeat: no-repeat;
     border-radius: 5px;
     background-repeat: no-repeat;
+    font-family: "PoppinsVN-400.ttf";
 }
 
 .report-report-index {
@@ -194,7 +195,7 @@ content: "CS ";
 
 
 .report-matrix-bg {
-    background: url(https://w.ladicdn.com/5ebf76b51e398e6f1670261b/maxtrix-bg-01-20221120123604-wrewg.png);
+    background: url('https://w.ladicdn.com/5ebf76b51e398e6f1670261b/maxtrix-bg-01-20221120123604-wrewg.png');
     background-size: 100% 100%;
     width: 100%;
     height: 100%;
@@ -310,7 +311,7 @@ content: "CS ";
 }
 
 .report-process-mid .index-value::after {
-    content: "\A TUỔI";
+
     font-size: 11px;
     text-transform: uppercase;
     display: inherit;

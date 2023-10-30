@@ -278,7 +278,8 @@ body {
 .ladi-wraper {
     width: 100%;
     min-height: 100%;
-    overflow: hidden
+    overflow: hidden;
+
 }
 
 .ladi-section {
@@ -330,6 +331,21 @@ body {
 
 .ladi-element {
     position: absolute;
+}
+
+.ladi-element1 {
+    margin-top: 100px;
+    background-color: #be3455;
+    height: 36px;
+    width: auto;
+    border-radius: 3px;
+    color: #ffffff;
+    padding-left: 10px; /* Khoảng cách từ lề trái */
+    padding-right: 10px; /* Khoảng cách từ lề phải */
+}
+
+.ladi-element1:hover {
+    background-color: #a52834;
 }
 
 .ladi-overlay {
@@ -1668,6 +1684,13 @@ body {
     height: 100%
 }
 
+.ladi-group1 {
+    position: relative;
+    margin-top: -50px;
+    width: 100%;
+    height: 100%
+}
+
 .ladi-accordion {
     position: absolute;
     width: 100%;
@@ -1739,7 +1762,8 @@ body {
     display: inline-block;
     word-break: break-word;
     background-size: cover;
-    background-position: center center
+    background-position: center center;
+    text-align: center;
 }
 
 .ladi-headline a {
@@ -1867,10 +1891,9 @@ a:link {
 }
 
 #ladi-hidden1 {
-
     background-color: #e85d04 !important;
-
 }
+
 .backdrop-popup {
     display: none;
     position: fixed;
@@ -2082,7 +2105,8 @@ a:link {
     left: 0;
     right: 0;
     margin: 0 auto;
-    height: 100vh !important
+    height: 100vh !important;
+
 }
 
 .ladi-html strong {

@@ -12,7 +12,7 @@ div, p {
 
 /* minimum height to fit one screen */
 #INTRO {
-    min-height: calc(100vh - 50px);
+    min-height: 350px;
 }
 
 
@@ -164,12 +164,9 @@ div, p {
 
 .book .spacer {
     padding: 75px 0px 0px 0px;
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     letter-spacing: 1px;
 }
 
-.regline::after {
-    content: " Mua bản full 20 chỉ số theo hướng dẫn bên dưới để xem nội dung luận giải";
-}
 
