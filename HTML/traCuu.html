@@ -28,7 +28,8 @@
     <link rel="stylesheet" id="style_animation" href="../CSS_ThanSo/css3.css" type="text/css">
     <link rel="stylesheet" id="style_page" href="../CSS_ThanSo/css4.css" type="text/css">
     <link rel="stylesheet" href="../css/hotLine.css">
-    <script src="../js/jquery-3.5.1.min.js"></script>
+
+
 
 </head>
 <body>
@@ -83,7 +84,7 @@
                             </div>
                         </div>
 
-                        <div >
+                        <div>
                             <button type="submit" class="ladi-element1"
                                     onclick="tinhToanSo(); return false;">KHÁM PHÁ BẢN THÂN
                             </button>
@@ -102,11 +103,13 @@
     <div id="REPORT" class='ladi-section'>
         <div class='ladi-section-background'></div>
         <div class="ladi-container">
-            <div id="HEADLINE1624" class='ladi-element divider'><h3 class='ladi-headline'>BẢN ĐỒ CUỘC ĐỜI</h3></div>
+            <div id="HEADLINE1624" class='ladi-element divider'>
+                <h3 class='ladi-headline' id="showFullName1"></h3>
+            </div>
 
             <div id="c_namedobr" class='ladi-element report-name'><h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY
                 NHẤT</h3></div>
-<!--            slide ở đây-->
+            <!--    slide ở đây-->
             <div id="HTML_CODE1627" class='ladi-element'>
                 <div class='ladi-html-code'>
                     <link rel="stylesheet" href="../CSS_ThanSo/css8.css" type="text/css">
@@ -129,8 +132,9 @@
                                         <div class="title" align="center">TUỆ TÂM <br>CHỮA LÀNH <small>&amp;</small>
                                             HẠNH&nbsp;PHÚC
                                         </div>
-                                        <div class="spacer" align="center">Dành riêng cho chính bạn!</div>
 
+                                        <h1 class="spacer" id="showFullName" align="center"></h1>
+                                        <div class="spacer" align="center">Dành riêng cho chính bạn!</div>
                                     </div>
                                 </div>
 
@@ -141,7 +145,7 @@
                                         <div id="s_soduongdoi_2" class="report-report-value"></div>
                                     </div>
                                     <div id="report_duongdoi_intro" class="report-details-content"></div>
-                                    <div id="report_duongdoi_content" class="report-details-content">234234</div>
+                                    <div id="report_duongdoi_content" class="report-details-content"></div>
                                 </div>
 
                                 <!-- So sumenh -->
@@ -612,7 +616,8 @@
                         <div id="PARAGRAPH1694" class='ladi-element ins-text'>
                             <div class='ladi-paragraph'>
                                 &lt;Họ và Tên&gt; &lt;Ngày sinh&gt;<br>
-                                Gửi tới số  <a style="font-weight: bold; font-size: larger; color: #6a1a21" href="tel:0918362992"> 0918.362.992</a> <br>
+                                Gửi tới số <a style="font-weight: bold; font-size: larger; color: #6a1a21"
+                                                 href="tel:0918362992"> 0918.362.992</a> <br>
                                 Hoặc điện thoại trực tiếp cho chuyên gia
                             </div>
 
@@ -636,7 +641,9 @@
                             <div class='ladi-paragraph'>Báo cáo số học của bạn sẽ được gửi theo số điện thoại zalo
                                 hoặc email bạn cung cấp.
                             </div>
-                            <div class='ladi-paragraph'>Chi tiết ib fanpage của Thùy Dung Media <a href="https://www.facebook.com/profile.php?id=100090208786947" target="_blank">Tại đây</a>
+                            <div class='ladi-paragraph'>Chi tiết ib fanpage của Thùy Dung Media <a
+                                    href="https://www.facebook.com/profile.php?id=100090208786947" target="_blank">Tại
+                                đây</a>
                             </div>
                         </div>
                     </div>
@@ -665,9 +672,11 @@
         </a>
     </div>
 </div>
-
+<script src="../js/jquery-3.5.1.min.js"></script>
 </body>
 <script src="../JS_thanSo/tinhToanSo.js"></script>
+<!--<script src="../JS_thanSo/JS_soThieu_soSuMenh.js"></script>-->
+<!--<script type="module" src="../js/main.js"></script>-->
 
 <!--<script src="../js/noCopy.js"></script>-->
 </html>

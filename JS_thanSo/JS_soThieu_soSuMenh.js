@@ -1,6 +1,6 @@
 
-function so_thieu_so_su_menh() {
 
+function so_thieu_so_su_menh() {
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let ten = document.getElementById("fullname").value;
     let ngaySinh = document.getElementById("ngay").value;
@@ -13,7 +13,7 @@ function so_thieu_so_su_menh() {
 
     let arr = [];
     let arrTen = []; // so trong ten
-    let soThieuTrongHoVaTen =[];
+    let soThieuTrongHoVaTen = [];
 
     function loaiBoSo0(a) {
 
@@ -41,7 +41,7 @@ function so_thieu_so_su_menh() {
     function removeAccents() {
         var dauTiengViet = [
             "AÀẢÃÁẠĂẰẲẴẮẶÂẦẨẪẤẬ", "DĐ", "EÈẺẼÉẸÊỀỂỄẾỆ", "IÌỈĨÍỊ",
-            "OÒỎÕÓỌÔỒỔỖỐỘƠỜỞỠỚỢ", "UÙỦŨÚỤƯỪỬỮỨỰ", "YỲỶỸÝỴ" ];
+            "OÒỎÕÓỌÔỒỔỖỐỘƠỜỞỠỚỢ", "UÙỦŨÚỤƯỪỬỮỨỰ", "YỲỶỸÝỴ"];
         for (var i = 0; i < dauTiengViet.length; i++) {
 
             var re = new RegExp('[' + dauTiengViet[i].substr(1) + ']', 'g');
@@ -59,6 +59,7 @@ function so_thieu_so_su_menh() {
             }
         }
     }
+
     daySoHoVaTen();
 
     function soThieu() {
@@ -75,6 +76,7 @@ function so_thieu_so_su_menh() {
             }
         }
     }
+
     soThieu();
 
     function soSucManhTiemThuc() {
@@ -84,7 +86,7 @@ function so_thieu_so_su_menh() {
     document.getElementById("soSucManhTT").innerHTML += soSucManhTiemThuc();
 
     function soNgaySinh() {
-        let tong = parseInt(ngaySinh[0])+ parseInt(ngaySinh[1]);
+        let tong = parseInt(ngaySinh[0]) + parseInt(ngaySinh[1]);
         if (tong > 9) {
             tong -= 9;
         }
@@ -105,16 +107,14 @@ function so_thieu_so_su_menh() {
 
     function soTuDuyLyTri() {
         let sum;
-        sum = soNgaySinh()+ parseInt(soVanMenh())
+        sum = soNgaySinh() + parseInt(soVanMenh())
         if (sum > 9) {
             sum -= 9;
         }
         document.getElementById("soTuDuyLyTri").innerHTML += sum;
         return (sum)
     }
-// console.log(soNgaySinh())
-// console.log(soVanMenh())
-   soTuDuyLyTri()
 
+    soTuDuyLyTri()
 
 }
