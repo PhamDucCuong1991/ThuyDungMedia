@@ -225,11 +225,11 @@
 }
 
 #report_noicam_label::before {
-    content: "Đam Mê";
+    content: "Nhân cách";
 }
 
 #report_tuongtac_label::before {
-    content: "Nhân Cách";
+    content: "Đam mê";
 }
 
 #report_thaido_label::before {
@@ -241,19 +241,19 @@
 }
 
 #report_logic_label::before {
-    content: "Tư duy\00a0Logic";
+    content: "Tư duy Logic";
 }
 
 #report_camxuc_label::before {
-    content: "Tư duy Cảm\00a0xúc";
+    content: "Tư duy Cảm xúc";
 }
 
 #report_trucgiac_label::before {
-    content: "Tư duy Trực\00a0giác";
+    content: "Tư duy Trực giác";
 }
 
 #report_trainghiem_label::before {
-    content: "Tư duy Trải\00a0nghiệm";
+    content: "Tư duy Trải nghiệm";
 }
 
 #report_bosung_label::before {
@@ -261,11 +261,11 @@
 }
 
 #report_nttt_label::before {
-    content: "Kết nối Linh\00a0hồn";
+    content: "Kết nối Linh hồn";
 }
 
 #report_ddsm_label::before {
-    content: "Kết nối Vận\00a0mệnh";
+    content: "Kết nối Vận mệnh";
 }
 
 #report_canbang_label::before {
@@ -277,19 +277,19 @@
 }
 
 #report_namsinh_label::before {
-    content: "Năm Cá\00a0nhân";
+    content: "Năm Cá nhân";
 }
 
 #report_thangcanhan_label::before {
-    content: "Tháng Cá\00a0nhân";
+    content: "Tháng Cá nhân";
 }
 
 #report_dinhcao_label::before {
-    content: "Đỉnh cao";
+    content: "Số vận mệnh";
 }
 
 #report_thachthuc_label::before {
-    content: "Thách\00a0thức";
+    content: "Sức mạnh tiềm thức";
 }
 
 
