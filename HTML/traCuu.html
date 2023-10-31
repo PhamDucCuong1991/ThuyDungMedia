@@ -15,6 +15,10 @@
     <meta property="og:description" content="Xem Thần Số Học"/>
     <meta name="format-detection" content="telephone=no"/>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link rel="dns-prefetch">
 
     <link rel="preconnect" href="https://a.ladipage.com/" crossorigin>
@@ -28,6 +32,7 @@
     <link rel="stylesheet" id="style_animation" href="../CSS_ThanSo/css3.css" type="text/css">
     <link rel="stylesheet" id="style_page" href="../CSS_ThanSo/css4.css" type="text/css">
     <link rel="stylesheet" href="../css/hotLine.css">
+
 
 
 
@@ -88,7 +93,8 @@
                             <button type="submit" class="ladi-element1"
                                     onclick="tinhToanSo(); return false;">KHÁM PHÁ BẢN THÂN
                             </button>
-                            <button class="ladi-element1" onclick="xoaDuLieu()">RESET</button>
+                            <button type="button" class="ladi-element1" onclick="xoaDuLieu()">RESET</button>
+
                         </div>
 
                     </form>
@@ -109,11 +115,12 @@
 
             <div id="c_namedobr" class='ladi-element report-name'><h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY
                 NHẤT</h3></div>
+            <button type="button" class="ladi-element1" onclick="generatePDF()">Xuất ra PDF</button>
             <!--    slide ở đây-->
             <div id="HTML_CODE1627" class='ladi-element'>
-                <div class='ladi-html-code'>
+                <div class='ladi-html-code' >
                     <link rel="stylesheet" href="../CSS_ThanSo/css8.css" type="text/css">
-                    <div class="report-details report-container">
+                    <div class="report-details report-container" >
                         <div class="report-container report-container-vflex">
                             <div class="report-details-instruction report-align-center">Nhấn nút play để nghe sách nói
                             </div>
@@ -124,15 +131,13 @@
                             </audio>
                             <div class="report-details-instruction report-align-center">Vuốt lên để xem báo cáo</div>
 
-                            <div class="report-details-report report-container-vflex">
+                            <div class="report-details-report report-container-vflex" id="HTML_CODE1627_1">
                                 <!--bia sach -->
                                 <div id="report-cover">
                                     <div class="report-report-cover book">
-
                                         <div class="title" align="center">TUỆ TÂM <br>CHỮA LÀNH <small>&amp;</small>
                                             HẠNH&nbsp;PHÚC
                                         </div>
-
                                         <h1 class="spacer" id="showFullName" align="center"></h1>
                                         <div class="spacer" align="center">Dành riêng cho chính bạn!</div>
                                     </div>
@@ -682,4 +687,28 @@
 <!--<script type="module" src="../js/main.js"></script>-->
 
 <!--<script src="../js/noCopy.js"></script>-->
+<script>
+    function generatePDF() {
+        let element = document.getElementById("report-duongdoi");
+
+        html2canvas(element, { scale: 2 }).then(canvas => {
+            let imgData = canvas.toDataURL('image/png');
+            let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+            let width = pdf.internal.pageSize.getWidth();
+            let height = pdf.internal.pageSize.getHeight();
+            let aspectRatio = canvas.width / canvas.height;
+            let newHeight = width / aspectRatio;
+
+            if (newHeight > height) {
+                newHeight = height;
+                width = height * aspectRatio;
+            }
+
+            pdf.addImage(imgData, 'PNG', 0, 0, width, newHeight);
+            pdf.save("document.pdf");
+        }).catch(error => {
+            console.error("Error generating PDF:", error);
+        });
+    }
+</script>
 </html>
