@@ -1,3 +1,4 @@
+
 function so_thieu_so_su_menh() {
 
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
