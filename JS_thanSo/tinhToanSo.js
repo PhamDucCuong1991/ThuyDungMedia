@@ -370,26 +370,66 @@ VD về số 2 nằm ở một số vị trí khác nhau trong bản đồ: <br>
     </ul>
 </div>`,
 
-    so_22: ``,
+    so_22: `<div>
+    <h2>1. Ý nghĩa tổng quan</h2>
+    <ul>
+        <li>Tượng trưng cho nguyên tắc của sự chính xác và cân bằng. Trong toán học cơ bản, 22 tượng trưng cho hình tròn và nó là con số nguyên thấp nhất.</li>
+        <li>Master Builder: liên quan đến xây dựng, đất đai, năng lượng thổ</li>
+        <li>Kết hợp năng lượng giữa 2 – 4 – 11 (22 = 11 + 11)</li>
+        <li>Những người mang số 22 thường được cho là mang khát khao lớn, hoài vọng lớn</li>
+        <li>Người 22 ít khi bị mâu thuẫn như số 11 vì số 11 mang năng lượng của 2 con số âm dương ngược nhau, còn 22 mang năng lượng của 2 con số âm là 2 và 4.</li>
+        <li>Số 22 có một quyền năng đặc biệt là sự may mắn vì nó bao gồm 1,2,4 đều nằm trên trục vị kỉ nên nó có quyền được nghĩ đến bản thân và có may mắn trời cho.</li>
+        <li>22 nằm ở sứ mệnh thường may mắn trong công việc, 22 ở nhân cách thì thường được mọi người yêu từ cái nhìn đầu tiên.</li>
+    </ul>
 
-    so_33: "1.\tÝ nghĩa tổng quan\n" +
-        "-\tSố 3 là con số đại diện cho sự sáng tạo, khả năng giao tiếp khéo léo\n" +
-        "-\tSố 6 là số đại diện cho trách nhiệm, sự chăm sóc, nuôi dưỡng, bảo vệ và hướng về gia đình\n" +
-        "-\tCon số 33/6 sẽ là con số đại diện cho tình yêu, sự chăm sóc và lòng trắc ẩn\n" +
-        "-\tĐây là con số mang năng lượng của cả số 3 và số 6 nhưng mạnh hơn gấp nhiều lần\n" +
-        "2.\tĐiểm mạnh của số 33\n" +
-        "-\tSáng tạo, trực quan, truyền cảm hứng\n" +
-        "-\tYêu thương, chữa lành, nuôi dưỡng\n" +
-        "-\tNhân ái, hài hòa\n" +
-        "-\tCó trách nhiệm, tử tế, trung thực\n" +
-        "-\tLòng bao dung, tốt bụng\n" +
-        "-\tNăng lực quan tâm chăm sóc\n" +
-        "\n" +
-        "3.\tĐiểm yếu của số 33:\n" +
-        "-\tDễ mất phương hướng\n" +
-        "-\tThiếu năng lượng\n" +
-        "-\tThiếu khả năng quan sát, phân tích\n" +
-        "-\tDễ bị lu mờ trong cuộc sống\n",
+    <h2>2. Điểm mạnh của số 22</h2>
+    <ul>
+        <li>Con số vua (Master number)</li>
+        <li>Kiên cường, thông minh, quyết đoán (nằm ở số 4)</li>
+        <li>Có tham vọng lớn (nằm ở số 11)</li>
+        <li>Khao khát phát triển cuộc đời</li>
+        <li>Có tố chất, phong thái của nhà lãnh đạo (nằm ở số 11)</li>
+        <li>Có tầm nhìn xa trông rộng</li>
+    </ul>
+
+    <h2>3. Điểm yếu của số 22</h2>
+    <ul>
+        <li>Ngại đối đầu thực tế</li>
+        <li>Thiếu quyết đoán</li>
+        <li>Hay mơ tưởng, suy nghĩ viển vông</li>
+        <li>Dễ bị mất cân bằng trong cuộc sống do được tạo bởi 2 số 2 nên vẫn có sự mềm yếu của con số 2</li>
+        <li>Đòi hỏi cao đối với bản thân và đối phương</li>
+        <li>Muốn đạt đến đỉnh cao cần thử thách và sóng gió của cuộc sống.</li>
+    </ul>
+</div>`,
+
+    so_33: `<div>
+    <h2>1. Ý nghĩa tổng quan</h2>
+    <ul>
+        <li>Số 3 là con số đại diện cho sự sáng tạo, khả năng giao tiếp khéo léo</li>
+        <li>Số 6 là số đại diện cho trách nhiệm, sự chăm sóc, nuôi dưỡng, bảo vệ và hướng về gia đình</li>
+        <li>Con số 33/6 sẽ là con số đại diện cho tình yêu, sự chăm sóc và lòng trắc ẩn</li>
+        <li>Đây là con số mang năng lượng của cả số 3 và số 6 nhưng mạnh hơn gấp nhiều lần</li>
+    </ul>
+
+    <h2>2. Điểm mạnh của số 33</h2>
+    <ul>
+        <li>Sáng tạo, trực quan, truyền cảm hứng</li>
+        <li>Yêu thương, chữa lành, nuôi dưỡng</li>
+        <li>Nhân ái, hài hòa</li>
+        <li>Có trách nhiệm, tử tế, trung thực</li>
+        <li>Lòng bao dung, tốt bụng</li>
+        <li>Năng lực quan tâm chăm sóc</li>
+    </ul>
+
+    <h2>3. Điểm yếu của số 33</h2>
+    <ul>
+        <li>Dễ mất phương hướng</li>
+        <li>Thiếu năng lượng</li>
+        <li>Thiếu khả năng quan sát, phân tích</li>
+        <li>Dễ bị lu mờ trong cuộc sống</li>
+    </ul>
+</div>`,
 
 }
 
@@ -399,10 +439,6 @@ function tinhToanSo() {
     const ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
 
     let ngaySinh = document.getElementById("birthDay").value.trim();
-    if (tachNgayThangNamTuChuoi(ngaySinh) === "") {
-        alert("Định dạng ngày sinh không hợp lệ");
-        return
-    }
 
     let arrNa = [];
     let arrPa = [];
@@ -593,23 +629,8 @@ function tinhToanSo() {
     }
 
     function tachNgayThangNamTuChuoi(ngaySinh) {
-        const regexPatterns = [
-            /\d{2}\/\d{2}\/\d{4}/, // DD/MM/YYYY
-            /\d{2}-\d{2}-\d{4}/, // DD-MM-YYYY
-            /\d{2}\*\d{2}\*\d{4}/ // DD*MM*YYYY (ví dụ)
-        ];
-        let ketQua = "";
-        // Lặp qua từng biểu thức chính quy để kiểm tra định dạng
-        for (const pattern of regexPatterns) {
-            const matches = ngaySinh.match(pattern);
-            if (matches) {
-                ketQua = matches[0];
-                break; // Dừng khi tìm thấy định dạng hợp lệ đầu tiên
-            }
-        }
-        if (ketQua) {
-            // Tách ngày, tháng và năm từ chuỗi kết quả
-            const parts = ketQua.split(/\/|-|\*/); // Phân tách bằng /, - hoặc *
+
+            const parts = ngaySinh.split(/\/|-|\*/); // Phân tách bằng /, - hoặc *
             if (parts.length === 3) {
                 return {
                     ngay_sinh: parseInt(parts[0]),
@@ -617,9 +638,7 @@ function tinhToanSo() {
                     nam_sinh: parseInt(parts[2])
                 };
             }
-        } else {
-            return "";
-        }
+
     }
 
     function removeAccent(string) {
