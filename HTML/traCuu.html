@@ -762,16 +762,9 @@
 
         // Danh sách tên ảnh
         let imageNames = [];
-        let imageNumber = 2;
-        imageNames.push(`so_duong_doi_${imageNumber}.jpg`);
-        imageNames.push('gallery-img-02.jpg');
-        imageNames.push('gallery-img-03.jpg');
-        imageNames.push('gallery-img-04.jpg');
-        imageNames.push('gallery-img-05.jpg');
-        imageNames.push('gallery-img-06.jpg');
-        imageNames.push('gallery-img-07.jpg');
-        imageNames.push('gallery-img-08.jpg');
-        imageNames.push('gallery-img-09.jpg');
+        let imageNumber = 1;
+        imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber}.jpg`);
+        imageNames.push(`so_duong_doi/bg_duongdoi.jpg`);
 
         // Định nghĩa hàm để thêm ảnh vào PDF
         function addImageToPDF(imagePath, index) {
@@ -792,7 +785,7 @@
         }
 
         // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-        let promises = imageNames.map((imageName, index) => addImageToPDF('../img/' + imageName, index));
+        let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
 
         Promise.all(promises).then(() => {
             pdf.save('document.pdf');

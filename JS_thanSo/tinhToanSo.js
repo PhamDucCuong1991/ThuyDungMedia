@@ -501,7 +501,7 @@ function tinhToanSo() {
             soKetNoiLinhHon : soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem : soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages(dataPDF)
+        generatePDFWithImages1(dataPDF)
     }
 
     // this.dinhCao.dinhCao1 = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4));
@@ -680,7 +680,7 @@ function xoaDuLieu() {
     location.reload()
 }
 
-function generatePDFWithImages(dataPDF) {
+function generatePDFWithImages1(dataPDF) {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -749,7 +749,7 @@ function generatePDFWithImages(dataPDF) {
 
     let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
     imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
-    
+
     // Định nghĩa hàm để thêm ảnh vào PDF
     function addImageToPDF(imagePath, index) {
         return new Promise((resolve, reject) => {
@@ -769,7 +769,7 @@ function generatePDFWithImages(dataPDF) {
     }
 
     // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/' + imageName, index));
+    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
 
     Promise.all(promises).then(() => {
         pdf.save('document.pdf');
