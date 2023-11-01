@@ -17,7 +17,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <link rel="dns-prefetch">
 
@@ -33,7 +32,12 @@
     <link rel="stylesheet" id="style_page" href="../CSS_ThanSo/css4.css" type="text/css">
     <link rel="stylesheet" href="../css/hotLine.css">
 
-
+    <style>
+        p {
+            font-size: x-large;
+            font-weight: inherit;
+        }
+    </style>
 
 
 </head>
@@ -68,7 +72,7 @@
                 <div id="HEADLINE1579" class='ladi-element text-shadowed'><h3 class='ladi-headline'>SỐ HỌC ỨNG DỤNG
                     PYTAGO<br></h3></div>
                 <div id="DataInput" class='ladi-element'>
-                    <form class='ladi-form'>
+                    <div class='ladi-form'>
 
                         <div id="input_name" class='ladi-element'>
                             <div class="ladi-form-item-container">
@@ -85,7 +89,7 @@
                                 <div class='ladi-form-item'>
                                     <input name="input_day" id="birthDay"
                                            required class="ladi-form-control" type="date"
-                                           /></div>
+                                    /></div>
                             </div>
                         </div>
 
@@ -97,7 +101,7 @@
 
                         </div>
 
-                    </form>
+                    </div>
 
 
                 </div>
@@ -115,12 +119,12 @@
 
             <div id="c_namedobr" class='ladi-element report-name'><h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY
                 NHẤT</h3></div>
-            <button type="button" class="ladi-element1" onclick="generatePDF()">Xuất ra PDF</button>
+            <button type="button" class="ladi-element1" onclick="generatePDFWithImages()">Xuất ra PDF</button>
             <!--    slide ở đây-->
             <div id="HTML_CODE1627" class='ladi-element'>
-                <div class='ladi-html-code' >
+                <div class='ladi-html-code'>
                     <link rel="stylesheet" href="../CSS_ThanSo/css8.css" type="text/css">
-                    <div class="report-details report-container" >
+                    <div class="report-details report-container">
                         <div class="report-container report-container-vflex">
                             <div class="report-details-instruction report-align-center">Nhấn nút play để nghe sách nói
                             </div>
@@ -688,27 +692,115 @@
 
 <!--<script src="../js/noCopy.js"></script>-->
 <script>
-    function generatePDF() {
-        let element = document.getElementById("report-duongdoi");
+    // function generatePDF() {
+    //     let element = document.getElementById("report-duongdoi");
+    //
+    //     html2canvas(element, {scale: 2}).then(canvas => {
+    //         let imgData = canvas.toDataURL('image/png');
+    //         let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+    //         let width = pdf.internal.pageSize.getWidth()*2.5;
+    //         let height = pdf.internal.pageSize.getHeight()*2.5;
+    //         let aspectRatio = canvas.width / canvas.height;
+    //         let newHeight = width / aspectRatio;
+    //
+    //         if (newHeight > height) {
+    //             newHeight = height;
+    //             width = height * aspectRatio;
+    //         }
+    //
+    //         pdf.addImage(imgData, 'PNG', 0, 0, width, newHeight);
+    //         pdf.save("document.pdf");
+    //     }).catch(error => {
+    //         console.error("Error generating PDF:", error);
+    //     });
+    // }
 
-        html2canvas(element, { scale: 2 }).then(canvas => {
+    function generatePDF() {
+        let element = document.getElementById("HTML_CODE1627_1");
+
+        html2canvas(element, {scale: 2}).then(canvas => {
             let imgData = canvas.toDataURL('image/png');
             let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-            let width = pdf.internal.pageSize.getWidth();
-            let height = pdf.internal.pageSize.getHeight();
+            let width = pdf.internal.pageSize.getWidth() - 20; // Trừ đi 10mm cho cả 2 lề (10mm cho mỗi lề)
+            let height = pdf.internal.pageSize.getHeight() - 20; // Trừ đi 10mm cho cả 2 lề
             let aspectRatio = canvas.width / canvas.height;
             let newHeight = width / aspectRatio;
 
-            if (newHeight > height) {
-                newHeight = height;
-                width = height * aspectRatio;
+            let yOffset = 10; // Bắt đầu với lề trên là 10mm
+
+            while (newHeight > 0) {
+                if (newHeight > height) {
+                    pdf.addImage(imgData, 'PNG', 10, yOffset, width, height, null, 'NONE', 0);
+                    yOffset = -height + 10; // Đặt lề trên cho trang tiếp theo
+                    newHeight -= height;
+                } else {
+                    pdf.addImage(imgData, 'PNG', 10, yOffset, width, newHeight, null, 'NONE', 0);
+                    newHeight = 0; // Đã vẽ xong ảnh, dừng vòng lặp
+                }
+
+                if (newHeight > 0) {
+                    pdf.addPage(); // Thêm trang mới nếu còn nội dung
+                }
             }
 
-            pdf.addImage(imgData, 'PNG', 0, 0, width, newHeight);
             pdf.save("document.pdf");
+        }).catch(error => {
+            console.error("Error generating PDF:", error);
+        })
+        if(localStorage.getItem("loggedInUser")==="admin"){
+            generatePDFWithImages()
+        }
+    }
+
+    function generatePDFWithImages() {
+        // Tạo một đối tượng PDF mới
+        let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+
+        // Lấy chiều rộng và chiều cao của một trang A4
+        let width = pdf.internal.pageSize.getWidth();
+        let height = pdf.internal.pageSize.getHeight();
+
+        // Danh sách tên ảnh
+        let imageNames = [];
+        let imageNumber = 2;
+        imageNames.push(`so_duong_doi_${imageNumber}.jpg`);
+        imageNames.push('gallery-img-02.jpg');
+        imageNames.push('gallery-img-03.jpg');
+        imageNames.push('gallery-img-04.jpg');
+        imageNames.push('gallery-img-05.jpg');
+        imageNames.push('gallery-img-06.jpg');
+        imageNames.push('gallery-img-07.jpg');
+        imageNames.push('gallery-img-08.jpg');
+        imageNames.push('gallery-img-09.jpg');
+
+        // Định nghĩa hàm để thêm ảnh vào PDF
+        function addImageToPDF(imagePath, index) {
+            return new Promise((resolve, reject) => {
+                let img = new Image();
+                img.src = imagePath;
+                img.onload = function() {
+                    pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
+                    if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
+                        pdf.addPage();
+                    }
+                    resolve();
+                };
+                img.onerror = function() {
+                    reject(new Error("Error loading image: " + imagePath));
+                };
+            });
+        }
+
+        // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
+        let promises = imageNames.map((imageName, index) => addImageToPDF('../img/' + imageName, index));
+
+        Promise.all(promises).then(() => {
+            pdf.save('document.pdf');
         }).catch(error => {
             console.error("Error generating PDF:", error);
         });
     }
+
+
 </script>
 </html>

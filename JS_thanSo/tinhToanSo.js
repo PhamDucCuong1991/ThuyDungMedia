@@ -478,82 +478,30 @@ function tinhToanSo() {
     const duongDoiSlide1 = "so_" + duongDoiSlide
     document.getElementById("report_duongdoi_content").innerHTML += duongDoi[duongDoiSlide1]
 
-    if (localStorage.getItem("loggedInUser") === "admin") {
-        $("#s_sosumenh_2x").append("SỐ " + suMenhSlide);
-        const suMenhSlide1 = "so_" + suMenhSlide;
-        $("#report_sumenh_content").append(duongDoi[suMenhSlide1]);
-
-        $("#s_sonoitam_2x").append("SỐ " + linhHonSlide);
-        const linhHonSlide1 = "so_" + linhHonSlide;
-        $("#report_noitam_content").append(duongDoi[linhHonSlide1]);
-
-        $("#s_sonoicam_2x").append("SỐ " + nhanCachSlide);
-        const nhanCachSlide1 = "so_" + nhanCachSlide;
-        $("#report_noicam_content").append(duongDoi[nhanCachSlide1]);
-
-        $("#s_sotuongtac_2x").append("SỐ " + soDamMeSlide);
-        const soDamMeSlide1 = "so_" + soDamMeSlide;
-        $("#report_tuongtac_content").append(duongDoi[soDamMeSlide1]);
-
-        $("#s_sothaido_2x").append("SỐ " + thaiDoSlide);
-        const thaiDoSlide1 = "so_" + thaiDoSlide;
-        $("#report_thaido_content").append(duongDoi[thaiDoSlide1]);
-
-        $("#s_songaysinh_2x").append("SỐ " + ngaySinh1Slide);
-        const ngaySinh1Slide1 = "so_" + ngaySinh1Slide;
-        $("#report_ngaysinh_contentx").append(duongDoi[ngaySinh1Slide1]);
-
-        $("#s_sologic_2x").append("SỐ " + tuDuyLyTriSlide);
-        const tuDuyLyTriSlide1 = "so_" + tuDuyLyTriSlide;
-        $("#report_logic_content").append(duongDoi[tuDuyLyTriSlide1]);
-
-        $("#s_socamxuc_2x").append("SỐ " + soCamXucSlide);
-        const soCamXucSlide1 = "so_" + soCamXucSlide;
-        $("#report_camxuc_contentx").append(duongDoi[soCamXucSlide1]);
-
-        $("#s_sotrucgiac_2x").append("SỐ " + soTrucGiacSlide);
-        const soTrucGiacSlide1 = "so_" + soTrucGiacSlide;
-        $("#report_trucgiac_contentx").append(duongDoi[soTrucGiacSlide1]);
-
-        $("#s_sotrainghiem_2x").append("SỐ " + soTuDuyTraiNghiemSlide);
-        const soTuDuyTraiNghiemSlide1 = "so_" + soTuDuyTraiNghiemSlide;
-        $("#report_trainghiem_contentx").append(duongDoi[soTuDuyTraiNghiemSlide1]);
-
-        $("#s_sobosung_2x").append("SỐ " + soThieuSlide);
-        const soThieuSlide1 = "so_" + soThieuSlide;
-        $("#report_bosung_contentx").append(duongDoi[soThieuSlide1]);
-
-        $("#s_sonttt_2").append("SỐ " + soKetNoiLinhHonSlide);
-        const soKetNoiLinhHonSlide1 = "so_" + soKetNoiLinhHonSlide;
-        $("#report_nttt_contentx").append(duongDoi[soKetNoiLinhHonSlide1]);
-
-        $("#s_soddsm_2").append("SỐ " + ketNoiVanMenhSlide);
-        const ketNoiVanMenhSlide1 = "so_" + ketNoiVanMenhSlide;
-        $("#report_ddsm_contentx").append(duongDoi[ketNoiVanMenhSlide1]);
-
-        $("#s_socanbang_2x").append("SỐ " + canBangSlide);
-        const canBangSlide1 = "so_" + canBangSlide;
-        $("#report_canbang_contentx").append(duongDoi[canBangSlide1]);
-
-        $("#s_sotruongthanh_2x").append("SỐ " + truongThanhSlide);
-        const truongThanhSlide1 = "so_" + truongThanhSlide;
-        $("#report_truongthanh_contentx").append(duongDoi[truongThanhSlide1]);
-
-        $("#s_sonamsinh_2").append("SỐ " + namCaNhanSlide);
-        const namCaNhanSlide1 = "so_" + namCaNhanSlide;
-        $("#report_namsinh_contentx").append(duongDoi[namCaNhanSlide1]);
-
-        $("#s_thangcanhan_2x").append("SỐ " + thangCaNhanSlide);
-        const thangCaNhanSlide1 = "so_" + thangCaNhanSlide;
-        $("#report_thangcanhan_contentx").append(duongDoi[thangCaNhanSlide1]);
-
-        $("#s_vanMenh_2").append("SỐ " + vanMenhSlide);
-        const vanMenhSlide1 = "so_" + vanMenhSlide;
-        $("#report_vanMenh_contentx").append(duongDoi[vanMenhSlide1]);
-
-        $("#s_smtt_2").append("SỐ " + sucManhTiemThucSlide);
-        const sucManhTiemThucSlide1 = "so_" + sucManhTiemThucSlide;
-        $("#report_smtt_contentx").append(duongDoi[sucManhTiemThucSlide1]);
+    if(localStorage.getItem("loggedInUser")==="admin"){
+        const dataPDF = {
+            duongDoi : duongDoiSlide,
+            suMenh : suMenhSlide,
+            linhHon: suMenhSlide,
+            nhanCach: nhanCachSlide,
+            canBang : canBangSlide,
+            truongThanh : truongThanhSlide,
+            ngaySinh : ngaySinh1Slide,
+            thaiDo : thaiDoSlide,
+            tuDuyLyTri : tuDuyLyTriSlide,
+            vanMenh : vanMenhSlide,
+            soThieu : soThieuSlide,
+            sucManhTiemThuc : sucManhTiemThucSlide,
+            soCamXuc : soCamXucSlide,
+            soTrucGiac : soTrucGiacSlide,
+            namCaNhan : namCaNhanSlide,
+            thangCaNhan : thangCaNhanSlide,
+            ketNoiVanMenh : ketNoiVanMenhSlide,
+            soDamMe : soDamMeSlide,
+            soKetNoiLinhHon : soKetNoiLinhHonSlide,
+            soTuDuyTraiNghiem : soTuDuyTraiNghiemSlide
+        }
+        generatePDFWithImages(dataPDF)
     }
 
     // this.dinhCao.dinhCao1 = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4));
@@ -732,3 +680,100 @@ function xoaDuLieu() {
     location.reload()
 }
 
+function generatePDFWithImages(dataPDF) {
+    // Tạo một đối tượng PDF mới
+    let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+
+    // Lấy chiều rộng và chiều cao của một trang A4
+    let width = pdf.internal.pageSize.getWidth();
+    let height = pdf.internal.pageSize.getHeight();
+
+    // Danh sách tên ảnh
+    let imageNames = []
+    let imgDuongDoi = dataPDF.duongDoi;
+    imageNames.push(`so_duong_doi/imgDuongDoi${imgDuongDoi}.jpg`);
+
+    let imgSuMenh = dataPDF.suMenh;
+    imageNames.push(`so_su_menh/imgSuMenh${imgSuMenh}.jpg`);
+
+    let imgLinhHon = dataPDF.linhHon;
+    imageNames.push(`so_linh_hon/imgLinhHon${imgLinhHon}.jpg`);
+
+    let imgNhanCach = dataPDF.nhanCach;
+    imageNames.push(`so_nhan_cach/imgNhanCach${imgNhanCach}.jpg`);
+
+    let imgCanBang = dataPDF.canBang;
+    imageNames.push(`so_can_bang/imgCanBang${imgCanBang}.jpg`);
+
+    let imgTruongThanh = dataPDF.truongThanh;
+    imageNames.push(`so_truong_thanh/imgTruongThanh${imgTruongThanh}.jpg`);
+
+    let imgNgaySinh = dataPDF.ngaySinh;
+    imageNames.push(`so_ngay_sinh/imgNgaySinh${imgNgaySinh}.jpg`);
+
+    let imgThaiDo = dataPDF.thaiDo;
+    imageNames.push(`so_thai_do/imgThaiDo${imgThaiDo}.jpg`);
+
+    let imgTuDuyLyTri = dataPDF.tuDuyLyTri;
+    imageNames.push(`so_tu_duy_ly_tri/imgTuDuyLyTri${imgTuDuyLyTri}.jpg`);
+
+    let imgVanMenh = dataPDF.vanMenh;
+    imageNames.push(`so_van_menh/imgVanMenh${imgVanMenh}.jpg`);
+
+    let imgSoThieu = dataPDF.soThieu;
+    imageNames.push(`so_bo_sung/imgSoThieu${imgSoThieu}.jpg`);
+
+    let imgSucManhTiemThuc = dataPDF.sucManhTiemThuc;
+    imageNames.push(`so_suc_manh_tiem_thuc/imgSucManhTiemThuc${imgSucManhTiemThuc}.jpg`);
+
+    let imgCamXuc = dataPDF.soCamXuc;
+    imageNames.push(`so_cam_xuc/imgCamXuc${imgCamXuc}.jpg`);
+
+    let imgTrucGiac = dataPDF.soTrucGiac;
+    imageNames.push(`so_truc_giac/imgTrucGiac${imgTrucGiac}.jpg`);
+
+    let imgNamCaNhan = dataPDF.namCaNhan;
+    imageNames.push(`so_nam_ca_nhan/imgNamCaNhan${imgNamCaNhan}.jpg`);
+
+    let imgThangCaNhan = dataPDF.thangCaNhan;
+    imageNames.push(`so_thang_ca_nhan/imgThangCaNhan${imgThangCaNhan}.jpg`);
+
+    let imgKetNoiVanMenh = dataPDF.ketNoiVanMenh;
+    imageNames.push(`so_ket_noi_van_menh/imgKetNoiVanMenh${imgKetNoiVanMenh}.jpg`);
+
+    let imgDamMe = dataPDF.soDamMe;
+    imageNames.push(`so_dam_me/imgDamMe${imgDamMe}.jpg`);
+
+    let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
+    imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
+
+    let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
+    imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
+    
+    // Định nghĩa hàm để thêm ảnh vào PDF
+    function addImageToPDF(imagePath, index) {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.src = imagePath;
+            img.onload = function() {
+                pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
+                if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
+                    pdf.addPage();
+                }
+                resolve();
+            };
+            img.onerror = function() {
+                reject(new Error("Error loading image: " + imagePath));
+            };
+        });
+    }
+
+    // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
+    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/' + imageName, index));
+
+    Promise.all(promises).then(() => {
+        pdf.save('document.pdf');
+    }).catch(error => {
+        console.error("Error generating PDF:", error);
+    });
+}
