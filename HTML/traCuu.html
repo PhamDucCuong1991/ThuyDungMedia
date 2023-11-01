@@ -19,7 +19,6 @@
     <script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
-
     <link rel="stylesheet" href="../CSS_ThanSo/css.css">
     <link rel="stylesheet" id="style_ladi" href="../CSS_ThanSo/css1.css">
     <link rel="stylesheet" id="style_element" href="../CSS_ThanSo/css2.css">
@@ -50,9 +49,9 @@
             <div id="GROUP1818" class='ladi-element nav-group'>
 
                 <div id="HEADLINE1817" class='ladi-element nav-logo'>
-                    <h3 class='ladi-headline'>Thần số học Thùy Dung<br></h3>
+                    <h3 class='ladi-headline nav-link'><a class="nav-link" href="../index.html">Thần số học Thùy Dung</a></h3>
                 </div>
-
+                <a class="nav-link" id="link-than-so" href="../index.html" ></a>
             </div>
         </div>
     </div>
@@ -83,7 +82,7 @@
                                 <div class="ladi-form-item-background"></div>
                                 <div class='ladi-form-item'>
                                     <input name="input_day" id="birthDay"
-                                           required class="ladi-form-control" type="text"
+                                           required class="ladi-form-control" type="date"
                                     /></div>
                             </div>
                         </div>
@@ -95,12 +94,8 @@
                             <button type="button" class="ladi-element1" onclick="xoaDuLieu()">RESET</button>
 
                         </div>
-
                     </div>
-
-
                 </div>
-
             </div>
         </div>
 
@@ -114,7 +109,7 @@
 
             <div id="c_namedobr" class='ladi-element report-name'><h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY
                 NHẤT</h3></div>
-            <button type="button" class="ladi-element1" onclick="generatePDF()">Xuất ra PDF</button>
+
             <!--    slide ở đây-->
             <div id="HTML_CODE1627" class='ladi-element'>
                 <div class='ladi-html-code'>
@@ -355,7 +350,6 @@
                                 <div id="report-thachthuc" class="report-report">
                                     <div class="report-report-top">
                                         <div id="report_thachthuc_label" class="report-report-index"></div>
-                                        <!-- chỗ sửa id="s_dinhcao_2"-->
                                         <div id="s_smtt_2" class="report-report-value"></div>
                                     </div>
                                     <div id="report_thachthuc_intro" class="report-details-content"></div>
@@ -682,6 +676,7 @@
 <script src="../js/jquery-3.5.1.min.js"></script>
 </body>
 <script src="../JS_thanSo/tinhToanSo.js"></script>
+
 <!--<script src="../JS_thanSo/JS_soThieu_soSuMenh.js"></script>-->
 <!--<script type="module" src="../js/main.js"></script>-->
 

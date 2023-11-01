@@ -123,7 +123,17 @@
     display: inherit;
     flex-direction: column;
 }
+#report-dinhcao1 {
+    order: 20;
+    display: inherit;
+    flex-direction: column;
+}
 
+#report-thachthuc1 {
+    order: 21;
+    display: inherit;
+    flex-direction: column;
+}
 /* ANH NEN CHI SO */
 
 #report-cover .report-report-cover {
@@ -284,10 +294,12 @@
     content: "Tháng Cá nhân";
 }
 
-#report_dinhcao_label::before {
+#report_vanMenh_label::before {
     content: "Số vận mệnh";
 }
-
+#report_dinhcao_label::before{
+    content: "Số đỉnh cao";
+}
 #report_thachthuc_label::before {
     content: "Sức mạnh tiềm thức";
 }
