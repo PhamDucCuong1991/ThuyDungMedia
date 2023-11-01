@@ -136,6 +136,7 @@ div, p {
 .nav-link:hover .ladi-button-background {
     border-bottom: 1px solid #fff;
 }
+
 .navbar {
     position: relative;
     display: flex;
@@ -362,6 +363,7 @@ div, p {
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0, 0, 0, .55)
 }
+
 .navbar-light .navbar-text a, .navbar-light .navbar-text a:focus, .navbar-light .navbar-text a:hover {
     color: rgba(0, 0, 0, .9)
 }
@@ -385,17 +387,29 @@ div, p {
 .navbar-dark .navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, .25)
 }
+
 .navbar-brand {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-decoration: none;
     white-space: nowrap;
-    font-family: "Arial Narrow";
     font-weight: bolder;
 }
 
+.navbar-brand-link {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    white-space: normal;
+    color: white;
+}
+.navbar-brand-link:hover{
+    color: #b02a37;
+}
 .navbar-nav {
     display: flex;
     flex-direction: column;
@@ -403,6 +417,7 @@ div, p {
     margin-bottom: 0;
     list-style: none
 }
+
 .collapse:not(.show) {
     display: none
 }
@@ -446,6 +461,7 @@ div, p {
     pointer-events: none;
     opacity: .65
 }
+
 .btn-outline-primary {
     color: #0d6efd;
     border-color: #0d6efd
