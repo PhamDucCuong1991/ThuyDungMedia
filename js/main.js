@@ -131,7 +131,6 @@ function logout() {
     localStorage.clear();
 }
 
-// Sự kiện khi người dùng nhấp vào thẻ <a>
 $('#idLogin').on('click', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
     if (isLoggedIn) {
@@ -139,8 +138,13 @@ $('#idLogin').on('click', function (event) {
     }
 });
 $('#link-than-so').on('click', function (event) {
-    event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
-    if (isLoggedIn) {
-        logout(); // Nếu đã đăng nhập, chuyển đến hàm logout
+    logout(); // Nếu đã đăng nhập, chuyển đến hàm logout
+    $("#mynavbar button").hide()
+});
+$(document).ready(function() {
+    if (localStorage.getItem("loggedInUser") === "admin") {
+        $("#mynavbar button").show();
+    }else {
+        $("#mynavbar button").hide()
     }
 });

@@ -33,28 +33,17 @@
         }
     </style>
 
-
 </head>
 <body>
 <div class="ladi-wraper">
-
-    <div id="NAV" class='ladi-section'>
-        <div class='ladi-section-background'></div>
-        <div class="ladi-container">
-            <div id="HTML_CODE1800" class='ladi-element'>
-                <div class='ladi-html-code'>
-
-                </div>
-            </div>
-            <div id="GROUP1818" class='ladi-element nav-group'>
-
-                <div id="HEADLINE1817" class='ladi-element nav-logo'>
-                    <h3 class='ladi-headline nav-link'><a class="nav-link" href="../index.html">Thần số học Thùy Dung</a></h3>
-                </div>
-                <a class="nav-link" id="link-than-so" href="../index.html" ></a>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Thần số học Thùy Dung</a>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <button class="btn btn-outline-primary" id="link-than-so" type="button">Logout</button>
             </div>
         </div>
-    </div>
+    </nav>
     <div id="INTRO" class='ladi-section no-print'>
 
         <div class="ladi-overlay"></div>
@@ -82,8 +71,8 @@
                                 <div class="ladi-form-item-background"></div>
                                 <div class='ladi-form-item'>
                                     <input name="input_day" id="birthDay"
-                                           required class="ladi-form-control" type="date"
-                                    /></div>
+                                           required class="ladi-form-control" type="text"
+                                           placeholder="Ngày/Tháng/Năm sinh"/></div>
                             </div>
                         </div>
 
@@ -678,32 +667,10 @@
 <script src="../JS_thanSo/tinhToanSo.js"></script>
 
 <!--<script src="../JS_thanSo/JS_soThieu_soSuMenh.js"></script>-->
-<!--<script type="module" src="../js/main.js"></script>-->
+<script type="module" src="../js/main.js"></script>
 
 <!--<script src="../js/noCopy.js"></script>-->
 <script>
-    // function generatePDF() {
-    //     let element = document.getElementById("report-duongdoi");
-    //
-    //     html2canvas(element, {scale: 2}).then(canvas => {
-    //         let imgData = canvas.toDataURL('image/png');
-    //         let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-    //         let width = pdf.internal.pageSize.getWidth()*2.5;
-    //         let height = pdf.internal.pageSize.getHeight()*2.5;
-    //         let aspectRatio = canvas.width / canvas.height;
-    //         let newHeight = width / aspectRatio;
-    //
-    //         if (newHeight > height) {
-    //             newHeight = height;
-    //             width = height * aspectRatio;
-    //         }
-    //
-    //         pdf.addImage(imgData, 'PNG', 0, 0, width, newHeight);
-    //         pdf.save("document.pdf");
-    //     }).catch(error => {
-    //         console.error("Error generating PDF:", error);
-    //     });
-    // }
 
     function generatePDF() {
         let element = document.getElementById("HTML_CODE1627_1");
@@ -739,8 +706,6 @@
         })
 
     }
-
-
 
 
 </script>
