@@ -79,3 +79,17 @@ function functionF() {
     }
 
 }
+
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    if (username === "admin" && password === "12345") {
+        localStorage.setItem("loggedInUser", username);
+        alert("Đăng nhập thành công!");
+        location.href = "../HTML/traCuu.html";
+    } else {
+        alert("Tài khoản hoặc mật khẩu không chính xác!");
+    }
+    $("#username").val("");
+    $("#password").val("");
+}

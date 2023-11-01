@@ -18,18 +18,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <link rel="dns-prefetch">
 
-    <link rel="preconnect" href="https://a.ladipage.com/" crossorigin>
-    <link rel="preconnect" href="https://api.sales.ldpform.net/" crossorigin>
-
-    <link rel="preload" href="https://w.ladicdn.com/v2/source/ladipage.vi.min.js?v=1672890786044" as="script">
 
     <link rel="stylesheet" href="../CSS_ThanSo/css.css">
-    <link rel="stylesheet" id="style_ladi" href="../CSS_ThanSo/css1.css" type="text/css">
-    <link rel="stylesheet" id="style_element" href="../CSS_ThanSo/css2.css" type="text/css">
-    <link rel="stylesheet" id="style_animation" href="../CSS_ThanSo/css3.css" type="text/css">
-    <link rel="stylesheet" id="style_page" href="../CSS_ThanSo/css4.css" type="text/css">
+    <link rel="stylesheet" id="style_ladi" href="../CSS_ThanSo/css1.css">
+    <link rel="stylesheet" id="style_element" href="../CSS_ThanSo/css2.css">
+    <link rel="stylesheet" id="style_animation" href="../CSS_ThanSo/css3.css">
+    <link rel="stylesheet" id="style_page" href="../CSS_ThanSo/css4.css">
     <link rel="stylesheet" href="../css/hotLine.css">
 
     <style>
@@ -88,14 +83,14 @@
                                 <div class="ladi-form-item-background"></div>
                                 <div class='ladi-form-item'>
                                     <input name="input_day" id="birthDay"
-                                           required class="ladi-form-control" type="date"
+                                           required class="ladi-form-control" type="text"
                                     /></div>
                             </div>
                         </div>
 
                         <div>
                             <button type="submit" class="ladi-element1"
-                                    onclick="tinhToanSo(); return false;">KHÁM PHÁ BẢN THÂN
+                                    onclick="tinhToanSo()">KHÁM PHÁ BẢN THÂN
                             </button>
                             <button type="button" class="ladi-element1" onclick="xoaDuLieu()">RESET</button>
 
@@ -119,7 +114,7 @@
 
             <div id="c_namedobr" class='ladi-element report-name'><h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY
                 NHẤT</h3></div>
-            <button type="button" class="ladi-element1" onclick="generatePDFWithImages()">Xuất ra PDF</button>
+            <button type="button" class="ladi-element1" onclick="generatePDF()">Xuất ra PDF</button>
             <!--    slide ở đây-->
             <div id="HTML_CODE1627" class='ladi-element'>
                 <div class='ladi-html-code'>
@@ -747,52 +742,10 @@
         }).catch(error => {
             console.error("Error generating PDF:", error);
         })
-        if(localStorage.getItem("loggedInUser")==="admin"){
-            generatePDFWithImages()
-        }
+
     }
 
-    function generatePDFWithImages() {
-        // Tạo một đối tượng PDF mới
-        let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
-        // Lấy chiều rộng và chiều cao của một trang A4
-        let width = pdf.internal.pageSize.getWidth();
-        let height = pdf.internal.pageSize.getHeight();
-
-        // Danh sách tên ảnh
-        let imageNames = [];
-        let imageNumber = 1;
-        imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber}.jpg`);
-        imageNames.push(`so_duong_doi/bg_duongdoi.jpg`);
-
-        // Định nghĩa hàm để thêm ảnh vào PDF
-        function addImageToPDF(imagePath, index) {
-            return new Promise((resolve, reject) => {
-                let img = new Image();
-                img.src = imagePath;
-                img.onload = function() {
-                    pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
-                    if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
-                        pdf.addPage();
-                    }
-                    resolve();
-                };
-                img.onerror = function() {
-                    reject(new Error("Error loading image: " + imagePath));
-                };
-            });
-        }
-
-        // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-        let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
-
-        Promise.all(promises).then(() => {
-            pdf.save('document.pdf');
-        }).catch(error => {
-            console.error("Error generating PDF:", error);
-        });
-    }
 
 
 </script>

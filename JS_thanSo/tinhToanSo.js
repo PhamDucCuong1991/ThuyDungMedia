@@ -501,7 +501,7 @@ function tinhToanSo() {
             soKetNoiLinhHon : soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem : soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages1(dataPDF)
+        generatePDFWithImages(dataPDF)
     }
 
     // this.dinhCao.dinhCao1 = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4));
@@ -673,11 +673,53 @@ function tinhToanSo() {
         return string;
     }
 
-
 }
 
 function xoaDuLieu() {
     location.reload()
+}
+
+
+function generatePDFWithImages() {
+    // Tạo một đối tượng PDF mới
+    let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
+
+    // Lấy chiều rộng và chiều cao của một trang A4
+    let width = pdf.internal.pageSize.getWidth();
+    let height = pdf.internal.pageSize.getHeight();
+
+    // Danh sách tên ảnh
+    let imageNames = [];
+    let imageNumber = 1;
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber}.jpg`);
+    imageNames.push(`so_duong_doi/bg_duongdoi.jpg`);
+
+    // Định nghĩa hàm để thêm ảnh vào PDF
+    function addImageToPDF(imagePath, index) {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.src = imagePath;
+            img.onload = function() {
+                pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
+                if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
+                    pdf.addPage();
+                }
+                resolve();
+            };
+            img.onerror = function() {
+                reject(new Error("Error loading image: " + imagePath));
+            };
+        });
+    }
+
+    // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
+    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
+
+    Promise.all(promises).then(() => {
+        pdf.save('document.pdf');
+    }).catch(error => {
+        console.error("Error generating PDF:", error);
+    });
 }
 
 function generatePDFWithImages1(dataPDF) {
