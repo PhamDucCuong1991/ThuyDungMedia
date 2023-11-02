@@ -1,5 +1,4 @@
 function functionF() {
-
     if (localStorage.getItem("loggedInUser") === "admin") {
         $("#s_sosumenh_2x").append("SỐ " + suMenhSlide);
         const suMenhSlide1 = "so_" + suMenhSlide;
@@ -83,7 +82,6 @@ function functionF() {
 let isClicked = false; // Khởi tạo biến trạng thái ban đầu là false
 
 const checkbox = $("#remember-me");
-
 checkbox.on("click", function () {
     isClicked = !isClicked;
 });
@@ -99,7 +97,7 @@ function login() {
     if (username === "admin" && password === "12345") {
         localStorage.setItem("loggedInUser", username);
         alert("Đăng nhập thành công!");
-        location.href = "../HTML/traCuu.html";
+        // location.href = "../HTML/traCuu.html";
         $('#tm-hello').append(' ' + '( Xin chào sếp!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
@@ -138,8 +136,13 @@ $('#idLogin').on('click', function (event) {
         logout(); // Nếu đã đăng nhập, chuyển đến hàm logout
     }
 });
-$('#link-than-so').on('click', function (event) {
-    logout(); // Nếu đã đăng nhập, chuyển đến hàm logout
+
+$('#tinhToanSo').on('click', function () {
+  tinhToanSo()
+});
+
+$('#link-than-so').on('click', function () {
+    logout();
     $("#mynavbar button").hide()
 });
 $(document).ready(function() {
@@ -149,3 +152,4 @@ $(document).ready(function() {
         $("#mynavbar button").hide()
     }
 });
+

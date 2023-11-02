@@ -1,77 +1,63 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Thần số học Thủy Dung</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2e1e7;
-      color: #333;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .title {
-      font-size: 24px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .input-group {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-    .input-group label {
-      width: 30%;
-    }
-    .input-group input {
-      width: 65%;
-      padding: 5px;
-    }
-    .btn-group {
-      text-align: center;
-    }
-    button {
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Giao diện mẫu</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
+
 <body>
-<div class="container">
-  <div class="title">Thần số học Thủy Dung</div>
-  <div class="title">KHÁM PHÁ BẢN THÂN VỚI SỐ HỌC ỨNG DỤNG PYTAGO</div>
 
-  <div class="input-group">
-    <label for="name">Họ và Tên:</label>
-    <input type="text" id="name" value="Nguyễn Thị Thuỳ Dung">
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-4">
+      <button class="btn btn-dark">Trang chủ</button>
+    </div>
+    <div class="col-4 text-center">
+      <h3>Thần số học Thủy Dung</h3>
+    </div>
+    <div class="col-4 text-end">
+      <button class="btn btn-danger">Logout</button>
+    </div>
   </div>
 
-  <div class="input-group">
-    <label for="birthdate">Ngày sinh:</label>
-    <input type="date" id="birthdate" value="1988-11-28">
+  <div class="mt-5 text-center">
+    <h2>Khám phá bản thân với</h2>
+    <h1>Số học ứng dụng Pytago</h1>
+
+    <form class="col-lg-4 mt-4 center">
+      <input type="text" class="form-control mb-2" placeholder="Họ và Tên">
+      <input type="text" class="form-control mb-2" placeholder="Ngày/Tháng/Năm sinh">
+      <button class="btn btn-dark mt-3">Khám phá bản thân</button>
+      <button class="btn btn-secondary mt-3 ms-2">Reset</button>
+    </form>
   </div>
 
-  <div class="btn-group">
-    <button>KHÁM PHÁ BẢN THÂN</button>
-    <button>RESET</button>
+  <div class="mt-5 text-center">
+    <h3>Bạn là phiên bản duy nhất</h3>
+
+    <div class="row mt-4">
+      <div class="col-6">
+        <!-- Left column contents -->
+        <p>Đường đời</p>
+        <p>Sứ mệnh</p>
+        <!-- ... add more contents here ... -->
+      </div>
+      <div class="col-6">
+        <!-- Right column contents -->
+        <p>Tư duy Trải nghiệm</p>
+        <p>Bổ sung</p>
+        <!-- ... add more contents here ... -->
+      </div>
+    </div>
   </div>
-
-  <div class="title">NGUYỄN THỊ THUỲ DUNG - BẠN LÀ PHIÊN BẢN DUY NHẤT</div>
-
-  <!-- ... Bạn có thể tiếp tục thêm các phần tử khác dựa trên hình ảnh ... -->
 </div>
+
+<!-- Bootstrap JS, Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

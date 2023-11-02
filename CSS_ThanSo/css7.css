@@ -305,22 +305,21 @@ content: "CS ";
 }
 
 .report-process-top .index-value::before {
-    content: "Đỉnh cao \A";
-    font-size: 11px;
+    content: "Đỉnh cao  \A";
+    font-size: 13px;
     text-transform: uppercase;
     color: #333;
 }
 
 .report-process-mid .index-value::after {
-
-    font-size: 11px;
+    font-size: 13px;
     text-transform: uppercase;
     display: inherit;
     color: #333;
 }
 
 .report-process-bottom .index-value::before {
-    content: "Thách thức \A";
+    content: "Thách thức  \A";
     font-size: 11px;
     text-transform: uppercase;
     color: #333;

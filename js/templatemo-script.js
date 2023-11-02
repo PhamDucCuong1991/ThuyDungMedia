@@ -1,12 +1,4 @@
-/*
-
-TemplateMo 560 Astro Motion
-
-https://templatemo.com/tm-560-astro-motion
-
-*/
-
-var gallery = undefined;
+let gallery = undefined;
 
 function closeMenu() {
   $(".navbar-collapse").removeClass("show"); 
@@ -47,9 +39,6 @@ function setupGallery() {
           slidesToScroll: 2
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
 }

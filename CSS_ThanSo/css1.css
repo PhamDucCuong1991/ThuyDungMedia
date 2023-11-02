@@ -1765,7 +1765,17 @@ body {
     background-position: center center;
     text-align: center;
 }
-
+.ladi-headline1 {
+    width: 100%;
+    display: inline-block;
+    word-break: break-word;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    font-size: medium;
+    font-weight: bolder;
+    color: #842029;
+}
 .ladi-headline a {
     text-decoration: underline
 }

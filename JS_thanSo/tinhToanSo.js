@@ -1,6 +1,6 @@
 const duongDoi = {
     so_1: `<div>
-    <h3>1. Ý nghĩa tổng quan</h3>
+    <p>1. Ý nghĩa tổng quan</p>
        <p> - Năng lượng của số 1 là biểu tượng của mặt trời, khởi đầu của mọi con số, nền tảng của mọi thứ<br>
         - Trong ngôn ngữ, nó là bản thể đầu tiên, là biểu tượng của sự thống nhất lãnh đạo và đứng đầu<br>
         - Có 2 khía cạnh:<br>
@@ -9,10 +9,9 @@ const duongDoi = {
         - Số 1 không thể chia được và không được tạo ra từ các số khác<br>
         - Nó là con số tuyệt đối duy nhất, tượng trưng cho sự tồn tại của bản chất mỗi người, đại diện cho bản ngã và cái tôi.
     </p>
-   <h3> 2. Điểm mạnh của số 1</h3>
+   <p> 2. Điểm mạnh của số 1</p>
       <p>  - Độc lập, đầy tham vọng<br>
-        - Chủ động, có tư duy lâu dài<br>
-        - Tiên phong, đi đầu<br>
+        - Chủ động, có tư duy lâu dài, tiên phong, đi đầu<br>
         - Sáng tạo, năng động. VD như Steve Jobs tạo ra Iphone, Lady Gaga tạo ra phong cách biểu diễn đặc biệt<br>
         - Để cao bản thân, cái tôi lớn VD Napoleon, Cacmac<br>
         - Tinh thần tốt, động lực cao<br>
@@ -24,7 +23,7 @@ const duongDoi = {
         - Hành động nhanh – sửa sai nhanh – hoàn thiện nhanh<br>
         - Uy lực, có chính kiến
     </p>
-    <h3>3. Điểm yếu của số 1:</h3>
+    <p>3. Điểm yếu của số 1:</p>
        <p> - Độc đoán<br>
         - Tự cao, kiêu ngạo, hiếu thắng, bảo thủ, sĩ diện<br>
         - Quân phiệt, gia trưởng, áp đặt<br>
@@ -38,15 +37,15 @@ const duongDoi = {
 </div>`,
 
     so_2: `<div>
-<h3>1. Ý nghĩa tổng quan</h3>
+<p>1. Ý nghĩa tổng quan</p>
 <p>- Số 2 đứng thứ hai trong hệ thống số nhị phân, là con số của sự hỗ trợ và giúp đỡ, của hòa bình, cân bằng và sự kết nối.<br>
 - Là con số đầu tiên có thể chia được cho một số khác, vì vậy nó là con số hỗ trợ cho phép chia cơ bản => nói lên sự kết nối, sự chia sẻ<br>
 - Số 2 được các nhà nghiên cứu số học biết đến như một lực lượng cực kỳ nữ tính, đại diện cho sự duyên dáng<br>
 - Luôn hướng tới mục tiêu mang lại hòa bình và cân bằng<br>
 - Trong tất cả các con số, số 2 có trực giác mạnh nhất vì là con số đầu tiên trong trục tinh thần (2,5,8). 
-Nó có thể cảm nhận được các dòng chảy và cảm giác theo bản năng, sau đó sử dụng những manh mối này để kết nối với những người khác một cách thấu cảm.</p>
-
-<h3>2. Điểm mạnh của số 2</h3>
+Nó có thể cảm nhận được các dòng chảy và cảm giác theo bản năng, sau đó sử dụng những manh mối này để kết 
+nối với những người khác một cách thấu cảm.</p>
+<p>2. Điểm mạnh của số 2</p>
 <p>- Trực quan, nhất quán, có tầm ảnh hưởng<br>
 - Thể hiện cho tinh thần hợp tác, tinh thần đồng đội<br>
 - Hỗ trợ người khác, đồng cảm, bảo vệ<br>
@@ -55,14 +54,8 @@ Nó có thể cảm nhận được các dòng chảy và cảm giác theo bản
 - Lắng nghe, thấu hiểu, hòa giải<br>
 - Nhẹ nhàng, dịu dàng, bao dung<br>
 - Thích sự hòa bình, ôn hòa<br>
-- Tinh tế, lãng mạn, nhạy cảm.<br>
-VD về số 2 nằm ở một số vị trí khác nhau trong bản đồ: <br>
-+ Người có ngày sinh 2 có năng lực tự nhiên là kết nối, hợp tác, lắng nghe, thấu hiểu… => đó là thế mạnh của bạn <br>
-+ Nếu số 2 nằm ở vị trí nội cảm thì yêu thích những điều lãng mạn<br>
-+ Nếu số 2 ở vị trí linh hồn thì sẽ luôn mong muốn người kia luôn có hành động lãng mạn với mình, yêu thương, đồng cảm<br>
-+ Nếu số 2 nằm ở sứ mệnh thì sẽ phù hợp làm những công việc mang tính kết nối, hỗ trợ, làm việc nhóm</p>
-
-<h3>3. Điểm yếu của số 2:</h3>
+- Tinh tế, lãng mạn, nhạy cảm.</p>
+<p>3. Điểm yếu của số 2:</p>
 <p>- Lưỡng lự, dễ bị tổn thương, không quyết đoán vì hay lắng nghe ý kiến của người khác.<br>
 - Đa sầu, đa cảm, lụy tình, dễ bị lợi dụng vì sống tình cảm<br>
 - Đa nghi, hay suy nghĩ, hay mơ mộng thái quá<br>
@@ -70,18 +63,17 @@ VD về số 2 nằm ở một số vị trí khác nhau trong bản đồ: <br>
 - Sợ người khác nghĩ không tốt về mình<br>
 - Không có chính kiến, dễ bị chiều theo ý của người khác<br>
 - Dễ bị xúc động quá mức</p>
-
 </div>`,
 
     so_3: `<div>
-    <h3>1.Ý nghĩa tổng quan</h3>
+    <p>1.Ý nghĩa tổng quan</p>
 <p>-Số 3 là số kì diệu, được cho là dấu hiệu của may mắn<br>
 -Nó xuất hiện rất nhiều trong truyện cổ tích và các câu chuyện truyền thuyết trên khắp thế giới như là biểu tượng của sự giàu có và phép màu<br>
 -Trong hình học, 3 là điều cơ bản để tạo nên một hình dạng “tam giác” và những người theo trường phái Pytago rất yêu thích con số này.<br>
 -Số 3 tượng trưng cho quẻ Càn, cho Trời và ánh sáng.<br>
 -Số 3 ứng với kết cấu của vũ trụ. <br>
 -Số 3 mang năng lượng hỏa, hành năng lượng hỏa và tượng trưng cho ánh sáng. <br>
-<h3>2.Điểm mạnh của số 3</h3>
+<p>2.Điểm mạnh của số 3</p>
 -Tâm hồn nghệ thuật, thích khám phá<br>
 -Giao tiếp tốt, hoạt ngôn, khả năng xã hội tốt<br>
 -Vui vẻ, lạc quan, ngây thơ, trẻ trung<br>
@@ -94,7 +86,7 @@ VD về số 2 nằm ở một số vị trí khác nhau trong bản đồ: <br>
 -Thẳng thắn, phóng khoán<br>
 -Khả năng hùng biện và đàm phán tốt<br>
 -Số 3 rất thông minh.<br>
-<h3>3.Điểm yếu của số 3:</h3>
+<p>3.Điểm yếu của số 3:</p>
 -Ngây thơ, thiếu tập trung<br>
 -Suy nghĩ bề mặt<br>
 -Nói dài nói dai thành nói dại<br>
@@ -478,41 +470,41 @@ function tinhToanSo() {
     const duongDoiSlide1 = "so_" + duongDoiSlide
     document.getElementById("report_duongdoi_content").innerHTML += duongDoi[duongDoiSlide1]
 
-    if(localStorage.getItem("loggedInUser")==="admin"){
+    if (localStorage.getItem("loggedInUser") === "admin") {
         const dataPDF = {
-            duongDoi : duongDoiSlide,
-            suMenh : suMenhSlide,
+            duongDoi: duongDoiSlide,
+            suMenh: suMenhSlide,
             linhHon: suMenhSlide,
             nhanCach: nhanCachSlide,
-            canBang : canBangSlide,
-            truongThanh : truongThanhSlide,
-            ngaySinh : ngaySinh1Slide,
-            thaiDo : thaiDoSlide,
-            tuDuyLyTri : tuDuyLyTriSlide,
-            vanMenh : vanMenhSlide,
-            soThieu : soThieuSlide,
-            sucManhTiemThuc : sucManhTiemThucSlide,
-            soCamXuc : soCamXucSlide,
-            soTrucGiac : soTrucGiacSlide,
-            namCaNhan : namCaNhanSlide,
-            thangCaNhan : thangCaNhanSlide,
-            ketNoiVanMenh : ketNoiVanMenhSlide,
-            soDamMe : soDamMeSlide,
-            soKetNoiLinhHon : soKetNoiLinhHonSlide,
-            soTuDuyTraiNghiem : soTuDuyTraiNghiemSlide
+            canBang: canBangSlide,
+            truongThanh: truongThanhSlide,
+            ngaySinh: ngaySinh1Slide,
+            thaiDo: thaiDoSlide,
+            tuDuyLyTri: tuDuyLyTriSlide,
+            vanMenh: vanMenhSlide,
+            soThieu: soThieuSlide,
+            sucManhTiemThuc: sucManhTiemThucSlide,
+            soCamXuc: soCamXucSlide,
+            soTrucGiac: soTrucGiacSlide,
+            namCaNhan: namCaNhanSlide,
+            thangCaNhan: thangCaNhanSlide,
+            ketNoiVanMenh: ketNoiVanMenhSlide,
+            soDamMe: soDamMeSlide,
+            soKetNoiLinhHon: soKetNoiLinhHonSlide,
+            soTuDuyTraiNghiem: soTuDuyTraiNghiemSlide
         }
         generatePDFWithImages(dataPDF)
     }
 
-    // this.dinhCao.dinhCao1 = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4));
-    // this.dinhCao.dinhCao2 = getSoDinhCao2(arrNgaySinh);
-    // this.dinhCao.dinhCao3 = (this.dinhCao.dinhCao1 + this.dinhCao.dinhCao2) % 9 || 9;
-    // this.dinhCao.dinhCao4 = getSum(arrNgaySinh.slice(2, arrNgaySinh.length));
-    //
-    // this.thachThuc.thachThuc1 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9;
-    // this.thachThuc.thachThuc2 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
-    // this.thachThuc.thachThuc3 = (Math.abs(this.thachThuc.thachThuc1 - this.thachThuc.thachThuc2)) % 9 || 9;
-    // this.thachThuc.thachThuc4 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
+    let dinhCao1 = $("#s_tuoichang1_1").append(getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4)));
+    let dinhCao2 = $("#s_tuoichang2_1").append(getSoDinhCao2(arrNgaySinh));
+    $("#s_tuoichang3_1").append((dinhCao1 + dinhCao2) % 9 || 9);
+    $("#s_tuoichang4_1").append(getSum(arrNgaySinh.slice(2, arrNgaySinh.length)));
+
+    let thachThuc1 = $("#s_sothachthuc1_2").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9);
+    let thachThuc2 = $("#s_sothachthuc2_2").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9);
+    $("#s_sothachthuc3_3").append((Math.abs(thachThuc1 - thachThuc2)) % 9 || 9);
+    $("#s_sothachthuc4_4").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9);
 
     function extractNumbers(value) {
         return (value.match(/[0-9]/g) || []).map(Number);
@@ -679,7 +671,6 @@ function xoaDuLieu() {
     location.reload()
 }
 
-
 function generatePDFWithImages() {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
@@ -694,26 +685,8 @@ function generatePDFWithImages() {
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber}.jpg`);
     imageNames.push(`so_duong_doi/bg_duongdoi.jpg`);
 
-    // Định nghĩa hàm để thêm ảnh vào PDF
-    function addImageToPDF(imagePath, index) {
-        return new Promise((resolve, reject) => {
-            let img = new Image();
-            img.src = imagePath;
-            img.onload = function() {
-                pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
-                if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
-                    pdf.addPage();
-                }
-                resolve();
-            };
-            img.onerror = function() {
-                reject(new Error("Error loading image: " + imagePath));
-            };
-        });
-    }
-
     // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
+    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames));
 
     Promise.all(promises).then(() => {
         pdf.save('document.pdf');
@@ -792,30 +765,30 @@ function generatePDFWithImages1(dataPDF) {
     let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
     imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
 
-    // Định nghĩa hàm để thêm ảnh vào PDF
-    function addImageToPDF(imagePath, index) {
-        return new Promise((resolve, reject) => {
-            let img = new Image();
-            img.src = imagePath;
-            img.onload = function() {
-                pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
-                if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
-                    pdf.addPage();
-                }
-                resolve();
-            };
-            img.onerror = function() {
-                reject(new Error("Error loading image: " + imagePath));
-            };
-        });
-    }
-
     // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index));
+    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames));
 
     Promise.all(promises).then(() => {
         pdf.save('document.pdf');
     }).catch(error => {
         console.error("Error generating PDF:", error);
+    });
+}
+
+// Định nghĩa hàm để thêm ảnh vào PDF
+function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
+    return new Promise((resolve, reject) => {
+        let img = new Image();
+        img.src = imagePath;
+        img.onload = function () {
+            pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
+            if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
+                pdf.addPage();
+            }
+            resolve();
+        };
+        img.onerror = function () {
+            reject(new Error("Error loading image: " + imagePath));
+        };
     });
 }
