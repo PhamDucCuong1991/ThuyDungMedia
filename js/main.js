@@ -98,7 +98,7 @@ function login() {
         localStorage.setItem("loggedInUser", username);
         alert("Đăng nhập thành công!");
         // location.href = "../HTML/traCuu.html";
-        $('#tm-hello').append(' ' + '( Xin chào sếp!)');
+        $('#tm-hello').append(' ' + '(Chào sếp!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
         if (isClicked) {
@@ -123,6 +123,10 @@ function login() {
 
 // Hàm xử lý khi đăng xuất
 function logout() {
+  let a =  window.confirm("Bạn chắc chắn muốn đăng xuất?")
+    if(!a){
+        return
+    }
     isLoggedIn = false;
     $('#idLogin').text('Login');
     $('#tm-hello').empty()
@@ -133,7 +137,7 @@ function logout() {
 $('#idLogin').on('click', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
     if (isLoggedIn) {
-        logout(); // Nếu đã đăng nhập, chuyển đến hàm logout
+        logout();
     }
 });
 
