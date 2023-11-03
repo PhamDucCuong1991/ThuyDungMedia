@@ -98,7 +98,7 @@ function login() {
         localStorage.setItem("loggedInUser", username);
         alert("Đăng nhập thành công!");
         // location.href = "../HTML/traCuu.html";
-        $('#tm-hello').append(' ' + '(Chào sếp!)');
+        $('#tm-hello').append(' ' + '(Chào sếp Dung!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
         if (isClicked) {
