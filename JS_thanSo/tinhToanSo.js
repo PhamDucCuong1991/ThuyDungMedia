@@ -427,10 +427,8 @@ nối với những người khác một cách thấu cảm.</p>
 }
 
 function tinhToanSo() {
-
     const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
-
     let ngaySinh = document.getElementById("birthDay").value.trim();
 
     let arrNa = [];
@@ -474,7 +472,7 @@ function tinhToanSo() {
         const dataPDF = {
             duongDoi: duongDoiSlide,
             suMenh: suMenhSlide,
-            linhHon: suMenhSlide,
+            linhHon: linhHonSlide,
             nhanCach: nhanCachSlide,
             canBang: canBangSlide,
             truongThanh: truongThanhSlide,
@@ -528,7 +526,6 @@ function tinhToanSo() {
         const lastWord = name.split(' ').pop();
         return convertNameToNumbers(lastWord, str).filter(n => n !== 0);
     }
-
 
     function getSumOnly(arr) {
         return arr.reduce((acc, curr) => (acc + curr) % 9, 0) || 9;
@@ -611,7 +608,6 @@ function tinhToanSo() {
         return (sumOfMonthChars + namCaNhan) % 9 || 9;
     }
 
-
     function getDaySoDamMe(arr) {
         let numCount = {}; // Đếm số lần xuất hiện của từng số
         let maxCount = 0; // Số lần xuất hiện nhiều nhất
@@ -664,14 +660,13 @@ function tinhToanSo() {
         string = string.replace(/Đ/g, "D").replace(/đ/g, "d");
         return string;
     }
-
 }
 
 function xoaDuLieu() {
     location.reload()
 }
 
-function generatePDFWithImages() {
+ async function generatePDFWithImages() {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -681,21 +676,57 @@ function generatePDFWithImages() {
 
     // Danh sách tên ảnh
     let imageNames = [];
-    let imageNumber = 1;
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber}.jpg`);
-    imageNames.push(`so_duong_doi/bg_duongdoi.jpg`);
+    let imageNumber1 = 1;
+    let imageNumber2 = 2;
+    let imageNumber3 = 3;
+    let imageNumber4 = 4;
+    let imageNumber5 = 5;
+    let imageNumber6 = 6;
+    let imageNumber7 = 7;
+    let imageNumber8 = 8;
+    let imageNumber9 = 9;
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
+     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
 
-    // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames));
-
-    Promise.all(promises).then(() => {
-        pdf.save('document.pdf');
-    }).catch(error => {
+    try {
+        for (let [index, imageName] of imageNames.entries()) {
+            await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
+            // Thêm trang mới nếu không phải là ảnh cuối cùng
+            if (index < imageNames.length - 1) {
+                pdf.addPage();
+            }
+        }
+        pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
+    } catch (error) {
         console.error("Error generating PDF:", error);
-    });
+    }
 }
-
-function generatePDFWithImages1(dataPDF) {
+async function generatePDFWithImages1(dataPDF) {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -765,27 +796,36 @@ function generatePDFWithImages1(dataPDF) {
     let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
     imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
 
-    // Sử dụng Promise để đảm bảo rằng ảnh được thêm vào theo đúng thứ tự
-    let promises = imageNames.map((imageName, index) => addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames));
-
-    Promise.all(promises).then(() => {
-        pdf.save('document.pdf');
-    }).catch(error => {
+    try {
+        for (let [index, imageName] of imageNames.entries()) {
+            await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
+            // Thêm trang mới nếu không phải là ảnh cuối cùng
+            if (index < imageNames.length - 1) {
+                pdf.addPage();
+            }
+        }
+        pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
+    } catch (error) {
         console.error("Error generating PDF:", error);
-    });
+    }
 }
 
 // Định nghĩa hàm để thêm ảnh vào PDF
 function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
     return new Promise((resolve, reject) => {
         let img = new Image();
+        img.crossOrigin = "Anonymous"; // Thêm dòng này nếu bạn gặp vấn đề với CORS
         img.src = imagePath;
         img.onload = function () {
-            pdf.addImage(img, 'JPEG', 0, 0, width, height, undefined, 'FAST');
-            if (index < imageNames.length - 1) { // Chỉ thêm trang mới nếu không phải là tấm ảnh cuối cùng
-                pdf.addPage();
+            try {
+                pdf.addImage(img, 'JPEG', 0, 0, width, height);
+                if (index < imageNames.length - 1) {
+                    pdf.addPage();
+                }
+                resolve();
+            } catch (e) {
+                reject(e); // Bắt và phát lại lỗi nếu có
             }
-            resolve();
         };
         img.onerror = function () {
             reject(new Error("Error loading image: " + imagePath));

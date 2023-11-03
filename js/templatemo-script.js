@@ -72,7 +72,6 @@ jQuery(function() {
 
     $(".navbar .navbar-nav > .nav-item > a.nav-link").on('click', function(e){
       var pageNo = $(this).data('no');
-
       openPage(pageNo);
       highlightMenu(pageNo);
       closeMenu();     
