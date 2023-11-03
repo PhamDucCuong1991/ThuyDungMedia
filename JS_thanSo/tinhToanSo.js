@@ -494,13 +494,16 @@ function tinhToanSo() {
         generatePDFWithImages(dataPDF)
     }
 
-    let dinhCao1 = $("#s_tuoichang1_1").append(getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4)));
-    let dinhCao2 = $("#s_tuoichang2_1").append(getSoDinhCao2(arrNgaySinh));
-    $("#s_tuoichang3_1").append((dinhCao1 + dinhCao2) % 9 || 9);
-    $("#s_tuoichang4_1").append(getSum(arrNgaySinh.slice(2, arrNgaySinh.length)));
+    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML += getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
+    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML += getSoDinhCao2(arrNgaySinh)
+    document.getElementById("s_tuoichang3_1").innerHTML +=  (dinhCao1 + dinhCao2) % 9 ||9
+    document.getElementById("s_tuoichang4_1").innerHTML += getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
 
-    let thachThuc1 = $("#s_sothachthuc1_2").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9);
-    let thachThuc2 = $("#s_sothachthuc2_2").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9);
+
+    let thachThuc1 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
+        $("#s_sothachthuc1_2").append(thachThuc1);
+    let thachThuc2 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
+        $("#s_sothachthuc2_2").append(thachThuc2);
     $("#s_sothachthuc3_3").append((Math.abs(thachThuc1 - thachThuc2)) % 9 || 9);
     $("#s_sothachthuc4_4").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9);
 
