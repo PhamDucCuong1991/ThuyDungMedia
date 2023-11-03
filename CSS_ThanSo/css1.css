@@ -347,7 +347,10 @@ body {
 .ladi-element1:hover {
     background-color: #a52834;
 }
-
+#tinhToanSo.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
 .ladi-overlay {
     position: absolute;
     top: 0;
@@ -375,7 +378,6 @@ body {
     position: relative;
     display: inline-block;
     text-decoration-line: inherit;
-    -webkit-text-decoration-line: inherit;
     transition: inherit;
     user-select: none;
     -webkit-user-select: none;
@@ -396,7 +398,6 @@ body {
 .ladi-survey .ladi-survey-option-label {
     display: block;
     text-decoration-line: inherit;
-    -webkit-text-decoration-line: inherit;
     position: relative
 }
 

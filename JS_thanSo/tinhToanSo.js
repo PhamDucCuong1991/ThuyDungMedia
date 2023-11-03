@@ -667,6 +667,10 @@ function xoaDuLieu() {
 }
 
  async function generatePDFWithImages() {
+     const button = document.getElementById('tinhToanSo');
+     button.classList.add('loading');
+     button.textContent = 'Đang tạo file pdf...';
+
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -722,11 +726,15 @@ function xoaDuLieu() {
             }
         }
         pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
+        button.classList.remove('loading');
+        button.textContent = 'KHÁM PHÁ BẢN THÂN'; // Reset text nếu cần
     } catch (error) {
         console.error("Error generating PDF:", error);
     }
+
+
 }
-async function generatePDFWithImages1(dataPDF) {
+ async function generatePDFWithImages1(dataPDF) {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -804,14 +812,14 @@ async function generatePDFWithImages1(dataPDF) {
                 pdf.addPage();
             }
         }
-        pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
+        pdf.save('BaoCaoThanSoHoc.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
     } catch (error) {
         console.error("Error generating PDF:", error);
     }
 }
 
-// Định nghĩa hàm để thêm ảnh vào PDF
-function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
+  // Định nghĩa hàm để thêm ảnh vào PDF
+ function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
     return new Promise((resolve, reject) => {
         let img = new Image();
         img.crossOrigin = "Anonymous"; // Thêm dòng này nếu bạn gặp vấn đề với CORS
