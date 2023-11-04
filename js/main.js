@@ -141,6 +141,7 @@ $('#idLogin').on('click', function (event) {
     }
 });
 
+
 $('#tinhToanSo').on('click', function () {
   tinhToanSo()
 });

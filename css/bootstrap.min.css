@@ -5493,7 +5493,8 @@ textarea.form-control-lg {
     position: relative;
     width: auto;
     margin: .5rem;
-    pointer-events: none
+    pointer-events: none;
+
 }
 
 .modal.fade .modal-dialog {
@@ -5534,11 +5535,12 @@ textarea.form-control-lg {
     min-height: calc(100% - 1rem)
 }
 
-.modal-content {
+.modal-content-lg {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
+    max-width: none;
     pointer-events: auto;
     background-color: #fff;
     background-clip: padding-box;
@@ -5546,7 +5548,39 @@ textarea.form-control-lg {
     border-radius: .3rem;
     outline: 0
 }
+/* CSS cho phần tử modal-content-lg */
 
+
+/* Trên tablet */
+@media (min-width: 768px) {
+    .modal-content-lg {
+        /* Đặt chiều rộng là 70% trên màn hình có chiều rộng từ 768px */
+        width: 60%;
+        max-width: none;
+    }
+}
+
+/* Trên desktop */
+@media (min-width: 992px) {
+    .modal-content-lg {
+        /* Đặt chiều rộng là 50% trên màn hình có chiều rộng từ 992px */
+        width: 130%;
+        max-width: none;
+    }
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0
+}
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -5589,7 +5623,8 @@ textarea.form-control-lg {
 .modal-body {
     position: relative;
     flex: 1 1 auto;
-    padding: 1rem
+    padding: 1rem;
+    font-weight: bolder;
 }
 
 .modal-footer {
@@ -5616,7 +5651,7 @@ textarea.form-control-lg {
     overflow: scroll
 }
 
-@media (min-width: 576px) {
+@media (min-width: 276px) {
     .modal-dialog {
         max-width: 500px;
         margin: 1.75rem auto
