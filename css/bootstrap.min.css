@@ -44,7 +44,7 @@
 
 body {
     margin: 0;
-    font-family: var(--bs-font-sans-serif);
+    font-family: Cambria;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -214,7 +214,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 }
 
 code, kbd, pre, samp {
-    font-family: var(--bs-font-monospace);
+    font-family: Cambria;
     font-size: 1em;
     direction: ltr;
     unicode-bidi: bidi-override
@@ -581,7 +581,11 @@ progress {
     margin-right: auto;
     margin-left: auto
 }
-
+.container-fluid1 {
+    display: flex; /* Thiết lập container là một flex container */
+    justify-content: space-around; /* Phân bố đều nội dung xung quanh */
+    align-items: center; /* Căn giữa các items theo chiều dọc */
+}
 @media (min-width: 576px) {
     .container, .container-sm {
         max-width: 540px
@@ -4041,7 +4045,7 @@ textarea.form-control-lg {
     font-size: 1.5rem;
     text-decoration: none;
     white-space: nowrap;
-    font-family: "Arial Narrow";
+    font-family: Cambria;
     font-weight: bolder;
 }
 
@@ -5808,7 +5812,7 @@ textarea.form-control-lg {
     z-index: 1070;
     display: block;
     margin: 0;
-    font-family: var(--bs-font-sans-serif);
+    font-family: Cambria;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -5921,7 +5925,7 @@ textarea.form-control-lg {
     z-index: 1060;
     display: block;
     max-width: 276px;
-    font-family: var(--bs-font-sans-serif);
+    font-family: Cambria;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -6388,11 +6392,16 @@ textarea.form-control-lg {
 }
 
 .link-dark {
-    color: #212529
+    font-weight: bold;
+    color: #99FF66;
+    text-decoration: none;
 }
-
+.link-dark1 {
+    font-weight: lighter;
+    color: #99FF66;
+}
 .link-dark:focus, .link-dark:hover {
-    color: #1a1e21
+    color: white;
 }
 
 .ratio {
@@ -6716,10 +6725,10 @@ textarea.form-control-lg {
 }
 
 .border {
-    border: 1px solid #6a1a21 !important
+    border: 1px solid #2f8032 !important
 }
 .background-color{
-    background-color: #dfc2c4;
+    background-color: none;
 }
 .border-0 {
     border: 0 !important
@@ -7174,7 +7183,9 @@ textarea.form-control-lg {
     margin-top: auto !important;
     margin-bottom: auto !important
 }
-
+.my-auto1 {
+    margin: 5px;
+}
 .mt-0 {
     margin-top: 0 !important
 }
@@ -7689,7 +7700,7 @@ textarea.form-control-lg {
 }
 
 .font-monospace {
-    font-family: var(--bs-font-monospace) !important
+    font-family: Cambria !important
 }
 
 .user-select-all {
