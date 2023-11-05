@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap List</title>
+    <title>Thùy Dung media</title>
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <style>
-        /* Thêm style CSS tùy chỉnh ở đây */
+        #bg-video {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            bottom: auto;
+            right: auto;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -100;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .style-a {
+            color: #99FF66;
+            font-weight: bolder;
+            text-decoration: none
+        }
+
         .custom-list {
             list-style-type: none;
             padding: 0;
@@ -18,9 +39,14 @@
             border-bottom: 1px solid #ccc;
         }
 
+        .custom-list div {
+            padding: 5px 0;
+
+        }
+
         .custom-list-div {
             margin-left: auto;
-            color: #be3455;
+            color: #99FF66;
         }
 
         .col-0 {
@@ -34,7 +60,7 @@
         }
 
         .text-brown {
-            color: #4f5050;
+            color: white;
             font-weight: bold;
         }
 
@@ -53,8 +79,8 @@
             background-color: #eee;
             margin-top: 34px;
             position: relative;
-            border-left: 2px solid pink;
-            border-right: 2px solid pink;
+            border-left: 2px solid #dfc2c4;
+            border-right: 2px solid #dfc2c4;
             margin-bottom: 34px; /* thêm khoảng cách phía dưới */
         }
 
@@ -68,12 +94,12 @@
 
         .hexagon::before {
             top: -34px;
-            border-bottom: 34px solid pink;
+            border-bottom: 34px solid #2f8032;
         }
 
         .hexagon::after {
             bottom: -34px;
-            border-top: 34px solid pink;
+            border-top: 34px solid #2f8032;
         }
 
         /* Media query cho điện thoại */
@@ -97,7 +123,8 @@
 
         .hexagon-text {
             font-weight: bolder;
-            margin-bottom: 40px; /* Bạn có thể điều chỉnh khoảng cách này để phù hợp */
+            margin-bottom: 40px;
+            color: #6a1a21;
         }
 
         .hexagon-label {
@@ -113,29 +140,85 @@
 
         .ladi-headline {
             text-align: center;
-            color: #6a1a21;
+            color: #99FF66;
             margin-top: 10px;
         }
     </style>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
+<video autoplay muted loop id="bg-video">
+    <source src="../video/gfp-astro-timelapse.mp4" type="video/mp4">
+</video>
 <div class="container">
-    <div class="container mt-4 ">
-        <nav class="navbar navbar-light bg-light">
+    <div class="container my-1  background-color">
+        <div class="my-auto1">
             <div class="container-fluid">
-                <a class="navbar-brand">Navbar</a>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div class="row">
+                    <h3><a class="style-a" href="../index.html">Thần số học Thùy Dung</a></h3>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-12 my-1">
+                            <input class="form-control " type="text" placeholder="Họ và tên">
+                        </div>
+                        <div class="col-lg-4 col-12 my-1">
+                            <input class="form-control" type="text" placeholder="DD/MM/YYYY">
+                        </div>
+                        <div class="col-lg-4 col-12 my-1">
+                            <button class="btn btn-outline-success" type="submit">KHÁM PHÁ BẢN THÂN</button>
+                            <button class="btn btn-outline-danger" type="submit">RESET</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </nav>
+        </div>
     </div>
     <div class="container mt-4">
         <div class="row">
-            <div class="col-0 col-md-3"></div>
+            <div class="col-0 col-md-3">
+                <div class="custom-list">
+                    <div class="d-flex justify-content-center ">
+                        <a id="y_nghia_duong_doi_1" class="link-dark" href="#">Ý nghĩa đường đời số 1</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_2" class="link-dark" href="#">Ý nghĩa đường đời số 2</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_3" class="link-dark" href="#">Ý nghĩa đường đời số 3</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_4" class="link-dark" href="#">Ý nghĩa đường đời số 4</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_5" class="link-dark" href="#">Ý nghĩa đường đời số 5</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_6" class="link-dark" href="#">Ý nghĩa đường đời số 6</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_7" class="link-dark" href="#">Ý nghĩa đường đời số 7</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_8" class="link-dark" href="#">Ý nghĩa đường đời số 8</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_9" class="link-dark" href="#">Ý nghĩa đường đời số 9</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_11" class="link-dark" href="#">Ý nghĩa đường đời số 11</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_22" class="link-dark" href="#">Ý nghĩa đường đời số 22</a>
+                    </div>
+                    <div class="d-flex justify-content-center text-brown">
+                        <a id="y_nghia_duong_doi_33" class="link-dark" href="#">Ý nghĩa đường đời số 33</a>
+                    </div>
+                </div>
+            </div>
             <div class="col-6 col-md-3">
                 <ul class="custom-list">
                     <li class="d-flex justify-content-between text-brown">
@@ -288,26 +371,26 @@
             </div>
         </div>
     </div>
-    <div class="container mt-4 border background-color">
+    <div class="container mt-4 background-color">
         <div class="row">
             <div class="col-0 col-lg-1"></div>
-            <div class="col-6 col-lg-10">
+            <div class="col-12 col-lg-10">
                 <h5 class='ladi-headline'>BẠN ĐÃ ĐƯỢC LUẬN GIẢI VỀ CHỈ SỐ ĐƯỜNG ĐỜI CỦA MÌNH, LÀM
                     SAO ĐỂ NHẬN FULL CHỈ SỐ?</h5>
                 <div class="row">
-                    <div id="GROUP1826" class='col-lg-4 col-12'>
+                    <div id="GROUP1826" class='col-lg-4 col-6'>
                         <div class='ladi-group'>
                             <h5 class='ladi-headline'>CUNG
                                 CẤP THÔNG TIN</h5>
                         </div>
                         <div id="PARAGRAPH1693" class='ladi-element ins-text'>
-                            <div class='ladi-paragraph'>Gửi thông tin của bạn theo cú pháp</div>
+                            <div style="color: white">Gửi thông tin của bạn theo cú pháp</div>
                         </div>
                         <div id="PARAGRAPH1694" class='ladi-element ins-text'>
-                            <div class='ladi-paragraph'>
+                            <div style="color: white">
                                 &lt;Họ và Tên&gt; &lt;Ngày sinh&gt;<br>
                                 Gửi tới số <a
-                                    style="font-weight: bold; color: #6a1a21"
+                                    class="link-dark"
                                     href="tel:0918362992"> 0918.362.992</a> <br>
                                 Hoặc điện thoại trực tiếp cho chuyên gia
                             </div>
@@ -315,45 +398,77 @@
                         </div>
                     </div>
 
-                    <div id="GROUP1825" class='col-lg-4 col-12'>
+                    <div id="GROUP1825" class='col-lg-4 col-6'>
                         <div class='ladi-group'>
                             <h5 class='ladi-headline'>THANH TOÁN</h5>
                         </div>
                         <div id="PARAGRAPH1679" class='ladi-element ins-text'>
-                            <div class='ladi-paragraph'>Thanh toán <span
+                            <div style="color: white">Thanh toán <span
                                     style="font-weight: bold;">320.000d</span>&nbsp;/
                                 1 Báo cáo số học:
                             </div>
                         </div>
-                        <div class='ladi-paragraph'>70001818700<br> Ngân hàng Shinnhan Bank - NGUYEN THI THUY
+                        <div style="color: white">70001818700<br> Ngân hàng Shinnhan Bank - NGUYEN THI THUY
                             DUNG
                         </div>
                     </div>
 
 
-                    <div id="GROUP1827" class='col-lg-4 col-12'>
+                    <div id="GROUP1827" class='col-lg-4 col-0'>
                         <div class='ladi-group'>
                             <h5 class='ladi-headline'>NHẬN BÁO CÁO</h5>
                         </div>
-                        <div id="PARAGRAPH1696" class='ladi-element ins-text'>
+                        <div id="PARAGRAPH1696" style="color: white">
                             <div class='ladi-paragraph'>Báo cáo full chỉ số sẽ được gửi vào email, facebook hoặc zalo mà
                                 bạn đã cung cấp!
                             </div>
                         </div>
-                        <span>Chi tiết xin liên hệ: <a
-                                style="font-weight: bold; color: #6a1a21"
-                                href="tel:0918362992"> 0918.362.992</a></span>
-                        <span>Thùy Dung xin trân trọng cám ơn!</span>
+                        <div style="color: white">Chi tiết xin liên hệ: <a
+                                class="link-dark"
+                                href="tel:0918362992"> 0918.362.992</a>
+                        </div>
+                        <div style="color: white">Thùy Dung xin trân trọng cám ơn!</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container my-1 background-color">
+        <div style="display: inherit">
+            <div class="container-fluid1">
+                <a class="link-dark1" href="../index.html">FACEBOOK</a>
+                <a class="link-dark1" href="../index.html">ZALO</a>
+                <a class="link-dark1" href="../index.html">TIKTOK</a>
+                <a class="link-dark1" href="../index.html">FANPAGE</a>
+                <a class="link-dark1" href="../index.html">EMAIL</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="container">
+        <div class="modal fade" id="exampleModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content-lg">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        This is a body text.
+                    </div>
+                    <div class="modal-footer">
+                        <button id="close_modal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!--                    <button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 
-<!-- Bootstrap Bundle with Popper -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-
+<script type="module" src="../js/y_nghia_cac_con_so.js"></script>
 </body>
 </html>

@@ -97,7 +97,7 @@ function login() {
     if (username === "admin" && password === "12345") {
         localStorage.setItem("loggedInUser", username);
         alert("Đăng nhập thành công!");
-        // location.href = "../HTML/traCuu.html";
+        location.href = "../HTML/traCuu.html";
         $('#tm-hello').append(' ' + '(Chào sếp Dung!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
@@ -140,6 +140,7 @@ $('#idLogin').on('click', function (event) {
         logout();
     }
 });
+
 
 $('#tinhToanSo').on('click', function () {
   tinhToanSo()

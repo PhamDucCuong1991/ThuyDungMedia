@@ -1,5 +1,5 @@
 export const duongDoi = {
-    so_1: "1.\tÝ nghĩa tổng quan\n" +
+    so_1: "1.\tÝ nghĩa tổng quan\n" + "\n"+
         "-\tNăng lượng của số 1 là biểu tượng của mặt trời, khởi đầu của mọi con số, nền tảng của mọi thứ\n" +
         "-\tTrong ngôn ngữ, nó là bản thể đầu tiên, là biểu tượng của sự thống nhất lãnh đạo và đứng đầu\n" +
         "-\tCó 2 khía cạnh:\n" +
