@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (button) { // Kiểm tra nếu phần tử tồn tại
             button.addEventListener('click', function () {
                 modal.show();
-                document.getElementById("modal-body").textContent = soDuongDoi[key];
+                document.getElementById("modal-body").innerHTML = soDuongDoi[key];
                 document.getElementById("exampleModalLabel").textContent = `Ý NGHĨA SỐ ĐƯỜNG ĐỜI ${index}`;
             });
         }

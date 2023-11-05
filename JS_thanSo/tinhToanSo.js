@@ -441,32 +441,32 @@ function tinhToanSo() {
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
     getDaySoTrucGiac(ten);  // Lấy ra mảng chữ số trực giác trong tên
-    document.getElementById("showFullName").innerHTML += ten;
-    document.getElementById("showFullName1").innerHTML += ten;
-    let duongDoiSlide = document.getElementById("duongDoi").innerHTML += getSum(arrNgaySinh);
-    let suMenhSlide = document.getElementById("suMenh").innerHTML += getSum(arr);
-    let linhHonSlide = document.getElementById("linhHon").innerHTML += getSum(arrNa);
-    let nhanCachSlide = document.getElementById("nhanCach").innerHTML += getSumOnly(arrPa);
-    let canBangSlide = document.getElementById("canBang").innerHTML += getSumOnly(convertNameToNumbers(getInitials(ten), str));
-    let truongThanhSlide = document.getElementById("truongThanh").innerHTML += getSum([getSum(arrNgaySinh), getSum(arr)]);
-    let ngaySinh1Slide = document.getElementById("ngaySinh").innerHTML += getBirthDayNumber(arrNgaySinh);
-    let thaiDoSlide = document.getElementById("thaiDo").innerHTML += getAttitudeNumber(arrNgaySinh);
-    let tuDuyLyTriSlide = document.getElementById("tuDuyLyTri").innerHTML += getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str));
-    let vanMenhSlide = document.getElementById("vanMenh").innerHTML += getDestinyNumber(getLastWordNumbers(ten, str));
-    let soThieuSlide = document.getElementById("soThieu").innerHTML += getMissingNumbers(arr);
-    let sucManhTiemThucSlide = document.getElementById("sucManhTiemThuc").innerHTML += (9 - getMissingNumbers(arr).length);
-    let soCamXucSlide = document.getElementById("soCamXuc").innerHTML += getSum(daySoCamXuc);
-    let soTrucGiacSlide = document.getElementById("soTrucGiac").innerHTML += getSum(daySoTrucGiac);
-    let namCaNhanSlide = document.getElementById("namCaNhan").innerHTML += namCaNhanHienTai();
-    let thangCaNhanSlide = document.getElementById("thangCaNhan").innerHTML += thangCaNhan(namCaNhanHienTai());
-    let ketNoiVanMenhSlide = document.getElementById("ketNoiVanMenh").innerHTML += (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
-    let soDamMeSlide = document.getElementById("soDamMe").innerHTML += getDaySoDamMe(arr);
-    let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML += soKetNoiLinhHon(arrPa, arrPa);
-    let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML += getSoTuDuyTraiNghiem(ten);
+    document.getElementById("showFullName").innerHTML = ten;
+    document.getElementById("showFullName1").innerHTML = ten;
+    let duongDoiSlide = document.getElementById("duongDoi").innerHTML = getSum(arrNgaySinh);
+    let suMenhSlide = document.getElementById("suMenh").innerHTML = getSum(arr);
+    let linhHonSlide = document.getElementById("linhHon").innerHTML = getSum(arrNa);
+    let nhanCachSlide = document.getElementById("nhanCach").innerHTML = getSumOnly(arrPa);
+    let canBangSlide = document.getElementById("canBang").innerHTML = getSumOnly(convertNameToNumbers(getInitials(ten), str));
+    let truongThanhSlide = document.getElementById("truongThanh").innerHTML = getSum([getSum(arrNgaySinh), getSum(arr)]);
+    let ngaySinh1Slide = document.getElementById("ngaySinh").innerHTML = getBirthDayNumber(arrNgaySinh);
+    let thaiDoSlide = document.getElementById("thaiDo").innerHTML = getAttitudeNumber(arrNgaySinh);
+    let tuDuyLyTriSlide = document.getElementById("tuDuyLyTri").innerHTML = getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str));
+    let vanMenhSlide = document.getElementById("vanMenh").innerHTML = getDestinyNumber(getLastWordNumbers(ten, str));
+    let soThieuSlide = document.getElementById("soThieu").innerHTML = getMissingNumbers(arr);
+    let sucManhTiemThucSlide = document.getElementById("sucManhTiemThuc").innerHTML = (9 - getMissingNumbers(arr).length);
+    let soCamXucSlide = document.getElementById("soCamXuc").innerHTML = getSumOnly(daySoCamXuc);
+    let soTrucGiacSlide = document.getElementById("soTrucGiac").innerHTML = getSumOnly(daySoTrucGiac);
+    let namCaNhanSlide = document.getElementById("namCaNhan").innerHTML = namCaNhanHienTai();
+    let thangCaNhanSlide = document.getElementById("thangCaNhan").innerHTML = thangCaNhan(namCaNhanHienTai());
+    let ketNoiVanMenhSlide = document.getElementById("ketNoiVanMenh").innerHTML = (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
+    let soDamMeSlide = document.getElementById("soDamMe").innerHTML = getDaySoDamMe(arr);
+    let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHon(arrPa, arrPa);
+    let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
 
-    document.getElementById("s_soduongdoi_2").innerHTML += "SỐ " + duongDoiSlide
+    document.getElementById("s_soduongdoi_2").innerHTML = "SỐ " + duongDoiSlide
     const duongDoiSlide1 = "so_" + duongDoiSlide
-    document.getElementById("report_duongdoi_content").innerHTML += duongDoi[duongDoiSlide1]
+    document.getElementById("report_duongdoi_content").innerHTML = duongDoi[duongDoiSlide1]
 
     if (localStorage.getItem("loggedInUser") === "admin") {
         const dataPDF = {
@@ -494,18 +494,16 @@ function tinhToanSo() {
         generatePDFWithImages(dataPDF)
     }
 
-    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML += getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
-    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML += getSoDinhCao2(arrNgaySinh)
-    document.getElementById("s_tuoichang3_1").innerHTML +=  (dinhCao1 + dinhCao2) % 9 ||9
-    document.getElementById("s_tuoichang4_1").innerHTML += getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
+    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
+    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh)
+    document.getElementById("s_tuoichang3_1").innerHTML =  (dinhCao1 + dinhCao2) % 9 ||9
+    document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
 
 
-    let thachThuc1 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
-        $("#s_sothachthuc1_2").append(thachThuc1);
-    let thachThuc2 = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
-        $("#s_sothachthuc2_2").append(thachThuc2);
-    $("#s_sothachthuc3_3").append((Math.abs(thachThuc1 - thachThuc2)) % 9 || 9);
-    $("#s_sothachthuc4_4").append((Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9);
+    let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
+    let thachThuc2= document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
+    document.getElementById("s_sothachthuc3_3").innerHTML = (Math.abs(thachThuc1 - thachThuc2)) % 9 || 9;
+    document.getElementById("s_sothachthuc4_4").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
 
     function extractNumbers(value) {
         return (value.match(/[0-9]/g) || []).map(Number);
