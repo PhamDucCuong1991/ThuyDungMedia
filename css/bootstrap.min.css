@@ -6431,14 +6431,24 @@ textarea.form-control-lg {
     color: #99FF66;
     text-decoration: none;
 }
+
+.link-dark:focus, .link-dark:hover {
+    color: white;
+}
 .link-dark1 {
     font-weight: lighter;
     color: #99FF66;
 }
-.link-dark:focus, .link-dark:hover {
+
+.link-dark2 {
+    font-weight: bold;
     color: white;
+    text-decoration: none;
 }
 
+.link-dark2:focus, .link-dark2:hover {
+    color: #99FF66;
+}
 .ratio {
     position: relative;
     width: 100%
