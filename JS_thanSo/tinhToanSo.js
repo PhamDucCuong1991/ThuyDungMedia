@@ -446,8 +446,8 @@ function tinhToanSo() {
     let duongDoiSlide = document.getElementById("duongDoi").innerHTML += getSum(arrNgaySinh);
     let suMenhSlide = document.getElementById("suMenh").innerHTML += getSum(arr);
     let linhHonSlide = document.getElementById("linhHon").innerHTML += getSum(arrNa);
-    let nhanCachSlide = document.getElementById("nhanCach").innerHTML += getSum(arrPa);
-    let canBangSlide = document.getElementById("canBang").innerHTML += getSum(convertNameToNumbers(getInitials(ten), str));
+    let nhanCachSlide = document.getElementById("nhanCach").innerHTML += getSumOnly(arrPa);
+    let canBangSlide = document.getElementById("canBang").innerHTML += getSumOnly(convertNameToNumbers(getInitials(ten), str));
     let truongThanhSlide = document.getElementById("truongThanh").innerHTML += getSum([getSum(arrNgaySinh), getSum(arr)]);
     let ngaySinh1Slide = document.getElementById("ngaySinh").innerHTML += getBirthDayNumber(arrNgaySinh);
     let thaiDoSlide = document.getElementById("thaiDo").innerHTML += getAttitudeNumber(arrNgaySinh);
@@ -545,7 +545,7 @@ function tinhToanSo() {
     }
 
     function getAttitudeNumber(arr) {
-        return getSum(arr.slice(0, arr.length - 4));
+        return getSumOnly(arr.slice(0, arr.length - 4));
     }
 
     function getDestinyNumber(arr) {
