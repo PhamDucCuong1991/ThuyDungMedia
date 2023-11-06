@@ -3283,7 +3283,7 @@ textarea.form-control-lg {
 }
 
 .btn-outline-success.disabled, .btn-outline-success:disabled {
-    color: #198754;
+    color: limegreen;
     background-color: transparent
 }
 
@@ -6433,7 +6433,7 @@ textarea.form-control-lg {
 
 .link-dark {
     font-weight: bold;
-    color: #99FF66;
+    color: limegreen;
     text-decoration: none;
 }
 
@@ -6443,17 +6443,17 @@ textarea.form-control-lg {
 
 .link-dark1 {
     font-weight: lighter;
-    color: #99FF66;
+    color: limegreen;
 }
 
 .link-dark2 {
     font-weight: bold;
-    color: white;
+    color: #cfe2ff;
     text-decoration: none;
 }
 
 .link-dark2:focus, .link-dark2:hover {
-    color: #99FF66;
+    color: limegreen;
 }
 
 .ratio {
@@ -6782,6 +6782,7 @@ textarea.form-control-lg {
 
 .background-color {
     background-color: none;
+    padding-top: 10px;
 }
 
 .border-0 {

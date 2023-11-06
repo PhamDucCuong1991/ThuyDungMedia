@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 5 Squares</title>
+
+    <style>
+        .big-square {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0px 0px;
+            width: 30vw;
+            height: 15vw;
+            max-width: 100%;
+            margin: auto;
+        }
+        .small-square {
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .small-square:first-child,
+        .small-square:nth-child(2),
+        .small-square:nth-child(3) {
+            border-top: none;
+        }
+        .small-square:nth-child(7),
+        .small-square:nth-child(8),
+        .small-square:nth-child(9) {
+            border-bottom: none;
+        }
+        .small-square:nth-child(1),
+        .small-square:nth-child(4),
+        .small-square:nth-child(7) {
+            border-left: none;
+        }
+        .small-square:nth-child(3),
+        .small-square:nth-child(6),
+        .small-square:nth-child(9) {
+            border-right: none;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-3 big-square mx-auto  mt-5">
+            <div class="small-square"><p>1</p></div>
+            <div class="small-square"><p>2</p></div>
+            <div class="small-square"><p>3</p></div>
+            <div class="small-square"><p>4</p></div>
+            <div class="small-square"><p>5</p></div>
+            <div class="small-square"><p>6</p></div>
+            <div class="small-square"><p>7</p></div>
+            <div class="small-square"><p>8</p></div>
+            <div class="small-square"><p>9</p></div>
+        </div>
+        <div class="col-3 big-square mx-auto mt-5">
+            <div class="small-square"><p id="square-show1">1</p></div>
+            <div class="small-square"><p id="square-show2">2</p></div>
+            <div class="small-square"><p id="square-show3">3</p></div>
+            <div class="small-square"><p id="square-show4">4</p></div>
+            <div class="small-square"><p id="square-show5">5</p></div>
+            <div class="small-square"><p id="square-show6">6</p></div>
+            <div class="small-square"><p id="square-show7">7</p></div>
+            <div class="small-square"><p id="square-show8">8</p></div>
+            <div class="small-square"><p id="square-show9">9</p></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
