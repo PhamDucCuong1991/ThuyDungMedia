@@ -10,7 +10,48 @@
     <script src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/hotLine.css">
     <link rel="stylesheet" href="../css/number.css">
+    <style>
+        .big-square {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 0px 0px;
+            width: 20vw;
+            height: 16vw;
+            max-width: 80%;
+            margin: auto;
+            color: #bacbe6;
 
+        }
+        .small-square {
+            border: 1px solid #bacbe6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: x-large;
+        }
+        .small-square:first-child,
+        .small-square:nth-child(2),
+        .small-square:nth-child(3) {
+            border-top: none;
+        }
+        .small-square:nth-child(7),
+        .small-square:nth-child(8),
+        .small-square:nth-child(9) {
+            border-bottom: none;
+        }
+        .small-square:nth-child(1),
+        .small-square:nth-child(4),
+        .small-square:nth-child(7) {
+            border-left: none;
+        }
+        .small-square:nth-child(3),
+        .small-square:nth-child(6),
+        .small-square:nth-child(9) {
+            border-right: none;
+        }
+
+    </style>
 </head>
 <body>
 <video autoplay muted loop id="bg-video">
@@ -233,10 +274,46 @@
             </div>
         </div>
     </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-0 col-md-2"></div>
+            <div class="col-6 col-md-4 ">
+                <div class="big-square">
+                    <div class="small-square"><p>1</p></div>
+                    <div class="small-square"><p>2</p></div>
+                    <div class="small-square"><p>3</p></div>
+                    <div class="small-square"><p>4</p></div>
+                    <div class="small-square"><p>5</p></div>
+                    <div class="small-square"><p>6</p></div>
+                    <div class="small-square"><p>7</p></div>
+                    <div class="small-square"><p>8</p></div>
+                    <div class="small-square"><p>9</p></div>
+                </div>
+                <h5 class='ladi-headline'>BIỂU ĐỒ NGÀY SINH</h5>
+            </div>
+
+            <div class="col-6 col-md-4 ">
+                <div class="big-square">
+                    <div class="small-square"><p id="square-show1">1</p></div>
+                    <div class="small-square"><p id="square-show2">2</p></div>
+                    <div class="small-square"><p id="square-show3">3</p></div>
+                    <div class="small-square"><p id="square-show4">4</p></div>
+                    <div class="small-square"><p id="square-show5">5</p></div>
+                    <div class="small-square"><p id="square-show6">6</p></div>
+                    <div class="small-square"><p id="square-show7">7</p></div>
+                    <div class="small-square"><p id="square-show8">8</p></div>
+                    <div class="small-square"><p id="square-show9">9</p></div>
+                </div>
+                <h5 class='ladi-headline'>BIỂU ĐỒ NGÀY SINH</h5>
+            </div>
+
+            <div class="col-0 col-md-2"></div>
+        </div>
+    </div>
     <div class="container mt-4 background-color">
         <div class="row">
-            <div class="col-0 col-lg-1"></div>
-            <div class="col-12 col-lg-10">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-10">
                 <h5 class='ladi-headline'>BẠN ĐÃ ĐƯỢC LUẬN GIẢI VỀ CHỈ SỐ ĐƯỜNG ĐỜI CỦA MÌNH, LÀM
                     SAO ĐỂ NHẬN FULL CHỈ SỐ?</h5>
                 <div class="row">
@@ -260,7 +337,7 @@
                         </div>
                     </div>
 
-                    <div id="GROUP1825" class='col-lg-4 col-6'>
+                    <div id="GROUP1825" class='col-md-4 col-6'>
                         <div class='ladi-group'>
                             <h5 class='ladi-headline'>THANH TOÁN</h5>
                         </div>
@@ -276,7 +353,7 @@
                     </div>
 
 
-                    <div id="GROUP1827" class='col-lg-4 col-0'>
+                    <div id="GROUP1827" class='col-md-4 col-0'>
                         <div class='ladi-group'>
                             <h5 class='ladi-headline'>NHẬN BÁO CÁO</h5>
                         </div>

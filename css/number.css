@@ -14,7 +14,7 @@
 }
 
 .style-a {
-    color: #99FF66;
+    color: limegreen;
     font-weight: bolder;
     text-decoration: none
 }
@@ -36,7 +36,7 @@
 
 .custom-list-div {
     margin-left: auto;
-    color: #99FF66;
+    color: limegreen;
 }
 
 .col-0 {
@@ -128,6 +128,7 @@
 
 .ladi-headline {
     text-align: center;
-    color: #99FF66;
+    /*color: #5cac38;*/
+    color: limegreen;
     margin-top: 10px;
 }
