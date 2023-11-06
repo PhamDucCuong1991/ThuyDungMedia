@@ -105,7 +105,7 @@ function login() {
             setTimeout(() => {
                 localStorage.clear();
                 $('#idLogin').text('Login');
-            }, 365* 24 * 60 * 60 * 1000)
+            }, 365 * 24 * 60 * 60 * 1000)
         } else {
             setTimeout(() => {
                 localStorage.clear();
@@ -134,7 +134,7 @@ function logout() {
     alert("Bạn đã đăng xuất khỏi hệ thống!")
 }
 
-$('#idLogin').on('click', function (event) {
+$("#idLogin").on('click', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
     if (isLoggedIn) {
         logout();
@@ -148,12 +148,17 @@ $('#tinhToanSo').on('click', function () {
 $('#submit-form').on('click', function () {
     tinhToanSo()
 });
+$("#birthDay,#fullName").on('keypress', function (e) {
+    if (e.which == 13) {
+        tinhToanSo();
+    }
+});
 $("#reset-form").on('click', function () {
     $("#fullName").val("");
     $("#birthDay").val("");
 });
 
-$('#link-than-so').on('click', function () {
+$("#link-than-so").on('click', function () {
     logout();
     $("#mynavbar button").hide()
 });
@@ -165,6 +170,10 @@ $(document).ready(function() {
     }
 });
 
-document.getElementById("showFullName").addEventListener('contextmenu', function (ten) {
-    $("#exampleModal").textContent = ten;
-});
+// Sử dụng jQuery để ẩn .dropdown-menu khi trỏ chuột ra ngoài phần tử này
+// $('.dropdown-menu.show').mouseleave(function() {
+//     $(this).hide();
+// });
+// $('.dropdown').mouseenter(function() {
+//     $('.dropdown-menu.show').show();
+// });

@@ -445,8 +445,7 @@ function tinhToanSo() {
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
     getDaySoTrucGiac(ten);  // Lấy ra mảng chữ số trực giác trong tên
-    $("#showFullName").text(ten);
-    // document.getElementById("showFullName1").innerHTML = ten;
+
     let duongDoiSlide = document.getElementById("duongDoi").innerHTML = getSum(arrNgaySinh);
     let suMenhSlide = document.getElementById("suMenh").innerHTML = getSum(arr);
     let linhHonSlide = document.getElementById("linhHon").innerHTML = getSum(arrNa);
@@ -467,6 +466,9 @@ function tinhToanSo() {
     let soDamMeSlide = document.getElementById("soDamMe").innerHTML = getDaySoDamMe(arr);
     let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHon(arrPa, arrPa);
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
+
+    $("#showFullName").text(ten);
+    document.getElementById("showFullName1").innerHTML = ten;
 
     document.getElementById("s_soduongdoi_2").innerHTML = "SỐ " + duongDoiSlide
     const duongDoiSlide1 = "so_" + duongDoiSlide
@@ -502,7 +504,6 @@ function tinhToanSo() {
     let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh)
     document.getElementById("s_tuoichang3_1").innerHTML =  (dinhCao1 + dinhCao2) % 9 ||9
     document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
-
 
     let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
     let thachThuc2= document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
