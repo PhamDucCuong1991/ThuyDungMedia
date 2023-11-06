@@ -215,7 +215,7 @@ h2 {
 }
 
 .tm-intro-btn {
-    margin-top: 25px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -693,25 +693,25 @@ figure.effect-julia:hover p {
 }
 
 /* Loaded */
-.loaded #loader-wrapper .loader-section.section-left { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-    transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
-    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+.loaded #loader-wrapper .loader-section.section-left {
+    transform: translateX(-100%);
+    transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.loaded #loader-wrapper .loader-section.section-right { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-    transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
-    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+.loaded #loader-wrapper .loader-section.section-right {
+    transform: translateX(100%);
+    transition: all 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 .loaded #loader {
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: all 0.15s ease-out;
 }
 
 .loaded #loader-wrapper {
-    visibility: hidden; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-    transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
-    transition: all 0.3s 1s ease-out;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.15s 0.5s ease-out;
 }
 
 /* JavaScript Turned Off */

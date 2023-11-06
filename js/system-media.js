@@ -305,9 +305,7 @@
 
                 if (callback) {
                     setTimeout(function() {
-
                         _.disableTransition();
-
                         callback.call();
                     }, _.options.speed);
                 }
@@ -939,9 +937,7 @@
 
             if (callback) {
                 setTimeout(function() {
-
                     _.disableTransition(slideIndex);
-
                     callback.call();
                 }, _.options.speed);
             }
@@ -1261,7 +1257,6 @@
             _.updateDots();
             _.checkResponsive(true);
             _.focusHandler();
-
         }
 
         if (creation) {
