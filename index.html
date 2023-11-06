@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/slick.css" type="text/css">
     <link rel="stylesheet" href="./css/templatemo-style.css">
     <link rel="stylesheet" href="./css/hotLine.css">
+    <link rel="stylesheet" href="css/a.css">
+    <script src="JS_thanSo/tinhToanSo.js"></script>
 
 </head>
 <body>
@@ -22,7 +24,6 @@
         <div class="row">
             <div class="row-cols-lg-12">
                 <div class="cd-slider-nav">
-
                     <nav class="navbar navbar-expand-lg" id="tm-nav">
                         <h3><a class="tm-link-white" href="index.html">nguyenthithuydung.com.vn</a></h3>
                         <h3 style="color: white" id="tm-hello"></h3>
@@ -44,13 +45,16 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a id="idLogin" class="nav-link" href="#" data-no="3">Login</a>
+                                    <a class="nav-link" href="#" data-no="3">Tra cứu</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="#" data-no="4">Contact</a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a id="idLogin" class="nav-link" href="#" data-no="5">Login</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -182,49 +186,140 @@
             </li>
             <!--            data-no="3"-->
             <li data-page-no="3">
-                <h2 class="highlight" align="center">SIGN IN</h2>
-
-                <div class="mx-auto  position-relative page-width-2 page-right tm-border-top tm-border-bottom">
-                    <div class="row">
-                        <div class="circle intro-circle-1"></div>
-                        <div class="circle intro-circle-2"></div>
-                        <div class="circle intro-circle-3"></div>
-                        <div class="circle intro-circle-4"></div>
-                        <div class="col-12 col-md-6 ">
-                            <div class="card-body col-12 ">
-                                <div class="input-group tm-mb-30">
-                                    <input name="name" type="text" id="username"
-                                           class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
-                                           placeholder="username">
-                                </div>
-                                <div class="input-group tm-mb-30">
-                                    <input name="phoneNumber" type="text" id="password"
-                                           class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
-                                           placeholder="password">
-                                </div>
-
-                                <div class="form-group" align="right">
-                                    <div class="row align-items-center remember">
-                                        <input id="remember-me" type="checkbox">Remember Me
+                <h2 class="highlight" id="showFullName" align="center">Khám phá bản thân</h2>
+                <div class="mx-auto page-width-2">
+                    <h3 class='ladi-headline'>BẠN LÀ PHIÊN BẢN DUY NHẤT</h3>
+                    <div class="position-relative tm-border-top tm-border-bottom">
+                        <div class="row">
+                            <div class="circle intro-circle-1"></div>
+                            <div class="circle intro-circle-2"></div>
+                            <div class="circle intro-circle-3"></div>
+                            <div class="circle intro-circle-4"></div>
+                            <div class="col-12 col-md-6 ">
+                                <div class="card-body col-12 ">
+                                    <div class="input-group tm-mb-30">
+                                        <input name="fullName" type="text" id="fullName"
+                                               class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
+                                               placeholder="fullName">
                                     </div>
-                                    <button type="submit" class="btn btn-primary tm-btn-pad-2" onclick="login()">
-                                        Submit
-                                    </button>
-                                </div>
-
-                                <div class="card-footer">
-                                    <div class="d-flex justify-content-center links">
-                                        Don't have an account ? <a href="#"> Sign Up</a>
+                                    <div class="input-group tm-mb-30">
+                                        <input name="birthDay" type="text" id="birthDay"
+                                               class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
+                                               placeholder="birthDay">
                                     </div>
 
+                                    <div class="form-group" align="right">
+                                        <button type="submit" class="btn btn-primary tm-btn-pad-2" id="submit-form">
+                                            SUBMIT
+                                        </button>
+                                        <button type="submit" class="btn btn-danger tm-btn-pad-2" id="reset-form">
+                                            RESET
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body col-12 col-0">
+                                    <div class="row">
+                                    
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-12 col-md-6 ">
+                                <div class="row">
+                                    <div class="col-6 col-md-6">
+                                        <ul class="custom-list">
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Đường đời
+                                                <div class="custom-list-div" id="duongDoi"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Sứ mệnh
+                                                <div class="custom-list-div" id="suMenh"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Linh hồn
+                                                <div class="custom-list-div" id="linhHon"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Đam Mê
+                                                <div class="custom-list-div" id="soDamMe"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Nhân cách
+                                                <div class="custom-list-div" id="nhanCach"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Thái độ
+                                                <div class="custom-list-div" id="thaiDo"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Ngày sinh
+                                                <div class="custom-list-div" id="ngaySinh"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Kết nối vận mệnh
+                                                <div class="custom-list-div" id="ketNoiVanMenh"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Tư duy Cảm xúc
+                                                <div class="custom-list-div" id="soCamXuc"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Tư duy Trực giác
+                                                <div class="custom-list-div" id="soTrucGiac"></div>
+                                            </li>
 
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-md-6">
+                                        <ul class="custom-list">
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Tư duy Trải nghiệm
+                                                <div class="custom-list-div" id="soTuDuyTraiNghiem"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Bổ sung
+                                                <div class="custom-list-div" id="soThieu"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Kết nối Linh hồn
+                                                <div class="custom-list-div" id="soKetNoiLinhHon"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Vận mệnh
+                                                <div class="custom-list-div" id="vanMenh"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Cân bằng
+                                                <div class="custom-list-div" id="canBang"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Trưởng thành
+                                                <div class="custom-list-div" id="truongThanh"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Tháng cá nhân
+                                                <div class="custom-list-div" id="thangCaNhan"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Năm cá nhân
+                                                <div class="custom-list-div" id="namCaNhan"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Sức mạnh tiềm thức
+                                                <div class="custom-list-div" id="sucManhTiemThuc"></div>
+                                            </li>
+                                            <li class="d-flex justify-content-between text-brown">
+                                                Tư duy lý trí
+                                                <div class="custom-list-div" id="tuDuyLyTri"></div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
             </li>
             <!--            data-no="4"-->
             <li data-page-no="4">
@@ -277,6 +372,49 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </li>
+            <!--            data-no="5"-->
+            <li data-page-no="5">
+                <h2 class="highlight" align="center">SIGN IN</h2>
+                <div class="mx-auto  position-relative page-width-2 page-right tm-border-top tm-border-bottom">
+                    <div class="row">
+                        <div class="circle intro-circle-1"></div>
+                        <div class="circle intro-circle-2"></div>
+                        <div class="circle intro-circle-3"></div>
+                        <div class="circle intro-circle-4"></div>
+                        <div class="col-12 col-md-6 ">
+                            <div class="card-body col-12 ">
+                                <div class="input-group tm-mb-30">
+                                    <input name="name" type="text" id="username"
+                                           class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
+                                           placeholder="username">
+                                </div>
+                                <div class="input-group tm-mb-30">
+                                    <input name="phoneNumber" type="text" id="password"
+                                           class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
+                                           placeholder="password">
+                                </div>
+
+                                <div class="form-group" align="right">
+                                    <div class="row align-items-center remember">
+                                        <input id="remember-me" type="checkbox">Remember Me
+                                    </div>
+                                    <button type="submit" class="btn btn-primary tm-btn-pad-2" onclick="login()">
+                                        Submit
+                                    </button>
+                                </div>
+
+                                <div class="card-footer">
+                                    <div class="d-flex justify-content-center links">
+                                        Don't have an account ? <a href="#"> Sign Up</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </li>
