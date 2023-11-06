@@ -430,6 +430,10 @@ function tinhToanSo() {
     const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
     let ngaySinh = document.getElementById("birthDay").value.trim();
+    if(ngaySinh.length !== 10){
+        alert("Ngày sinh không hợp lệ!")
+        return
+    }
 
     let arrNa = [];
     let arrPa = [];
@@ -441,8 +445,8 @@ function tinhToanSo() {
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
     getDaySoTrucGiac(ten);  // Lấy ra mảng chữ số trực giác trong tên
-    document.getElementById("showFullName").innerHTML = ten;
-    document.getElementById("showFullName1").innerHTML = ten;
+    $("#showFullName").text(ten);
+    // document.getElementById("showFullName1").innerHTML = ten;
     let duongDoiSlide = document.getElementById("duongDoi").innerHTML = getSum(arrNgaySinh);
     let suMenhSlide = document.getElementById("suMenh").innerHTML = getSum(arr);
     let linhHonSlide = document.getElementById("linhHon").innerHTML = getSum(arrNa);

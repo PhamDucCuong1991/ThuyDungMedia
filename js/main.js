@@ -97,7 +97,7 @@ function login() {
     if (username === "admin" && password === "12345") {
         localStorage.setItem("loggedInUser", username);
         alert("Đăng nhập thành công!");
-        location.href = "../HTML/traCuu.html";
+        // location.href = "../HTML/traCuu.html";
         $('#tm-hello').append(' ' + '(Chào sếp Dung!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
@@ -145,6 +145,13 @@ $('#idLogin').on('click', function (event) {
 $('#tinhToanSo').on('click', function () {
   tinhToanSo()
 });
+$('#submit-form').on('click', function () {
+    tinhToanSo()
+});
+$("#reset-form").on('click', function () {
+    $("#fullName").val("");
+    $("#birthDay").val("");
+});
 
 $('#link-than-so').on('click', function () {
     logout();
@@ -158,3 +165,6 @@ $(document).ready(function() {
     }
 });
 
+document.getElementById("showFullName").addEventListener('contextmenu', function (ten) {
+    $("#exampleModal").textContent = ten;
+});
