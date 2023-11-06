@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 560 Astro Motion
-
-https://templatemo.com/tm-560-astro-motion
-
-*/
 
 html, body, .page-container {
     height: 100%;
@@ -33,10 +27,11 @@ p {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .highlight {
+    padding-top: 5px;
     color: #99FF66;
 }
 
@@ -68,22 +63,6 @@ h2 {
 .btn-primary:focus {
     color: #5cac38;
     background-color: white;
-}
-
-/* Style the video: 100% width and height to cover the entire window */
-#bg-video {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translateX(-50%) translateY(-50%);
-    z-index: -100;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 #tm-nav {
@@ -483,7 +462,17 @@ figure.effect-julia:hover p {
 .form-control:-ms-input-placeholder {
     color: white;
 }
-
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 35px;
+}
+.form-group{
+    padding: 20px;
+}
 .tm-mb-30 {
     margin-bottom: 30px;
 }
