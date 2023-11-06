@@ -462,7 +462,17 @@ figure.effect-julia:hover p {
 .form-control:-ms-input-placeholder {
     color: white;
 }
-
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    max-height: 35px;
+}
+.form-group{
+    padding: 20px;
+}
 .tm-mb-30 {
     margin-bottom: 30px;
 }
