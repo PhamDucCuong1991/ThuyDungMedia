@@ -177,3 +177,9 @@ $(document).ready(function() {
 // $('.dropdown').mouseenter(function() {
 //     $('.dropdown-menu.show').show();
 // });
+
+//tải video sau khi DOm xong
+document.addEventListener('DOMContentLoaded', (event) => {
+    const bgVideo = document.getElementById('bg-video');
+    bgVideo.load();
+});
