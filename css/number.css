@@ -89,7 +89,15 @@
         height: 15vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
     }
 
-
+    .hexagon-text {
+        font-size: 1.4vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
+    }
+    .hexagon-label{
+        font-size: 1.4vw;
+    }
+    .small-square-text {
+        font-size: 1.4vw;
+    }
 
     .text-brown {
         font-size: inherit;
@@ -107,9 +115,14 @@
     }
 
     .hexagon-text {
-        font-size: 1.3vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
+        font-size: 0.8vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
     }
-
+    .hexagon-label{
+        font-size: 1.2vw;
+    }
+    .small-square-text {
+        font-size: 0.8vw;
+    }
 }
 
 .hexagon-content {
@@ -121,7 +134,6 @@
     height: 100%;
     width: 100%;
 }
-
 
 
 .hexagon-label {
