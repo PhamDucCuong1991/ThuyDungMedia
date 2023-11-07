@@ -678,14 +678,17 @@ figure.effect-julia:hover p {
     background: #222222;
     z-index: 2000; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
     transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
+    will-change: transform; /* Thêm vào để tối ưu hóa hiệu suất */
 }
 
 #loader-wrapper .loader-section.section-left {
     left: 0;
+    transition: transform 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 #loader-wrapper .loader-section.section-right {
     right: 0;
+    transition: transform 0.35s 0.15s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 /* Loaded */
@@ -701,20 +704,25 @@ figure.effect-julia:hover p {
 
 .loaded #loader {
     opacity: 0;
-    transition: all 0.15s ease-out;
+    transition: opacity 0.15s ease-out;
 }
 
 .loaded #loader-wrapper {
     visibility: hidden;
     transform: translateY(-100%);
-    transition: all 0.15s 0.5s ease-out;
+    transition: visibility 0s 0.5s, transform 0.15s 0.5s ease-out;
 }
 
 /* JavaScript Turned Off */
 .no-js #loader-wrapper {
     display: none;
 }
-
+@media (max-width: 768px) { /* hoặc bất kỳ điểm ngắt nào phù hợp với thiết kế của bạn */
+    /* Tối ưu hóa cho điện thoại */
+    #loader-wrapper .loader-section {
+        width: 100%; /* điều chỉnh nếu cần cho điện thoại */
+    }
+}
 
 .input-group-prepend span {
     width: 50px;

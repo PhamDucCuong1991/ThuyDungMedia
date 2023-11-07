@@ -81,3 +81,19 @@ jQuery(function() {
       closeMenu();
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Preload video
+  const bgVideo = document.getElementById('bg-video');
+  if (bgVideo) {
+    bgVideo.load();
+  }
+
+  // Khi tài nguyên đã sẵn sàng, ẩn loader và hiển thị nội dung
+  window.addEventListener('load', () => {
+    const loaderWrapper = document.getElementById('loader-wrapper');
+    if (loaderWrapper) {
+      loaderWrapper.classList.add('loaded');
+    }
+  });
+});
