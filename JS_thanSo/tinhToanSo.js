@@ -430,12 +430,14 @@ nối với những người khác một cách thấu cảm.</p>
 </div>`,
 
 }
+const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let ten;
+let ngaySinh;
 
 function tinhToanSo() {
-    const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
-    let ngaySinh = document.getElementById("birthDay").value.trim();
-    if(ngaySinh.length !== 10){
+    ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
+    ngaySinh = document.getElementById("birthDay").value.trim();
+    if (ngaySinh.length !== 10) {
         alert("Ngày sinh không hợp lệ!")
         return
     }
@@ -446,6 +448,7 @@ function tinhToanSo() {
     let daySoTrucGiac = [];
     const arrNgaySinh = extractNumbers(ngaySinh);
     const arr = convertNameToNumbers(ten, str);
+    console.log(arr)
 
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
@@ -471,6 +474,10 @@ function tinhToanSo() {
     let soDamMeSlide = document.getElementById("soDamMe").innerHTML = getDaySoDamMe(arr);
     let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHon(arrPa, arrPa);
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
+
+
+    getIndexNumberByName(arr)
+    getIndexNumberByBirthDay(arrNgaySinh)
 
     $("#showFullName").text(ten);
     document.getElementById("showFullName1").innerHTML = ten;
@@ -507,11 +514,11 @@ function tinhToanSo() {
 
     let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
     let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh)
-    document.getElementById("s_tuoichang3_1").innerHTML =  (dinhCao1 + dinhCao2) % 9 ||9
+    document.getElementById("s_tuoichang3_1").innerHTML = (dinhCao1 + dinhCao2) % 9 || 9
     document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
 
     let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
-    let thachThuc2= document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
+    let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
     document.getElementById("s_sothachthuc3_3").innerHTML = (Math.abs(thachThuc1 - thachThuc2)) % 9 || 9;
     document.getElementById("s_sothachthuc4_4").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
 
@@ -671,16 +678,48 @@ function tinhToanSo() {
         string = string.replace(/Đ/g, "D").replace(/đ/g, "d");
         return string;
     }
+
+}
+
+
+function getIndexNumberByName(array) {
+    document.getElementById("name_index1").innerHTML = doubleNumber(1, array);
+    document.getElementById("name_index2").innerHTML = doubleNumber(2, array);
+    document.getElementById("name_index3").innerHTML = doubleNumber(3, array);
+    document.getElementById("name_index4").innerHTML = doubleNumber(4, array);
+    document.getElementById("name_index5").innerHTML = doubleNumber(5, array);
+    document.getElementById("name_index6").innerHTML = doubleNumber(6, array);
+    document.getElementById("name_index7").innerHTML = doubleNumber(7, array);
+    document.getElementById("name_index8").innerHTML = doubleNumber(8, array);
+    document.getElementById("name_index9").innerHTML = doubleNumber(9, array);
+}
+
+function getIndexNumberByBirthDay(array) {
+    document.getElementById("birthDay_index1").innerHTML = doubleNumber(1, array);
+    document.getElementById("birthDay_index2").innerHTML = doubleNumber(2, array);
+    document.getElementById("birthDay_index3").innerHTML = doubleNumber(3, array);
+    document.getElementById("birthDay_index4").innerHTML = doubleNumber(4, array);
+    document.getElementById("birthDay_index5").innerHTML = doubleNumber(5, array);
+    document.getElementById("birthDay_index6").innerHTML = doubleNumber(6, array);
+    document.getElementById("birthDay_index7").innerHTML = doubleNumber(7, array);
+    document.getElementById("birthDay_index8").innerHTML = doubleNumber(8, array);
+    document.getElementById("birthDay_index9").innerHTML = doubleNumber(9, array);
+}
+
+function doubleNumber(num, array) {
+    return array.filter(function (value) {
+        return value === num;
+    });
 }
 
 function xoaDuLieu() {
     location.reload()
 }
 
- async function generatePDFWithImages() {
-     const button = document.getElementById('tinhToanSo');
-     button.classList.add('loading');
-     button.textContent = 'Đang tạo file pdf...';
+async function generatePDFWithImages() {
+    const button = document.getElementById('tinhToanSo');
+    button.classList.add('loading');
+    button.textContent = 'Đang tạo file pdf...';
 
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
@@ -718,15 +757,15 @@ function xoaDuLieu() {
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
-     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
+    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
 
     try {
         for (let [index, imageName] of imageNames.entries()) {
@@ -745,7 +784,8 @@ function xoaDuLieu() {
 
 
 }
- async function generatePDFWithImages1(dataPDF) {
+
+async function generatePDFWithImages1(dataPDF) {
     // Tạo một đối tượng PDF mới
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
@@ -829,8 +869,8 @@ function xoaDuLieu() {
     }
 }
 
-  // Định nghĩa hàm để thêm ảnh vào PDF
- function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
+// Định nghĩa hàm để thêm ảnh vào PDF
+function addImageToPDF(imagePath, index, width, height, pdf, imageNames) {
     return new Promise((resolve, reject) => {
         let img = new Image();
         img.crossOrigin = "Anonymous"; // Thêm dòng này nếu bạn gặp vấn đề với CORS
