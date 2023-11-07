@@ -1,4 +1,4 @@
-let gallery = undefined;
+let gallery = null;
 
 function closeMenu() {
   $(".navbar-collapse").removeClass("show"); 
@@ -45,7 +45,7 @@ function setupGallery() {
 
 function openPage(no) {
   if(no == 2) {
-    if(gallery == undefined) {
+    if(gallery == null) {
       setupGallery();
     } else {
       $('.gallery-slider').slick('unslick');
@@ -61,6 +61,7 @@ function openPage(no) {
 $(window).on('load', function() {
   $('body').addClass('loaded');
   openPage(1);
+  highlightMenu(1)
 });
 
 jQuery(function() {
