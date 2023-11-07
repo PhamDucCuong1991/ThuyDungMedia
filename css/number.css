@@ -85,8 +85,8 @@
 
 @media (max-width: 768px) {
     .hexagon {
-        width: 15vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
-        height: 15vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+        width: 17vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 17vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
     }
 
     .hexagon-text {
@@ -121,7 +121,7 @@
         font-size: 1.2vw;
     }
     .small-square-text {
-        font-size: 0.8vw;
+        font-size: 1.2vw;
     }
 }
 
