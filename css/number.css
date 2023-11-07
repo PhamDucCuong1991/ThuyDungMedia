@@ -38,7 +38,7 @@
 
 .text-brown {
     color: #cccccc;
-    font-weight: bold;
+    font-weight: inherit;
 }
 
 .hexagon-container {
