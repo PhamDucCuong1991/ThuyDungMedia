@@ -23,17 +23,7 @@ export const duongDoi = {
         - Hành động nhanh – sửa sai nhanh – hoàn thiện nhanh<br>
         - Uy lực, có chính kiến
     </p>
-    <h5>3. Điểm yếu của số 1:</h5>
-       <p> - Độc đoán<br>
-        - Tự cao, kiêu ngạo, hiếu thắng, bảo thủ, sĩ diện<br>
-        - Quân phiệt, gia trưởng, áp đặt<br>
-        - Không biết lắng nghe<br>
-        - Cái tôi lớn<br>
-        - Ích kỉ, muốn giữ thế độc tôn<br>
-        - Liều lĩnh, mạo hiểm, bất chấp hậu quả<br>
-        - Thích kiểm soát người khác<br>
-        - Biết sai, sửa sai nhưng không nhận sai
-    </p>
+    
 </div>`,
 
     so_2: `<div>
@@ -55,14 +45,6 @@ nối với những người khác một cách thấu cảm.</p>
 - Nhẹ nhàng, dịu dàng, bao dung<br>
 - Thích sự hòa bình, ôn hòa<br>
 - Tinh tế, lãng mạn, nhạy cảm.</p>
-<h5>3. Điểm yếu của số 2:</h5>
-<p>- Lưỡng lự, dễ bị tổn thương, không quyết đoán vì hay lắng nghe ý kiến của người khác.<br>
-- Đa sầu, đa cảm, lụy tình, dễ bị lợi dụng vì sống tình cảm<br>
-- Đa nghi, hay suy nghĩ, hay mơ mộng thái quá<br>
-- Sợ dư luận, sợ từ chối<br>
-- Sợ người khác nghĩ không tốt về mình<br>
-- Không có chính kiến, dễ bị chiều theo ý của người khác<br>
-- Dễ bị xúc động quá mức</p>
 </div>`,
 
     so_3: `<div>
@@ -72,9 +54,9 @@ nối với những người khác một cách thấu cảm.</p>
 -Trong hình học, 3 là điều cơ bản để tạo nên một hình dạng “tam giác” và những người theo trường phái Pytago rất yêu thích con số này.<br>
 -Số 3 tượng trưng cho quẻ Càn, cho Trời và ánh sáng.<br>
 -Số 3 ứng với kết cấu của vũ trụ. <br>
--Số 3 mang năng lượng hỏa, hành năng lượng hỏa và tượng trưng cho ánh sáng. <br>
+-Số 3 mang năng lượng hỏa, hành năng lượng hỏa và tượng trưng cho ánh sáng. </p>
 <h5>2.Điểm mạnh của số 3</h5>
--Tâm hồn nghệ thuật, thích khám phá<br>
+<p>-Tâm hồn nghệ thuật, thích khám phá<br>
 -Giao tiếp tốt, hoạt ngôn, khả năng xã hội tốt<br>
 -Vui vẻ, lạc quan, ngây thơ, trẻ trung<br>
 -Thích hoạt động tập thể, năng động<br>
@@ -85,19 +67,7 @@ nối với những người khác một cách thấu cảm.</p>
 -Có thiên hướng làm nghệ thuật<br>
 -Thẳng thắn, phóng khoán<br>
 -Khả năng hùng biện và đàm phán tốt<br>
--Số 3 rất thông minh.<br>
-<h5>3.Điểm yếu của số 3:</h5>
--Ngây thơ, thiếu tập trung<br>
--Suy nghĩ bề mặt<br>
--Nói dài nói dai thành nói dại<br>
--Thể hiện bản thân, thích khoe khoang<br>
--Vạ miệng, bốc đồng, nông nổi<br>
--Nóng tính, tự tin thái quá<br>
--Thích tranh luận<br>
--Lấn lướt, cái tôi cao<br>
--Gây sát thương người khác bằng ngôn từ<br>
--Quản trị cảm xúc kém<br>
-</p>
+-Số 3 rất thông minh.<br></p>
 </div>`,
 
     so_4: `<div>
@@ -119,21 +89,13 @@ nối với những người khác một cách thấu cảm.</p>
 - Có khả năng chịu áp lực và ghi nhớ tốt<br>
 - Có thế mạnh về quy trình và tính hệ thống<br>
 - Là chuyên trong lĩnh vực của mình<br><br>
-<h5>3. Điểm yếu của số 4:</h5>
-- Bảo thủ, cứng nhắc<br>
-- Gia trưởng, hà khắc, cục tính<br>
-- Rập khuôn, áp đặt, cố hữu, độc tài<br>
-- Nguyên tắc, khắt khe, cứng nhắc, khô khan<br>
-- Hay nghi ngờ, xét nét, chỉ trách , săm soi<br>
-- Tính chiếm hữu cao<br>
-- Thiếu linh hoạt
 </p>
 
 </div>`,
 
     so_5: `<div>
 <h5>1. Ý nghĩa tổng quan</h5>
-<>
+<p>
 - Số 5 là con số trung tâm và được sử dụng trong phong thủy rất nhiều<br>
 - Theo trường phái Pytago, 5 là con số của sự hài hòa trong cuộc sống (sức khỏe, tình yêu, hôn nhân, bản thân, các mối quan hệ xã hội).<br>
 - 5 cũng liên quan tới cơ thể con người như 4 chi và đầu hay 5 giác quan (thị giác, thính giác, vị giác, khứu giác và xúc giác).<br>
@@ -160,15 +122,6 @@ nối với những người khác một cách thấu cảm.</p>
 - Giàu lòng trắc ẩn.<br>
 - Số 5 sáng tạo thường dựa trên tính giải trí (khác với số 3, 8) vì vậy rất nhiều số 5 hoạt động trong lĩnh vực giải trí.
 </p>
-
-<h5>3. Điểm yếu của số 5:</h5>
-<p>
-- Không nhất quán. Liều lĩnh, thích mạnh hiểm, bốc đồng<br>
-- Buông thả, ham chơi. Hoang phí, không thích ràng buộc <br>
-- Không liên định mục tiêu. Không thích làm các việc chi tiết<br>
-- Thích hưởng thụ, xa xỉ. Sống cảm xúc
-</p>
-
 </div>`,
 
     so_6: `<div>
@@ -198,19 +151,6 @@ nối với những người khác một cách thấu cảm.</p>
   - Có khả năng lắng nghe và giải quyết vấn đề cho người khác<br>
   - Sáng tạo cực kỳ cao nếu đạt trạng thái năng lượng cao<br>
 </p>
-
-<h5>3. Điểm yếu của số 6:</h5>
-<p>
-  - Thiếu sự cân bằng trong cuộc sống<br>
-  - Hay suy diễn, dễ bị cảm xúc chi phối<br>
-  - Thích kiểm soát người khác vì mong muốn người ta được như mình mong muốn<br>
-  - Cả nể, dễ bị lợi dụng, nhu nhược <br>
-  - Yêu thương thiếu trí tuệ (yêu thương mù quáng)<br>
-  - Gây ra sự ngột ngạt với người thân<br>
-  - Không thích bị người khác sai khiến, chỉ trích<br>
-  - Điểm yếu rất lớn của số 6 là tin tưởng nhân viên quá mức<br>
-</p>
-
 </div>`,
 
     so_7: `<div>
@@ -236,17 +176,6 @@ nối với những người khác một cách thấu cảm.</p>
         <li>Thích sống độc lập, thích không gian yên tĩnh</li>
         <li>Lời nói có sức ảnh hưởng và thuyết phục với người khác</li>
         <li>Lưu ý: số 7 có thể đọc rất nhiều sách nhưng các quyển sách đó đều xoay quanh một chủ đề</li>
-    </ul>
-
-    <h5>3. Điểm yếu của số 7</h5>
-    <ul>
-        <li>Mê tín, đa nghi, bảo thủ, cầu toàn, cứng nhắc, cái tôi cao</li>
-        <li>Hay chỉ trích, soi xét, gây áp lực cho người khác</li>
-        <li>Không đồng cảm và thấu hiểu, kỳ vọng cao</li>
-        <li>Khép kín, lập dị, dễ cao ngạo</li>
-        <li>Khó tính, ít lắng nghe</li>
-        <li>Kín đáo, đơn độc, nội tâm</li>
-        <li>Hay hoài nghi, ưa phân tích</li>
     </ul>
 </div>`,
 
@@ -280,17 +209,6 @@ nối với những người khác một cách thấu cảm.</p>
         <li>Thường có gu thời trang rất tốt</li>
         <li>Có thể kinh doanh đa ngành nghề</li>
     </ul>
-    <h5>3. Điểm yếu của số 8:</h5>
-    <ul>
-        <li>Đam mê danh vọng, quyền lực</li>
-        <li>Ôn đồm, tham công tiếc việc</li>
-        <li>Thích lối sống ăn chơi hưởng thụ, tiêu xài</li>
-        <li>Thực dụng và hiếu thắng</li>
-        <li>Dễ bốc đồng, dễ tự ái</li>
-        <li>Thích khoa trương</li>
-        <li>Thích kiểm soát</li>
-        <li>Kỳ vọng quá cao vào người khác khiến người khác bị áp lực</li>
-    </ul>
 </div>`,
 
     so_9: `<div>
@@ -317,18 +235,6 @@ nối với những người khác một cách thấu cảm.</p>
     <li>Cầu toàn, tiêu chuẩn cao</li>
     <li>Sẵn sàng cống hiến, phụng sự vô điều kiện</li>
     <li>Quan tâm đến giáo dục</li>
-  </ul>
-
-  <h5>3. Điểm yếu của số 9:</h5>
-  <ul>
-    <li>Ôm đồm, bao đồng, cam chịu, nhẫn nhục</li>
-    <li>Dễ bị lợi dụng tình cảm</li>
-    <li>Cứng nhắc, ba phải, lý tưởng hóa cuộc đời</li>
-    <li>Quá cẩn trọng, thiếu thực tế</li>
-    <li>Lo xa quá mức, suy nghĩ quá nhiều</li>
-    <li>Quá cẩn trọng => chờ hoàn hảo mới làm</li>
-    <li>Hay nhìn cuộc đời bằng kính màu hồng nên dễ bị lừa</li>
-    <li>Sợ mất uy tín, sợ không gánh vác được trách nhiệm</li>
   </ul>
 </div>`,
 
@@ -357,15 +263,6 @@ nối với những người khác một cách thấu cảm.</p>
         <li>Có trực giác rất mạnh, là con số có trực giác nhạy bén nhất trong tất cả các con số, họ rất nhạy cảm và có khả năng thấu hiểu người khác vì nó mang phẩm chất của con số 2 khuếch đại lên.</li>
         <li>Là con số làm việc với con người rất tốt.</li>
     </ul>
-
-    <h5>3. Điểm yếu của số 11</h5>
-    <ul>
-        <li>Mâu thuẫn nội tâm.</li>
-        <li>Hay mơ tưởng, suy nghĩ viển vông.</li>
-        <li>Dễ bị mất cân bằng trong cuộc sống.</li>
-        <li>Đòi hỏi cao đối với bản thân và đối phương.</li>
-        <li>Dễ bị dao động và chi phối bởi tình cảm/cảm xúc.</li>
-    </ul>
 </div>`,
 
     so_22: `<div>
@@ -389,16 +286,6 @@ nối với những người khác một cách thấu cảm.</p>
         <li>Có tố chất, phong thái của nhà lãnh đạo (nằm ở số 11)</li>
         <li>Có tầm nhìn xa trông rộng</li>
     </ul>
-
-    <h5>3. Điểm yếu của số 22</h5>
-    <ul>
-        <li>Ngại đối đầu thực tế</li>
-        <li>Thiếu quyết đoán</li>
-        <li>Hay mơ tưởng, suy nghĩ viển vông</li>
-        <li>Dễ bị mất cân bằng trong cuộc sống do được tạo bởi 2 số 2 nên vẫn có sự mềm yếu của con số 2</li>
-        <li>Đòi hỏi cao đối với bản thân và đối phương</li>
-        <li>Muốn đạt đến đỉnh cao cần thử thách và sóng gió của cuộc sống.</li>
-    </ul>
 </div>`,
 
     so_33: `<div>
@@ -420,13 +307,6 @@ nối với những người khác một cách thấu cảm.</p>
         <li>Năng lực quan tâm chăm sóc</li>
     </ul>
 
-    <h5>3. Điểm yếu của số 33</h5>
-    <ul>
-        <li>Dễ mất phương hướng</li>
-        <li>Thiếu năng lượng</li>
-        <li>Thiếu khả năng quan sát, phân tích</li>
-        <li>Dễ bị lu mờ trong cuộc sống</li>
-    </ul>
 </div>`,
 
 }
