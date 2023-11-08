@@ -85,27 +85,25 @@
 
 @media (max-width: 768px) {
     .hexagon {
-        width: 17vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
-        height: 17vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+        width: 22vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 22vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
     }
 
     .hexagon-text {
-        font-size: 1.4vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
+        font-size: 2.5vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
+        margin-bottom: 20px;
     }
     .hexagon-label{
-        font-size: 1.4vw;
+        font-size: 4vw;
     }
     .small-square-text {
-        font-size: 1.4vw;
+        font-size: 4vw;
     }
 
     .text-brown {
-        font-size: inherit;
+        font-size: small;
     }
 
-    .hexagon-label {
-        font-size: 1vw;
-    }
 }
 
 @media (min-width: 769px) {
@@ -124,6 +122,7 @@
         font-size: 1.2vw;
     }
 }
+
 
 .hexagon-content {
     position: relative;
