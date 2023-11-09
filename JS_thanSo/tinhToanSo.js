@@ -476,8 +476,8 @@ function tinhToanSo() {
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
 
 
-    getIndexNumberByName(arr)
-    getIndexNumberByBirthDay(arrNgaySinh)
+    // getIndexNumberByName(arr)
+    // getIndexNumberByBirthDay(arrNgaySinh)
 
     $("#showFullName").text(ten);
     document.getElementById("showFullName1").innerHTML = ten;
@@ -748,24 +748,7 @@ async function generatePDFWithImages() {
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
     imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
+
 
     try {
         for (let [index, imageName] of imageNames.entries()) {
@@ -775,6 +758,7 @@ async function generatePDFWithImages() {
                 pdf.addPage();
             }
         }
+
         pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
         button.classList.remove('loading');
         button.textContent = 'KHÁM PHÁ BẢN THÂN'; // Reset text nếu cần

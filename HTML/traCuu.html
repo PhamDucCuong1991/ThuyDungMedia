@@ -32,19 +32,40 @@
             font-size: x-large;
             font-weight: bold;
         }
-    </style>
 
+        .background-image {
+            background-image: url('../img/imgCamXuc1.jpg');
+            width: 50%;
+            height: 150vh;
+            background-size: cover; /* Điều này sẽ đảm bảo ảnh bao phủ toàn bộ div và không bị mất tỷ lệ */
+            background-repeat: no-repeat; /* Điều này ngăn ảnh nền lặp lại */
+            background-position: center center; /* Điều này đặt ảnh nền vào giữa div */
+
+        }
+
+        .image-text {
+            color: #6a1a21;
+            font-size: 36px;
+            font-weight: bolder;
+        }
+
+        .hidden-on-screen {
+            display: none !important;
+        }
+
+    </style>
 
 </head>
 <body>
 <div class="ladi-wraper">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-           <h3 class="navbar-brand-link"><a href="../index.html">Trang chủ</a></h3>
+            <h3 class="navbar-brand-link"><a href="../index.html">Trang chủ</a></h3>
             <h2 class="navbar-brand">Thần số học Thùy Dung</h2>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <button class="btn btn-outline-primary" id="link-than-so" type="button">Logout</button>
             </div>
+            <button class="btn btn-outline-primary" onclick="generatePDF()">print</button>
         </div>
     </nav>
     <div id="INTRO" class='ladi-section no-print'>
@@ -463,7 +484,7 @@
 
                 </div>
             </div>
-<!--            đỉnh cao- thách thức-->
+            <!--            đỉnh cao- thách thức-->
             <div id="HTML_CODE1635" class='ladi-element'>
                 <div class='ladi-html-code'>
                     <div class="report-process">
@@ -543,7 +564,8 @@
     </div>
     <div id="CONTACT" class='ladi-section'>
         <div class="ladi-container">
-            <h2 class='ladi-headline1'>BẠN ĐÃ ĐƯỢC LUẬN GIẢI VỀ CHỈ SỐ ĐƯỜNG ĐỜI CỦA MÌNH, LÀM SAO ĐỂ NHẬN FULL CHỈ SỐ?</h2>
+            <h2 class='ladi-headline1'>BẠN ĐÃ ĐƯỢC LUẬN GIẢI VỀ CHỈ SỐ ĐƯỜNG ĐỜI CỦA MÌNH, LÀM SAO ĐỂ NHẬN
+                FULL CHỈ SỐ?</h2>
             <div class='ladi-group'>
                 <div id="GROUP1833" class='ladi-element ins'>
                     <div class='ladi-group'>
@@ -624,8 +646,31 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<!--print pdf-->
+<div class="container">
+    <div class="background-image"  id="print_pdf1">
+        <div class="row px-5 py-5">
+            <div style="margin-top: 300px; margin-left: 50px;">
+                <h1 class="image-text">xfgdfgdfgf</h1>
+                <p class="image-text">xfgdfgdfgf</p>
+                <p class="image-text">xfgdfgdfgf</p>
+            </div>
+        </div>
+    </div>
+    <div class="background-image" id="print_pdf2">
+        <div class="row px-5 py-5">
+            <div style="margin-top: 300px; margin-left: 50px;">
+                <h1 class="image-text">xfgdfgdfgf</h1>
+                <p class="image-text">xfgdfgdfgf</p>
+                <p class="image-text">xfgdfgdfgf</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 <!--hotline-->
 <div class="hotline-phone-ring-wrap">
@@ -654,40 +699,59 @@
 <script>
 
     function generatePDF() {
-        let element = document.getElementById("HTML_CODE1627_1");
+        let element1 = document.getElementById("print_pdf1");
+        let element2 = document.getElementById("print_pdf2");
 
-        html2canvas(element, {scale: 2}).then(canvas => {
-            let imgData = canvas.toDataURL('image/png');
+        // Promise để xử lý bất đồng bộ của html2canvas cho cả hai phần tử
+        Promise.all([
+            html2canvas(element1, { scale: 2 }),
+            html2canvas(element2, { scale: 2 })
+        ]).then(canvases => {
             let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-            let width = pdf.internal.pageSize.getWidth() - 20; // Trừ đi 10mm cho cả 2 lề (10mm cho mỗi lề)
-            let height = pdf.internal.pageSize.getHeight() - 20; // Trừ đi 10mm cho cả 2 lề
-            let aspectRatio = canvas.width / canvas.height;
-            let newHeight = width / aspectRatio;
+            let pageWidth = pdf.internal.pageSize.getWidth();
+            let pageHeight = pdf.internal.pageSize.getHeight();
 
-            let yOffset = 10; // Bắt đầu với lề trên là 10mm
+            // Xử lý cho phần tử đầu tiên
+            let imgData1 = canvases[0].toDataURL('image/png');
+            addImageToPDF(imgData1, pageWidth, pageHeight, pdf);
 
-            while (newHeight > 0) {
-                if (newHeight > height) {
-                    pdf.addImage(imgData, 'PNG', 10, yOffset, width, height, null, 'NONE', 0);
-                    yOffset = -height + 10; // Đặt lề trên cho trang tiếp theo
-                    newHeight -= height;
-                } else {
-                    pdf.addImage(imgData, 'PNG', 10, yOffset, width, newHeight, null, 'NONE', 0);
-                    newHeight = 0; // Đã vẽ xong ảnh, dừng vòng lặp
-                }
+            // Thêm trang mới cho phần tử tiếp theo
+            pdf.addPage();
 
-                if (newHeight > 0) {
-                    pdf.addPage(); // Thêm trang mới nếu còn nội dung
-                }
-            }
+            // Xử lý cho phần tử thứ hai
+            let imgData2 = canvases[1].toDataURL('image/png');
+            addImageToPDF(imgData2, pageWidth, pageHeight, pdf);
 
+            // Lưu tài liệu PDF
             pdf.save("document.pdf");
         }).catch(error => {
             console.error("Error generating PDF:", error);
-        })
-
+        });
     }
 
+    function addImageToPDF(imgData, pageWidth, pageHeight, pdf) {
+        let ratio = pageWidth / pageHeight;
+        let imageWidth = pageWidth;
+        let imageHeight = pageHeight;
+        let imageRatio = imageWidth / imageHeight;
+
+        if (imageRatio > ratio) {
+            imageWidth = pageWidth;
+            imageHeight = pageWidth / imageRatio;
+        } else {
+            imageHeight = pageHeight;
+            imageWidth = pageHeight * imageRatio;
+        }
+
+        pdf.addImage(
+            imgData,
+            'PNG',
+            0,
+            0,
+            imageWidth,
+            imageHeight
+        );
+    }
 
 </script>
 </html>
