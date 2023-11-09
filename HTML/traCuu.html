@@ -36,7 +36,7 @@
         .background-image {
             background-image: url('../img/imgCamXuc1.jpg');
             width: 50%;
-            height: 150vh;
+            height: 90vh;
             background-size: cover; /* Điều này sẽ đảm bảo ảnh bao phủ toàn bộ div và không bị mất tỷ lệ */
             background-repeat: no-repeat; /* Điều này ngăn ảnh nền lặp lại */
             background-position: center center; /* Điều này đặt ảnh nền vào giữa div */
@@ -54,7 +54,12 @@
         }
 
     </style>
-
+    <style type="text/css" media="print">
+        .image-text {
+            font-size: 36pt; /* Điều chỉnh kích thước font theo ý muốn */
+        }
+        /* Điều chỉnh các style khác nếu cần cho việc in ấn */
+    </style>
 </head>
 <body>
 <div class="ladi-wraper">
@@ -649,7 +654,7 @@
 </div>
 
 <!--print pdf-->
-<div class="container">
+<div class="container hidden-on-screen">
     <div class="background-image"  id="print_pdf1">
         <div class="row px-5 py-5">
             <div style="margin-top: 300px; margin-left: 50px;">
@@ -697,8 +702,18 @@
 
 <!--<script src="../js/noCopy.js"></script>-->
 <script>
+    function adjustStylesForPrint() {
+        // Chọn tất cả các phần tử bạn muốn điều chỉnh
+        let textElements = document.querySelectorAll('.image-text');
 
+        // Áp dụng style cho từng phần tử
+        textElements.forEach(el => {
+            el.style.fontWeight = '100pt'; // Hoặc kích thước font nào đó thân thiện với việc in ấn
+            // Thêm bất kỳ điều chỉnh style nào khác ở đây
+        });
+    }
     function generatePDF() {
+        adjustStylesForPrint();
         let element1 = document.getElementById("print_pdf1");
         let element2 = document.getElementById("print_pdf2");
 

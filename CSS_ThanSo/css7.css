@@ -274,16 +274,17 @@ content: "CS ";
     transform: translate(-50%, -50%);
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .report-process {
         width: 380px;
+        min-width: 280px;
     }
 }
 
 .report-process-range {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 50%;
     text-align: center;
 }
 
@@ -294,13 +295,53 @@ content: "CS ";
     justify-content: center;
     min-height: 133px;
     background: url("https://w.ladicdn.com/5ebf76b51e398e6f1670261b/steps-h-20220628051146.svg");
+    /*background-image: url("/img/lucGiac.png");*/
     background-position: center center;
     background-repeat: no-repeat;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
+    .report-process-mid {
+        min-height: 80px;
+    }
+
+    .report-process-range {
+        width: 22%;
+        padding: 1px;
+    }
+}
+
+@media (max-width: 768px) {
     .report-process-mid {
         min-height: 95px;
+    }
+}
+
+@media (min-width: 786px) {
+    .report-process-mid {
+        min-height: 133px;
+
+    }
+
+    .report-process-top .index-value::before {
+        content: "Đỉnh cao  \A";
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .report-process-mid .index-value::after {
+        font-size: 15px;
+        text-transform: uppercase;
+        display: inherit;
+        color: #333;
+    }
+
+    .report-process-bottom .index-value::before {
+        content: "Thách thức  \A";
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #333;
     }
 }
 
