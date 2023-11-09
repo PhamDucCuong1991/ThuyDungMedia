@@ -29,3 +29,71 @@ body {
     font-family: "PoppinsVN-400.ttf";
     src: url("https://w.ladicdn.com/5ebf76b51e398e6f1670261b/poppinsvn-400-20221216051841-tt1an.ttf") format("truetype");
 }
+.col-0 {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .col-0 {
+        display: block;
+    }
+}
+.col-md-1 {
+    flex: 0 0 auto;
+    width: 8.3333333333%
+}
+
+.col-md-2 {
+    flex: 0 0 auto;
+    width: 16.6666666667%
+}
+
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 25%
+}
+
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%
+}
+
+.col-md-5 {
+    flex: 0 0 auto;
+    width: 41.6666666667%
+}
+
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 50%
+}
+
+.col-md-7 {
+    flex: 0 0 auto;
+    width: 58.3333333333%
+}
+
+.col-md-8 {
+    flex: 0 0 auto;
+    width: 66.6666666667%
+}
+
+.col-md-9 {
+    flex: 0 0 auto;
+    width: 75%
+}
+
+.col-md-10 {
+    flex: 0 0 auto;
+    width: 83.3333333333%
+}
+
+.col-md-11 {
+    flex: 0 0 auto;
+    width: 91.6666666667%
+}
+
+.col-md-12 {
+    flex: 0 0 auto;
+    width: 100%
+}

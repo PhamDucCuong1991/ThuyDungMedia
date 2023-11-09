@@ -462,7 +462,7 @@ function tinhToanSo() {
     let truongThanhSlide = document.getElementById("truongThanh").innerHTML = getSum([getSum(arrNgaySinh), getSum(arr)]);
     let ngaySinh1Slide = document.getElementById("ngaySinh").innerHTML = getBirthDayNumber(arrNgaySinh);
     let thaiDoSlide = document.getElementById("thaiDo").innerHTML = getAttitudeNumber(arrNgaySinh);
-    let tuDuyLyTriSlide = document.getElementById("tuDuyLyTri").innerHTML = getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str));
+    let tuDuyLyTriSlide = document.getElementById("tuDuyLyTri").innerHTML = (getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str))) % 9 || 9;
     let vanMenhSlide = document.getElementById("vanMenh").innerHTML = getDestinyNumber(getLastWordNumbers(ten, str));
     let soThieuSlide = document.getElementById("soThieu").innerHTML = getMissingNumbers(arr);
     let sucManhTiemThucSlide = document.getElementById("sucManhTiemThuc").innerHTML = (9 - getMissingNumbers(arr).length);
