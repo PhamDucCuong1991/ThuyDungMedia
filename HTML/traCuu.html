@@ -35,17 +35,16 @@
 
         .background-image {
             background-image: url('../img/imgCamXuc1.jpg');
-            width: 30%;
-            height: 90vh;
-            background-size: cover; /* Điều này sẽ đảm bảo ảnh bao phủ toàn bộ div và không bị mất tỷ lệ */
-            background-repeat: no-repeat; /* Điều này ngăn ảnh nền lặp lại */
-            background-position: center center; /* Điều này đặt ảnh nền vào giữa div */
-
+            width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
+            height: 297mm; /* Chiều cao của trang A4 */
+            background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         .image-text {
             color: #6a1a21;
-            font-size: 20px;
+            font-size: 6mm;
             font-weight: bolder;
         }
 
@@ -53,6 +52,9 @@
             display: none !important;
         }
 
+        #pdf-content-wrapper {
+            overflow: hidden;
+        }
     </style>
 
 
@@ -646,30 +648,23 @@
             </div>
         </div>
     </div>
-</div>
-
-<!--print pdf-->
-<div class="container hidden-on-screen">
-    <div class="background-image"  id="print_pdf1">
-        <div class="row px-5 py-5">
-            <div style="margin-top: 300px; margin-left: 50px;">
-                <h1 class="image-text">xfgdfgdfgf</h1>
-                <p class="image-text">xfgdfgdfgf</p>
-                <p class="image-text">xfgdfgdfgf</p>
+    <!--print pdf-->
+    <div class="container " id="pdf-content-wrapper">
+        <div class="background-image"  id="print_pdf1">
+            <div class="row px-5 py-5">
+                <div style="margin-top: 200px; margin-right: 60px;">
+                    <h1 class="image-text">xfgdfgdfgf abcrde 123456</h1>
+                    <p class="image-text">xfgdfgdfgf</p>
+                    <p class="image-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur at autem commodi deleniti, eaque exercitationem fugit minima necessitatibus nihil numquam officia provident repellendus tempore tenetur totam unde veritatis voluptatum?</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="background-image" id="print_pdf2">
-        <div class="row px-5 py-5">
-            <div style="margin-top: 200px; margin-right: 60px;">
-                <h1 class="image-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi debitis explicabo laudantium molestiae, porro provident quos reiciendis sed vel vero? Consequatur corporis, debitis hic iusto molestiae quis repudiandae rerum veniam.</h1>
-                <p class="image-text">xfgdfgdfgf gfchgfjhfjfj</p>
-                <p class="image-text">xfgdfgdfgf</p>
-            </div>
 
-        </div>
+
     </div>
 </div>
+
+
 
 
 <!--hotline-->
@@ -739,29 +734,6 @@
         });
     }
 
-    function addImageToPDF(imgData, pageWidth, pageHeight, pdf) {
-        let ratio = pageWidth / pageHeight;
-        let imageWidth = pageWidth;
-        let imageHeight = pageHeight;
-        let imageRatio = imageWidth / imageHeight;
-
-        if (imageRatio > ratio) {
-            imageWidth = pageWidth;
-            imageHeight = pageWidth / imageRatio;
-        } else {
-            imageHeight = pageHeight;
-            imageWidth = pageHeight * imageRatio;
-        }
-
-        pdf.addImage(
-            imgData,
-            'PNG',
-            0,
-            0,
-            imageWidth,
-            imageHeight
-        );
-    }
 
 </script>
 </html>

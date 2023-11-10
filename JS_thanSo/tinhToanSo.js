@@ -509,7 +509,7 @@ function tinhToanSo() {
             soKetNoiLinhHon: soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem: soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages(dataPDF)
+        generatePDFWithImages()
     }
 
     let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
@@ -716,6 +716,52 @@ function xoaDuLieu() {
     location.reload()
 }
 
+// async function addHtmlContentToPDF(pdf, divId, width, height) {
+//     const content = document.getElementById(divId);
+//     const canvas = await html2canvas(content);
+//     const imgData = canvas.toDataURL('image/jpeg');
+//     pdf.addImage(imgData, 'JPEG', 0, 0, width, height);
+// }
+async function addHtmlContentToPDF(pdf, divId, width, height) {
+    // Chọn thẻ div có id cung cấp
+    const content = document.getElementById(divId);
+
+    // Các tùy chọn cho html2canvas: Tăng tỷ lệ để cải thiện độ nét
+    const canvasOptions = {
+        scale: 2, // Tăng tỷ lệ để cải thiện độ nét
+        useCORS: true, // Cho phép tải tài nguyên có CORS
+        logging: true, // Bật ghi log để dễ dàng gỡ lỗi
+        width: content.offsetWidth, // Đảm bảo chụp đúng chiều rộng thực tế
+        height: content.offsetHeight // Đảm bảo chụp đúng chiều cao thực tế
+    };
+
+    // Sử dụng html2canvas để chụp ảnh nội dung thẻ div
+    const canvas = await html2canvas(content, canvasOptions);
+
+    // Chuyển canvas thành URL dạng hình ảnh
+    const imgData = canvas.toDataURL('image/jpeg', 1.0); // Sử dụng chất lượng hình ảnh tối đa
+
+    // Tính tỷ lệ để điều chỉnh kích thước hình ảnh cho vừa vặn trang PDF
+    const imgWidth = canvas.width / canvasOptions.scale;
+    const imgHeight = canvas.height / canvasOptions.scale;
+    const widthRatio = width / imgWidth;
+    const heightRatio = height / imgHeight;
+    const ratio = Math.min(widthRatio, heightRatio); // Chọn tỷ lệ nhỏ nhất
+
+    // Tính vị trí để đặt hình ảnh ở giữa trang
+    const imgScaledWidth = imgWidth * ratio;
+    const imgScaledHeight = imgHeight * ratio;
+    const x = (width - imgScaledWidth) / 2;
+    const y = (height - imgScaledHeight) / 2;
+
+    // Thêm một trang mới vào PDF
+    pdf.addPage();
+
+    // Thêm dữ liệu hình ảnh vào trang mới của PDF
+    pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
+}
+
+
 async function generatePDFWithImages() {
     const button = document.getElementById('tinhToanSo');
     button.classList.add('loading');
@@ -758,7 +804,7 @@ async function generatePDFWithImages() {
                 pdf.addPage();
             }
         }
-
+        await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
         pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
         button.classList.remove('loading');
         button.textContent = 'KHÁM PHÁ BẢN THÂN'; // Reset text nếu cần
@@ -770,7 +816,9 @@ async function generatePDFWithImages() {
 }
 
 async function generatePDFWithImages1(dataPDF) {
-    // Tạo một đối tượng PDF mới
+    const button = document.getElementById('tinhToanSo');
+    button.classList.add('loading');
+    button.textContent = 'Đang tạo file pdf...';
     let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
 
     // Lấy chiều rộng và chiều cao của một trang A4
