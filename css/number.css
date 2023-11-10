@@ -85,8 +85,8 @@
 
 @media (max-width: 768px) {
     .hexagon {
-        width: 22vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
-        height: 22vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+        width: 16vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 16vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
     }
 
     .hexagon-text {
@@ -122,8 +122,24 @@
         font-size: 1.2vw;
     }
 }
-
-
+@media (max-width: 960px) {
+    .hexagon {
+        width: 11vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 11vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+    }
+}
+@media (min-width: 960px) {
+    .hexagon {
+        width: 13vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 13vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+    }
+}
+@media (min-width: 1124px) {
+    .hexagon {
+        width: 10vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
+        height: 10vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+    }
+}
 .hexagon-content {
     position: relative;
     display: flex;

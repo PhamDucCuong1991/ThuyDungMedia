@@ -332,7 +332,16 @@ body {
 .ladi-element {
     position: absolute;
 }
-
+@media (max-width: 500px) {
+    #HTML_CODE1635{
+        padding-left:0px;
+    }
+}
+@media (max-width: 800px) {
+    #HTML_CODE1635{
+        padding-left: 40px;
+    }
+}
 .ladi-element1 {
     margin-top: 100px;
     background-color: #be3455;

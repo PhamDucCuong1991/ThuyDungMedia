@@ -29,12 +29,12 @@
 
     <style>
         p {
-            font-size: x-large;
-            font-weight: bold;
+            font-size: large;
+            font-weight: lighter;
         }
 
         .background-image {
-            background-image: url('../img/imgCamXuc1.jpg');
+            background-image: url('../img/img_than_so_pdf/so_bo_sung/imgSoThieu.jpg');
             width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
             height: 297mm; /* Chiều cao của trang A4 */
             background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
@@ -44,7 +44,7 @@
         }
 
         .image-text {
-            color: #6a1a21;
+            color:  #bb2d3b;
             font-size: 5mm;
             font-weight: bolder;
             font-family: Arial;
@@ -59,7 +59,7 @@
         }
 
         .image-content {
-            padding-top: 200px;
+            padding-top: 320px;
             padding-right: 50px;
             padding-left: 40px;
         }
@@ -658,19 +658,17 @@
     </div>
     <!--print pdf-->
     <div class="container " id="pdf-content-wrapper">
-        <div class="background-image" id="print_pdf1">
+        <div class="background-image" id="print_pdf">
             <div class="row px-5 py-5">
                 <div class="image-content">
-                    <h1 class="image-text">xfgdfgdfgf abcrde 123456</h1>
-                    <p class="image-text">xfgdfgdfgf</p>
-                    <p class="image-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur
-                        at autem commodi deleniti, eaque exercitationem fugit minima necessitatibus nihil numquam
-                        officia provident repellendus tempore tenetur totam unde veritatis voluptatum?</p>
+                    <h1 class="image-text">CON SỐ CẦN BỔ DUNG CỦA BẠN LÀ <span id="show_so_thieu"></span></h1>
+                    <div class="image-text" id="show_noi_dung_so_thieu">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Architecto, asperiores distinctio dolorem, eius eligendi harum hic iste
+                        labore minima nam perferendis perspiciatis placeat provident quam ut? Accusamus beatae quasi sed?</div>
+
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>
 

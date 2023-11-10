@@ -138,6 +138,7 @@ $("#idLogin").on('click', function (event) {
     event.preventDefault(); // Ngăn chặn hành động mặc định của thẻ <a>
     if (isLoggedIn) {
         logout();
+        $("#pdf-content-wrapper").hide();
     }
 });
 
@@ -165,8 +166,10 @@ $("#link-than-so").on('click', function () {
 $(document).ready(function() {
     if (localStorage.getItem("loggedInUser") === "admin") {
         $("#mynavbar button").show();
+        $("#pdf-content-wrapper").show();
     }else {
         $("#mynavbar button").hide()
+        $("#pdf-content-wrapper").hide();
     }
 });
 
