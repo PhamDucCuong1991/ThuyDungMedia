@@ -40,12 +40,14 @@
             background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
             background-repeat: no-repeat;
             background-position: center center;
+
         }
 
         .image-text {
             color: #6a1a21;
-            font-size: 6mm;
+            font-size: 5mm;
             font-weight: bolder;
+            font-family: Arial;
         }
 
         .hidden-on-screen {
@@ -54,6 +56,12 @@
 
         #pdf-content-wrapper {
             overflow: hidden;
+        }
+
+        .image-content {
+            padding-top: 200px;
+            padding-right: 50px;
+            padding-left: 40px;
         }
     </style>
 
@@ -650,12 +658,14 @@
     </div>
     <!--print pdf-->
     <div class="container " id="pdf-content-wrapper">
-        <div class="background-image"  id="print_pdf1">
+        <div class="background-image" id="print_pdf1">
             <div class="row px-5 py-5">
-                <div style="margin-top: 200px; margin-right: 60px;">
+                <div class="image-content">
                     <h1 class="image-text">xfgdfgdfgf abcrde 123456</h1>
                     <p class="image-text">xfgdfgdfgf</p>
-                    <p class="image-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur at autem commodi deleniti, eaque exercitationem fugit minima necessitatibus nihil numquam officia provident repellendus tempore tenetur totam unde veritatis voluptatum?</p>
+                    <p class="image-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur
+                        at autem commodi deleniti, eaque exercitationem fugit minima necessitatibus nihil numquam
+                        officia provident repellendus tempore tenetur totam unde veritatis voluptatum?</p>
                 </div>
             </div>
         </div>
@@ -663,8 +673,6 @@
 
     </div>
 </div>
-
-
 
 
 <!--hotline-->
@@ -702,6 +710,7 @@
             // Thêm bất kỳ điều chỉnh style nào khác ở đây
         });
     }
+
     function generatePDF() {
         adjustStylesForPrint();
         let element1 = document.getElementById("print_pdf1");
@@ -709,8 +718,8 @@
 
         // Promise để xử lý bất đồng bộ của html2canvas cho cả hai phần tử
         Promise.all([
-            html2canvas(element1, { scale: 2 }),
-            html2canvas(element2, { scale: 2 })
+            html2canvas(element1, {scale: 2}),
+            html2canvas(element2, {scale: 2})
         ]).then(canvases => {
             let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
             let pageWidth = pdf.internal.pageSize.getWidth();
