@@ -33,7 +33,7 @@
             font-weight: lighter;
         }
 
-        .background-image {
+        .background-image-so-thieu {
             background-image: url('../img/img_than_so_pdf/so_bo_sung/imgSoThieu.jpg');
             width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
             height: 297mm; /* Chiều cao của trang A4 */
@@ -42,11 +42,19 @@
             background-position: center center;
 
         }
+        .background-image-dam-me {
+            background-image: url('../img/img_than_so_pdf/so_dam_me/imgDamMe.jpg');
+            width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
+            height: 297mm; /* Chiều cao của trang A4 */
+            background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
+            background-repeat: no-repeat;
+            background-position: center center;
 
+        }
         .image-text {
             color:  #bb2d3b;
-            font-size: 5mm;
-            font-weight: bolder;
+            font-size: 4mm;
+            font-weight: lighter;
             font-family: Arial;
         }
 
@@ -59,7 +67,7 @@
         }
 
         .image-content {
-            padding-top: 320px;
+            padding-top: 240px;
             padding-right: 50px;
             padding-left: 40px;
         }
@@ -658,14 +666,19 @@
     </div>
     <!--print pdf-->
     <div class="container " id="pdf-content-wrapper">
-        <div class="background-image" id="print_pdf">
+        <div class="background-image-so-thieu" id="print_pdf1">
             <div class="row px-5 py-5">
                 <div class="image-content">
                     <h1 class="image-text">CON SỐ CẦN BỔ DUNG CỦA BẠN LÀ <span id="show_so_thieu"></span></h1>
-                    <div class="image-text" id="show_noi_dung_so_thieu">Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit. Architecto, asperiores distinctio dolorem, eius eligendi harum hic iste
-                        labore minima nam perferendis perspiciatis placeat provident quam ut? Accusamus beatae quasi sed?</div>
-
+                    <div class="image-text" id="show_noi_dung_so_thieu"></div>
+                </div>
+            </div>
+        </div>
+        <div class="background-image-dam-me" id="print_pdf2">
+            <div class="row px-5 py-5">
+                <div class="image-content">
+                    <h1 class="image-text">CON SỐ CẦN ĐAM MÊ CỦA BẠN LÀ <span id="show_so_dam_me"></span></h1>
+                    <div class="image-text" id="show_noi_dung_so_dam_me"></div>
                 </div>
             </div>
         </div>
