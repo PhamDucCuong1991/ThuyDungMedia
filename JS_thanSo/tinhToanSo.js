@@ -668,7 +668,7 @@ function tinhToanSo() {
             soKetNoiLinhHon: soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem: soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages()
+        generatePDFWithImages1(dataPDF)
     }else {
         getIndexNumberByName(arr)
         getIndexNumberByBirthDay(arrNgaySinh)
@@ -880,41 +880,27 @@ function xoaDuLieu() {
 
 
 async function addHtmlContentToPDF(pdf, divId, width, height) {
-    // Chọn thẻ div có id cung cấp
     const content = document.getElementById(divId);
-
-    // Các tùy chọn cho html2canvas: Tăng tỷ lệ để cải thiện độ nét
     const canvasOptions = {
-        scale: 6, // Tăng tỷ lệ để cải thiện độ nét
-        useCORS: true, // Cho phép tải tài nguyên có CORS
-        logging: true, // Bật ghi log để dễ dàng gỡ lỗi
-        width: content.offsetWidth, // Đảm bảo chụp đúng chiều rộng thực tế
-        height: content.offsetHeight // Đảm bảo chụp đúng chiều cao thực tế
+        scale: 6,
+        useCORS: true,
+        logging: true,
+        width: content.offsetWidth,
+        height: content.offsetHeight
     };
-
-    // Sử dụng html2canvas để chụp ảnh nội dung thẻ div
     const canvas = await html2canvas(content, canvasOptions);
-
-    // Chuyển canvas thành URL dạng hình ảnh
-    const imgData = canvas.toDataURL('image/jpeg', 1.0); // Sử dụng chất lượng hình ảnh tối đa
-
-    // Tính tỷ lệ để điều chỉnh kích thước hình ảnh cho vừa vặn trang PDF
+    const imgData = canvas.toDataURL('image/jpeg', 1.0);
     const imgWidth = canvas.width / canvasOptions.scale;
     const imgHeight = canvas.height / canvasOptions.scale;
     const widthRatio = width / imgWidth;
     const heightRatio = height / imgHeight;
-    const ratio = Math.min(widthRatio, heightRatio); // Chọn tỷ lệ nhỏ nhất
-
-    // Tính vị trí để đặt hình ảnh ở giữa trang
+    const ratio = Math.min(widthRatio, heightRatio);
     const imgScaledWidth = imgWidth * ratio;
     const imgScaledHeight = imgHeight * ratio;
     const x = (width - imgScaledWidth) / 2;
     const y = (height - imgScaledHeight) / 2;
 
-    // Thêm một trang mới vào PDF
     pdf.addPage();
-
-    // Thêm dữ liệu hình ảnh vào trang mới của PDF
     pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
 }
 
@@ -1004,7 +990,7 @@ async function generatePDFWithImages1(dataPDF) {
     imageNames.push(`so_truong_thanh/imgTruongThanh${imgTruongThanh}.jpg`);
 
     let imgNgaySinh = dataPDF.ngaySinh;
-    imageNames.push(`so_ngay_sinh/imgNgaySinh${imgNgaySinh}.jpg`);
+    imageNames.push(`so_ngay_sinh/imgSoNgaySinh${imgNgaySinh}.jpg`);
 
     let imgThaiDo = dataPDF.thaiDo;
     imageNames.push(`so_thai_do/imgThaiDo${imgThaiDo}.jpg`);
@@ -1015,17 +1001,14 @@ async function generatePDFWithImages1(dataPDF) {
     let imgVanMenh = dataPDF.vanMenh;
     imageNames.push(`so_van_menh/imgVanMenh${imgVanMenh}.jpg`);
 
-    let imgSoThieu = dataPDF.soThieu;
-    imageNames.push(`so_bo_sung/imgSoThieu${imgSoThieu}.jpg`);
-
     let imgSucManhTiemThuc = dataPDF.sucManhTiemThuc;
     imageNames.push(`so_suc_manh_tiem_thuc/imgSucManhTiemThuc${imgSucManhTiemThuc}.jpg`);
 
     let imgCamXuc = dataPDF.soCamXuc;
     imageNames.push(`so_cam_xuc/imgCamXuc${imgCamXuc}.jpg`);
 
-    let imgTrucGiac = dataPDF.soTrucGiac;
-    imageNames.push(`so_truc_giac/imgTrucGiac${imgTrucGiac}.jpg`);
+    // let imgTrucGiac = dataPDF.soTrucGiac;
+    // imageNames.push(`so_truc_giac/imgTrucGiac${imgTrucGiac}.jpg`);
 
     let imgNamCaNhan = dataPDF.namCaNhan;
     imageNames.push(`so_nam_ca_nhan/imgNamCaNhan${imgNamCaNhan}.jpg`);
@@ -1033,17 +1016,14 @@ async function generatePDFWithImages1(dataPDF) {
     let imgThangCaNhan = dataPDF.thangCaNhan;
     imageNames.push(`so_thang_ca_nhan/imgThangCaNhan${imgThangCaNhan}.jpg`);
 
-    let imgKetNoiVanMenh = dataPDF.ketNoiVanMenh;
-    imageNames.push(`so_ket_noi_van_menh/imgKetNoiVanMenh${imgKetNoiVanMenh}.jpg`);
+    // let imgKetNoiVanMenh = dataPDF.ketNoiVanMenh;
+    // imageNames.push(`so_ket_noi_van_menh/imgKetNoiVanMenh${imgKetNoiVanMenh}.jpg`);
 
-    let imgDamMe = dataPDF.soDamMe;
-    imageNames.push(`so_dam_me/imgDamMe${imgDamMe}.jpg`);
+    // let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
+    // imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
 
-    let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
-    imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
-
-    let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
-    imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
+    // let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
+    // imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
 
     try {
         for (let [index, imageName] of imageNames.entries()) {
@@ -1053,7 +1033,11 @@ async function generatePDFWithImages1(dataPDF) {
                 pdf.addPage();
             }
         }
-        pdf.save('BaoCaoThanSoHoc.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
+        await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
+        await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
+        pdf.save('BaoCaoThanSoHoc.pdf');
+        button.classList.remove('loading');
+        button.textContent = 'KHÁM PHÁ BẢN THÂN';
     } catch (error) {
         console.error("Error generating PDF:", error);
     }

@@ -32,38 +32,37 @@
             font-size: large;
             font-weight: lighter;
         }
+        #pdf-content-wrapper{
+            overflow: auto;
+            width: 220mm;
+            height: 1mm;
+        }
 
         .background-image-so-thieu {
             background-image: url('../img/img_than_so_pdf/so_bo_sung/imgSoThieu.jpg');
-            width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
-            height: 297mm; /* Chiều cao của trang A4 */
-            background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
-            background-repeat: no-repeat;
-            background-position: center center;
-
         }
         .background-image-dam-me {
             background-image: url('../img/img_than_so_pdf/so_dam_me/imgDamMe.jpg');
+
+        }
+        .background-image-so-thieu,
+        .background-image-dam-me {
             width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
             height: 297mm; /* Chiều cao của trang A4 */
             background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
             background-repeat: no-repeat;
             background-position: center center;
-
         }
+
         .image-text {
             color:  #bb2d3b;
             font-size: 4mm;
             font-weight: lighter;
-            font-family: Arial;
+            font-family: Arial,ui-serif;
         }
 
         .hidden-on-screen {
             display: none !important;
-        }
-
-        #pdf-content-wrapper {
-            overflow: hidden;
         }
 
         .image-content {
@@ -84,7 +83,7 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <button class="btn btn-outline-primary" id="link-than-so" type="button">Logout</button>
             </div>
-            <button class="btn btn-outline-primary" onclick="generatePDF()">print</button>
+<!--            <button class="btn btn-outline-primary" onclick="generatePDF()">print</button>-->
         </div>
     </nav>
     <div id="INTRO" class='ladi-section no-print'>
@@ -664,6 +663,7 @@
             </div>
         </div>
     </div>
+
     <!--print pdf-->
     <div class="container " id="pdf-content-wrapper">
         <div class="background-image-so-thieu" id="print_pdf1">
