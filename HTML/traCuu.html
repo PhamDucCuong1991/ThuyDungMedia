@@ -685,7 +685,6 @@
     </div>
 </div>
 
-
 <!--hotline-->
 <div class="hotline-phone-ring-wrap">
     <div class="hotline-phone-ring">
@@ -706,53 +705,7 @@
 
 </body>
 <script src="../JS_thanSo/tinhToanSo.js"></script>
-
 <script src="../js/main.js"></script>
 <script src="../js/noCopy.js"></script>
-<script>
-    function adjustStylesForPrint() {
-        // Chọn tất cả các phần tử bạn muốn điều chỉnh
-        let textElements = document.querySelectorAll('.image-text');
 
-        // Áp dụng style cho từng phần tử
-        textElements.forEach(el => {
-            el.style.fontWeight = '100pt'; // Hoặc kích thước font nào đó thân thiện với việc in ấn
-            // Thêm bất kỳ điều chỉnh style nào khác ở đây
-        });
-    }
-
-    function generatePDF() {
-        adjustStylesForPrint();
-        let element1 = document.getElementById("print_pdf1");
-        let element2 = document.getElementById("print_pdf2");
-
-        // Promise để xử lý bất đồng bộ của html2canvas cho cả hai phần tử
-        Promise.all([
-            html2canvas(element1, {scale: 2}),
-            html2canvas(element2, {scale: 2})
-        ]).then(canvases => {
-            let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-            let pageWidth = pdf.internal.pageSize.getWidth();
-            let pageHeight = pdf.internal.pageSize.getHeight();
-
-            // Xử lý cho phần tử đầu tiên
-            let imgData1 = canvases[0].toDataURL('image/png');
-            addImageToPDF(imgData1, pageWidth, pageHeight, pdf);
-
-            // Thêm trang mới cho phần tử tiếp theo
-            pdf.addPage();
-
-            // Xử lý cho phần tử thứ hai
-            let imgData2 = canvases[1].toDataURL('image/png');
-            addImageToPDF(imgData2, pageWidth, pageHeight, pdf);
-
-            // Lưu tài liệu PDF
-            pdf.save("document.pdf");
-        }).catch(error => {
-            console.error("Error generating PDF:", error);
-        });
-    }
-
-
-</script>
 </html>
