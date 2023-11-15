@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./css/hotLine.css">
     <link rel="stylesheet" href="css/number.css">
     <script src="JS_thanSo/tinhToanSo.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
 </head>
 <body>
@@ -372,6 +374,10 @@
                                     </div>
                                 </form>
 
+                                <form id="myForm2">
+                                    <input type="text" id="inputText" placeholder="Nhập dữ liệu">
+                                    <button type="submit">Gửi</button>
+                                </form>
                             </div>
 
                         </div>
@@ -486,8 +492,42 @@
 <script type="text/javascript" src="js/email_service.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+<script >
+    let firebaseConfig = {
+        apiKey: "AIzaSyAdic5sIMHiiw47CVvErovovu0EWfgc7A4",
+        authDomain: "thuydungmedia-1efed.firebaseapp.com",
+        projectId: "thuydungmedia-1efed",
+        storageBucket: "thuydungmedia-1efed.appspot.com",
+        messagingSenderId: "1094519862100",
+        appId: "1:1094519862100:web:cf24b42535b1f43c6f0ec1",
+        measurementId: "G-G30MG7Q8XL"
+    };
+    // Khởi tạo Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    $(document).ready(function() {
+        $('#myForm2').on('submit', function(e) {
+            e.preventDefault();
+
+            let inputData = $('#inputText').val();
+            // Lấy tham chiếu đến Firestore
+            let db = firebase.firestore();
+
+            // Thêm dữ liệu vào collection 'formData'
+            db.collection("formData").add({
+                data: inputData
+            })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+        });
+
+    });
+</script>
 <!--  <script src="js/noCopy.js"></script>-->
 </body>
-
 
 </html>
