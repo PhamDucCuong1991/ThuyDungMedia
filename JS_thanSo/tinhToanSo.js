@@ -1007,20 +1007,14 @@ async function generatePDFWithImages1(dataPDF) {
     let imgCamXuc = dataPDF.soCamXuc;
     imageNames.push(`so_cam_xuc/imgCamXuc${imgCamXuc}.jpg`);
 
-    // let imgTrucGiac = dataPDF.soTrucGiac;
-    // imageNames.push(`so_truc_giac/imgTrucGiac${imgTrucGiac}.jpg`);
-
     let imgNamCaNhan = dataPDF.namCaNhan;
     imageNames.push(`so_nam_ca_nhan/imgNamCaNhan${imgNamCaNhan}.jpg`);
 
     let imgThangCaNhan = dataPDF.thangCaNhan;
     imageNames.push(`so_thang_ca_nhan/imgThangCaNhan${imgThangCaNhan}.jpg`);
 
-    // let imgKetNoiVanMenh = dataPDF.ketNoiVanMenh;
-    // imageNames.push(`so_ket_noi_van_menh/imgKetNoiVanMenh${imgKetNoiVanMenh}.jpg`);
-
-    // let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
-    // imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
+    let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
+    imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
 
     // let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
     // imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
