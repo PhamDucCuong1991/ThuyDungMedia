@@ -601,7 +601,6 @@ function tinhToanSo() {
     let daySoTrucGiac = [];
     const arrNgaySinh = extractNumbers(ngaySinh);
     const arr = convertNameToNumbers(ten, str);
-    console.log(arr)
 
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
@@ -624,7 +623,7 @@ function tinhToanSo() {
     let thangCaNhanSlide = document.getElementById("thangCaNhan").innerHTML = thangCaNhan(namCaNhanHienTai());
     let ketNoiVanMenhSlide = document.getElementById("ketNoiVanMenh").innerHTML = (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
     let soDamMeSlide = document.getElementById("soDamMe").innerHTML = getDaySoDamMe(arr);
-    let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHon(arrPa, arrPa);
+    let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML =  (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
 
 
@@ -810,10 +809,6 @@ function tinhToanSo() {
         return mostFrequentNumbers;
     }
 
-    function soKetNoiLinhHon(arrNguyenAm, arrPhuAm) {
-        return (Math.abs(getSum(arrNguyenAm) - getSum(arrPhuAm))) % 9 || 9;
-    }
-
     function getSoDinhCao2(arr) {
         let phanDau = arr.slice(0, 2); // Lấy phần tử từ đầu đến vị trí thứ 1 và 2
         let phanCuoi = arr.slice(4);   // Lấy phần tử từ vị trí thứ 4 trở đi
@@ -902,61 +897,6 @@ async function addHtmlContentToPDF(pdf, divId, width, height) {
 
     pdf.addPage();
     pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
-}
-
-
-async function generatePDFWithImages() {
-    const button = document.getElementById('tinhToanSo');
-    button.classList.add('loading');
-    button.textContent = 'Đang tạo file pdf...';
-
-    // Tạo một đối tượng PDF mới
-    let pdf = new window.jspdf.jsPDF('p', 'mm', 'a4');
-
-    // Lấy chiều rộng và chiều cao của một trang A4
-    let width = pdf.internal.pageSize.getWidth();
-    let height = pdf.internal.pageSize.getHeight();
-
-    // Danh sách tên ảnh
-    let imageNames = [];
-    let imageNumber1 = 1;
-    let imageNumber2 = 2;
-    let imageNumber3 = 3;
-    let imageNumber4 = 4;
-    let imageNumber5 = 5;
-    let imageNumber6 = 6;
-    let imageNumber7 = 7;
-    let imageNumber8 = 8;
-    let imageNumber9 = 9;
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber1}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber2}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber3}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber4}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber5}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber6}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber7}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber8}.jpg`);
-    imageNames.push(`so_duong_doi/imgDuongDoi${imageNumber9}.jpg`);
-
-
-    try {
-        for (let [index, imageName] of imageNames.entries()) {
-            await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
-            // Thêm trang mới nếu không phải là ảnh cuối cùng
-            if (index < imageNames.length - 1) {
-                pdf.addPage();
-            }
-        }
-        await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
-        await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
-        pdf.save('document.pdf'); // Lưu PDF sau khi tất cả ảnh đã được thêm vào
-        button.classList.remove('loading');
-        button.textContent = 'KHÁM PHÁ BẢN THÂN'; // Reset text nếu cần
-    } catch (error) {
-        console.error("Error generating PDF:", error);
-    }
-
-
 }
 
 async function generatePDFWithImages1(dataPDF) {
