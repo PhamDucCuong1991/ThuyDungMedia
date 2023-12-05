@@ -626,6 +626,16 @@ function tinhToanSo() {
     let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML =  (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
 
+    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly(arrNgaySinh.slice(0, arrNgaySinh.length - 4))% 9 || 9;
+    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh);
+    document.getElementById("s_tuoichang3_1").innerHTML = (dinhCao1 + dinhCao2) % 9 || 9;
+    document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length));
+
+    let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9;
+    let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
+    document.getElementById("s_sothachthuc3_3").innerHTML = (Math.abs(thachThuc1 - thachThuc2)) % 9 || 9;
+    document.getElementById("s_sothachthuc4_4").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
+
 
     $("#showFullName").text(ten);
     document.getElementById("showFullName1").innerHTML = ten;
@@ -673,15 +683,6 @@ function tinhToanSo() {
         getIndexNumberByBirthDay(arrNgaySinh)
     }
 
-    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSum(arrNgaySinh.slice(0, arrNgaySinh.length - 4))
-    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh)
-    document.getElementById("s_tuoichang3_1").innerHTML = (dinhCao1 + dinhCao2) % 9 || 9
-    document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length))
-
-    let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9
-    let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
-    document.getElementById("s_sothachthuc3_3").innerHTML = (Math.abs(thachThuc1 - thachThuc2)) % 9 || 9;
-    document.getElementById("s_sothachthuc4_4").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9
 
     function extractNumbers(value) {
         return (value.match(/[0-9]/g) || []).map(Number);
