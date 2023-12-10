@@ -677,7 +677,9 @@ function tinhToanSo() {
             soKetNoiLinhHon: soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem: soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages1(dataPDF)
+        generatePDFWithImages1(dataPDF).then(r => {
+            alert("Tải file thành công!")
+        })
     }else {
         getIndexNumberByName(arr)
         getIndexNumberByBirthDay(arrNgaySinh)
