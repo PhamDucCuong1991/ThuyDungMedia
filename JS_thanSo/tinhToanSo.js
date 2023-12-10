@@ -772,13 +772,16 @@ function tinhToanSo() {
         return getSum(soTuDuyTraiNghiem);
     }
 
-    function namCaNhanHienTai() {
+    function layNamHienTai() {
         let currentDate = new Date();
-        let dateString = currentDate.toISOString().slice(0, 10);
-        let characters = dateString.replace(/-/g, '').split('');
-        const a = characters.map(char => parseInt(char));
-        return getSumOnly(a)
+        return currentDate.getFullYear() %9 || 9;
     }
+
+    function namCaNhanHienTai() {
+        let ngayThangSinh = tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh + tachNgayThangNamTuChuoi(ngaySinh).thang_sinh % 9 || 9;
+        return getSumOnly([ngayThangSinh,layNamHienTai()])
+    }
+
 
     function thangCaNhan(namCaNhan) {
         let currentDate = new Date();
