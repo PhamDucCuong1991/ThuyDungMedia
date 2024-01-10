@@ -601,6 +601,9 @@ function tinhToanSo() {
     let daySoTrucGiac = [];
     const arrNgaySinh = extractNumbers(ngaySinh);
     const arr = convertNameToNumbers(ten, str);
+    const so_ngaySinh = tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh;
+    const so_thangSinh = tachNgayThangNamTuChuoi(ngaySinh).thang_sinh;
+    const so_namSinh = tachNgayThangNamTuChuoi(ngaySinh).nam_sinh;
 
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
@@ -626,16 +629,15 @@ function tinhToanSo() {
     let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML =  (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
     let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
 
-    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly(arrNgaySinh.slice(0, arrNgaySinh.length - 4))% 9 || 9;
-    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSoDinhCao2(arrNgaySinh);
-    document.getElementById("s_tuoichang3_1").innerHTML = (dinhCao1 + dinhCao2) % 9 || 9;
-    document.getElementById("s_tuoichang4_1").innerHTML = getSum(arrNgaySinh.slice(2, arrNgaySinh.length));
+    let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly([so_ngaySinh, so_thangSinh]);
+    let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSumOnly([so_ngaySinh, so_namSinh]);
+    document.getElementById("s_tuoichang3_1").innerHTML = getSumOnly([dinhCao1, dinhCao2]);
+    document.getElementById("s_tuoichang4_1").innerHTML = getSumOnly([so_thangSinh, so_namSinh]);
 
-    let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).thang_sinh)) % 9 || 9;
-    let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
-    document.getElementById("s_sothachthuc3_3").innerHTML = (Math.abs(thachThuc1 - thachThuc2)) % 9 || 9;
-    document.getElementById("s_sothachthuc4_4").innerHTML = (Math.abs(tachNgayThangNamTuChuoi(ngaySinh).thang_sinh - tachNgayThangNamTuChuoi(ngaySinh).nam_sinh)) % 9 || 9;
-
+    let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(so_ngaySinh - so_thangSinh)) % 9;
+    let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(so_ngaySinh - so_namSinh)) % 9;
+    document.getElementById("s_sothachthuc3_3").innerHTML = Math.abs(thachThuc1 - thachThuc2);
+    document.getElementById("s_sothachthuc4_4").innerHTML = Math.abs(so_thangSinh - so_namSinh);
 
     $("#showFullName").text(ten);
     document.getElementById("showFullName1").innerHTML = ten;
@@ -780,8 +782,7 @@ function tinhToanSo() {
     }
 
     function namCaNhanHienTai() {
-        let ngayThangSinh = tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh + tachNgayThangNamTuChuoi(ngaySinh).thang_sinh % 9 || 9;
-        return getSumOnly([ngayThangSinh,layNamHienTai()])
+        return getSumOnly([so_ngaySinh + so_thangSinh,layNamHienTai()])
     }
 
 
@@ -824,16 +825,29 @@ function tinhToanSo() {
     }
 
     function tachNgayThangNamTuChuoi(ngaySinh) {
-
         const parts = ngaySinh.split(/\/|-|\*/); // Phân tách bằng /, - hoặc *
         if (parts.length === 3) {
+
+            const num1 = getSumOnly([
+                parseInt(parts[0].charAt(0)),
+                parseInt(parts[0].charAt(1)),
+            ]);
+            const num2 = getSumOnly([
+                parseInt(parts[1].charAt(0)),
+                parseInt(parts[1].charAt(1)),
+            ]);
+            let num3 = getSumOnly([
+                parseInt(parts[2].charAt(0)),
+                parseInt(parts[2].charAt(1)),
+                parseInt(parts[2].charAt(2)),
+                parseInt(parts[2].charAt(3))
+            ]);
             return {
-                ngay_sinh: parseInt(parts[0]),
-                thang_sinh: parseInt(parts[1]),
-                nam_sinh: parseInt(parts[2])
+                ngay_sinh: num1,
+                thang_sinh: num2,
+                nam_sinh: num3
             };
         }
-
     }
 
     function removeAccent(string) {
