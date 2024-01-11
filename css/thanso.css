@@ -1,0 +1,139 @@
+
+#bg-video {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -100;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.big-square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    width: 20vw;
+    height: 16vw;
+    max-width: 100%;
+    margin: auto;
+    color: #fff3cd;
+
+}
+@media (max-width: 768px) {
+    .ladi-headline {
+        font-size: 14px; /* Giảm kích thước font trên thiết bị nhỏ */
+        margin-top: 15px; /* Giảm khoảng cách trên nếu cần */
+    }
+
+    /* Bạn có thể cần điều chỉnh khoảng cách của .big-square tùy theo nội dung cụ thể */
+    .big-square {
+        margin-bottom: 15px; /* Giảm khoảng cách dưới cùng trên thiết bị nhỏ */
+        width: 35vw;
+        height: 28vw;
+    }
+    .small-square{
+        font-size: small;
+    }
+}
+.small-square {
+    border: 1px solid #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+.small-square:first-child,
+.small-square:nth-child(2),
+.small-square:nth-child(3) {
+    border-top: none;
+}
+
+.small-square:nth-child(7),
+.small-square:nth-child(8),
+.small-square:nth-child(9) {
+    border-bottom: none;
+}
+
+.small-square:nth-child(1),
+.small-square:nth-child(4),
+.small-square:nth-child(7) {
+    border-left: none;
+}
+
+.small-square:nth-child(3),
+.small-square:nth-child(6),
+.small-square:nth-child(9) {
+    border-right: none;
+}
+
+.btn-outline-success {
+    background-color: transparent;
+    width: auto;
+    border-radius: 3px;
+    color: #ffffff;
+    height: 40px;
+}
+
+.btn-outline-success:hover {
+    background-color: #0f5132;
+}
+#tinhToanSo.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#pdf-content-wrapper{
+    overflow: auto;
+    width: 220mm;
+    height: 1mm;
+}
+
+.background-image-so-thieu {
+    background-image: url('../img/img_than_so_pdf/so_bo_sung/imgSoThieu.jpg');
+}
+.background-image-dam-me {
+    background-image: url('../img/img_than_so_pdf/so_dam_me/imgDamMe.jpg');
+}
+.background-image-noi-dung-chinh{
+    background-image: url('../img/imgDefault.jpg');
+}
+.background-image-so-thieu,
+.background-image-noi-dung-chinh,
+.background-image-dam-me {
+    width: 210mm; /* Giả sử bạn muốn div này chiếm toàn bộ chiều rộng của trang A4 */
+    height: 297mm; /* Chiều cao của trang A4 */
+    background-size: contain; /* Đảm bảo ảnh nền nằm gọn trong div */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.image-text {
+    color:  #bb2d3b;
+    font-size: 4mm;
+    font-weight: lighter;
+    font-family: Arial,ui-serif;
+}
+.image-text-header{
+    color:  #bb2d3b;
+    font-size: 6mm;
+    font-weight: lighter;
+    font-family: Arial,ui-serif;
+    align-items: center;
+}
+.image-content-header{
+    padding: 40px;
+}
+.image-content {
+    padding-top: 240px;
+    padding-right: 50px;
+    padding-left: 40px;
+}
+

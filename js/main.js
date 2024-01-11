@@ -83,14 +83,5 @@ $("#link-than-so").on('click', function () {
     logout();
     $("#mynavbar button").hide()
 });
-$(document).ready(function() {
-    if (localStorage.getItem("loggedInUser") === "admin") {
-        $("#mynavbar button").show();
-        $("#pdf-content-wrapper").show();
-    }else {
-        $("#mynavbar button").hide()
-        $("#pdf-content-wrapper").hide();
-    }
-});
 
 

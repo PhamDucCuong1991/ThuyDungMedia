@@ -583,13 +583,13 @@ const soDamMePDF = {
 </div>`,
 }
 
-const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let ten;
-let ngaySinh;
+
 
 function tinhToanSo() {
-    ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
-    ngaySinh = document.getElementById("birthDay").value.trim();
+    const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    let ten = removeAccent(document.getElementById("fullName").value.trim().toUpperCase());
+    let ngaySinh = document.getElementById("birthDay").value.trim();
     if (ngaySinh.length !== 10) {
         alert("Ngày sinh không hợp lệ!")
         return
@@ -601,9 +601,9 @@ function tinhToanSo() {
     let daySoTrucGiac = [];
     const arrNgaySinh = extractNumbers(ngaySinh);
     const arr = convertNameToNumbers(ten, str);
-    const so_ngaySinh = tachNgayThangNamTuChuoi(ngaySinh).ngay_sinh;
-    const so_thangSinh = tachNgayThangNamTuChuoi(ngaySinh).thang_sinh;
-    const so_namSinh = tachNgayThangNamTuChuoi(ngaySinh).nam_sinh;
+    const so_ngaySinh = getSumOnly([arrNgaySinh[0], arrNgaySinh[1]]);
+    const so_thangSinh = getSumOnly([arrNgaySinh[2], arrNgaySinh[3]]);
+    const so_namSinh = getSumOnly([arrNgaySinh[4], arrNgaySinh[5], arrNgaySinh[6], arrNgaySinh[7]]);
 
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
@@ -639,12 +639,12 @@ function tinhToanSo() {
     document.getElementById("s_sothachthuc3_3").innerHTML = Math.abs(thachThuc1 - thachThuc2);
     document.getElementById("s_sothachthuc4_4").innerHTML = Math.abs(so_thangSinh - so_namSinh);
 
-    $("#showFullName").text(ten);
-    document.getElementById("showFullName1").innerHTML = ten;
+    // $("#showFullName").text(ten);
 
-    document.getElementById("s_soduongdoi_2").innerHTML = "SỐ " + duongDoiSlide
-    const duongDoiSlide1 = "so_" + duongDoiSlide
-    document.getElementById("report_duongdoi_content").innerHTML = duongDoi[duongDoiSlide1]
+
+
+    getIndexNumberByName(arr)
+    getIndexNumberByBirthDay(arrNgaySinh)
 
     if (localStorage.getItem("loggedInUser") === "admin") {
         document.getElementById("show_so_thieu").innerHTML = soThieuSlide;
@@ -657,6 +657,8 @@ function tinhToanSo() {
             let numberTarget = "so_"+ soDamMeSlide[i];
             document.getElementById("show_noi_dung_so_dam_me").innerHTML += soDamMePDF[numberTarget];
         }
+
+        document.getElementById("showFullName").innerHTML = ten;
         const dataPDF = {
             duongDoi: duongDoiSlide,
             suMenh: suMenhSlide,
@@ -682,9 +684,6 @@ function tinhToanSo() {
         generatePDFWithImages1(dataPDF).then(r => {
             alert("Tải file thành công!")
         })
-    }else {
-        getIndexNumberByName(arr)
-        getIndexNumberByBirthDay(arrNgaySinh)
     }
 
 
@@ -816,40 +815,6 @@ function tinhToanSo() {
         return mostFrequentNumbers;
     }
 
-    function getSoDinhCao2(arr) {
-        let phanDau = arr.slice(0, 2); // Lấy phần tử từ đầu đến vị trí thứ 1 và 2
-        let phanCuoi = arr.slice(4);   // Lấy phần tử từ vị trí thứ 4 trở đi
-        // Nối hai phần lại thành một mảng mới
-        let ketQua = phanDau.concat(phanCuoi);
-        return getSum(ketQua)
-    }
-
-    function tachNgayThangNamTuChuoi(ngaySinh) {
-        const parts = ngaySinh.split(/\/|-|\*/); // Phân tách bằng /, - hoặc *
-        if (parts.length === 3) {
-
-            const num1 = getSumOnly([
-                parseInt(parts[0].charAt(0)),
-                parseInt(parts[0].charAt(1)),
-            ]);
-            const num2 = getSumOnly([
-                parseInt(parts[1].charAt(0)),
-                parseInt(parts[1].charAt(1)),
-            ]);
-            let num3 = getSumOnly([
-                parseInt(parts[2].charAt(0)),
-                parseInt(parts[2].charAt(1)),
-                parseInt(parts[2].charAt(2)),
-                parseInt(parts[2].charAt(3))
-            ]);
-            return {
-                ngay_sinh: num1,
-                thang_sinh: num2,
-                nam_sinh: num3
-            };
-        }
-    }
-
     function removeAccent(string) {
         string = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         string = string.replace(/Đ/g, "D").replace(/đ/g, "d");
@@ -976,10 +941,9 @@ async function generatePDFWithImages1(dataPDF) {
     let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
     imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
 
-    // let imgTuDuyTraiNghiem = dataPDF.soTuDuyTraiNghiem;
-    // imageNames.push(`so_tu_duy_trai_nghiem/imgTuDuyTraiNghiem${imgTuDuyTraiNghiem}.jpg`);
-
     try {
+        await addHtmlContentToPDF(pdf, 'print_pdf3', width, height);
+        pdf.addPage();
         for (let [index, imageName] of imageNames.entries()) {
             await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
             // Thêm trang mới nếu không phải là ảnh cuối cùng
@@ -987,6 +951,7 @@ async function generatePDFWithImages1(dataPDF) {
                 pdf.addPage();
             }
         }
+
         await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
         await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
         pdf.save('BaoCaoThanSoHoc.pdf');

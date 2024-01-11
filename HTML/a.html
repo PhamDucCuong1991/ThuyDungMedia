@@ -6,89 +6,17 @@
     <title>Thùy Dung media</title>
 
     <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-
     <script src="../JS_thanSo/tinhToanSo.js"></script>
     <link rel="stylesheet" href="../css/hotLine.css">
     <link rel="stylesheet" href="../css/number.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <style>
-        #bg-video {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            bottom: auto;
-            right: auto;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translateX(-50%) translateY(-50%);
-            z-index: -100;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+    <link rel="stylesheet" href="../css/thanso.css">
 
-        .big-square {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 0px 0px;
-            width: 20vw;
-            height: 16vw;
-            max-width: 100%;
-            margin: auto;
-            color: #fff3cd;
-
-        }
-        @media (max-width: 768px) {
-            .ladi-headline {
-                font-size: 14px; /* Giảm kích thước font trên thiết bị nhỏ */
-                margin-top: 15px; /* Giảm khoảng cách trên nếu cần */
-            }
-
-            /* Bạn có thể cần điều chỉnh khoảng cách của .big-square tùy theo nội dung cụ thể */
-            .big-square {
-                margin-bottom: 15px; /* Giảm khoảng cách dưới cùng trên thiết bị nhỏ */
-                width: 35vw;
-                height: 28vw;
-            }
-            .small-square{
-                font-size: small;
-            }
-        }
-        .small-square {
-            border: 1px solid #fff3cd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: large;
-        }
-
-        .small-square:first-child,
-        .small-square:nth-child(2),
-        .small-square:nth-child(3) {
-            border-top: none;
-        }
-
-        .small-square:nth-child(7),
-        .small-square:nth-child(8),
-        .small-square:nth-child(9) {
-            border-bottom: none;
-        }
-
-        .small-square:nth-child(1),
-        .small-square:nth-child(4),
-        .small-square:nth-child(7) {
-            border-left: none;
-        }
-
-        .small-square:nth-child(3),
-        .small-square:nth-child(6),
-        .small-square:nth-child(9) {
-            border-right: none;
-        }
-
-    </style>
 
 </head>
 <body>
@@ -102,14 +30,15 @@
                 <div class="row">
                     <h3><a class="style-a" href="../index.html">Thần số học Thùy Dung</a></h3>
                     <div class="row">
-                        <div class="col-lg-4 col-12 my-1">
+                        <div class="col-lg-3 col-12 my-1">
                             <input id="fullName" class="form-control " type="text" placeholder="Họ và tên">
                         </div>
-                        <div class="col-lg-4 col-12 my-1">
+                        <div class="col-lg-3 col-12 my-1">
                             <input id="birthDay" class="form-control" type="text" placeholder="DD/MM/YYYY">
                         </div>
-                        <div class="col-lg-4 col-12 my-1">
-                            <button id="tinhToanSo" class="btn btn-outline-success">KHÁM PHÁ BẢN THÂN</button>
+                        <div class="col-lg-3 col-12 my-1">
+                            <button id="tinhToanSo" class="btn-outline-success ladi-element1">KHÁM PHÁ BẢN THÂN
+                            </button>
                             <button class="btn btn-outline-danger" id="reset-form">RESET</button>
                         </div>
                     </div>
@@ -480,13 +409,38 @@
         </div>
     </div>
 </div>
-<div id="showFullName" hidden></div>
-<div id="showFullName1" hidden></div>
-<div id="s_soduongdoi_2" hidden></div>
-<div id="report_duongdoi_content" hidden></div>
+
+<!--print pdf-->
+<div class="container " id="pdf-content-wrapper">
+    <div class="background-image-so-thieu" id="print_pdf1">
+        <div class="row px-5 py-5">
+            <div class="image-content">
+                <h1 class="image-text">CON SỐ CẦN BỔ DUNG CỦA BẠN LÀ <span id="show_so_thieu"></span></h1>
+                <div class="image-text" id="show_noi_dung_so_thieu"></div>
+            </div>
+        </div>
+    </div>
+    <div class="background-image-dam-me" id="print_pdf2">
+        <div class="row px-5 py-5">
+            <div class="image-content">
+                <h1 class="image-text">CON SỐ CẦN ĐAM MÊ CỦA BẠN LÀ <span id="show_so_dam_me"></span></h1>
+                <div class="image-text" id="show_noi_dung_so_dam_me"></div>
+            </div>
+        </div>
+    </div>
+    <div class="background-image-noi-dung-chinh" id="print_pdf3">
+        <div class="row px-5 py-5">
+            <div class="image-content-header">
+                <h1 class="image-text-header"><span id="showFullName"></span></h1>
+                <div class="image-text" id="show_noi_dung_chinh"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="../js/main.js"></script>
 <script type="module" src="../js/y_nghia_cac_con_so.js"></script>
-<script src="../js/noCopy.js"></script>
+<!--<script src="../js/noCopy.js"></script>-->
 </body>
 </html>
