@@ -20,9 +20,11 @@
 }
 
 .custom-list-div {
-    margin-left: auto;
     color: limegreen;
+}
 
+.custom-list-divp {
+    color: #b02a37;
 }
 
 .col-0 {

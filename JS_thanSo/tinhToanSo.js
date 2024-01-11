@@ -608,7 +608,11 @@ function tinhToanSo() {
     nguyenPhuAm(ten); // Lấy ra mảng nguyên âm và phụ âm
     getDaySoCamXuc(ten); //Lấy ra mảng chữ số cảm xúc trong tên
     getDaySoTrucGiac(ten);  // Lấy ra mảng chữ số trực giác trong tên
-    let duongDoiSlide = document.getElementById("duongDoi").innerHTML = getSum(arrNgaySinh);
+
+    let duongDoiSlide = getSum(arrNgaySinh);
+    document.getElementById("duongDoi").innerHTML = duongDoiSlide;
+    document.getElementById("duongDoi-P").innerHTML = duongDoiSlide;
+
     let suMenhSlide = document.getElementById("suMenh").innerHTML = getSum(arr);
     let linhHonSlide = document.getElementById("linhHon").innerHTML = getSum(arrNa);
     let nhanCachSlide = document.getElementById("nhanCach").innerHTML = getSumOnly(arrPa);
@@ -658,7 +662,7 @@ function tinhToanSo() {
             document.getElementById("show_noi_dung_so_dam_me").innerHTML += soDamMePDF[numberTarget];
         }
 
-        document.getElementById("showFullName").innerHTML = ten;
+        document.getElementById("showFullName").innerHTML = ten + " - " + ngaySinh;
         const dataPDF = {
             duongDoi: duongDoiSlide,
             suMenh: suMenhSlide,
@@ -884,6 +888,33 @@ async function addHtmlContentToPDF(pdf, divId, width, height) {
     pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
 }
 
+async function addHtmlContentToPDFNoBG(pdf, divId, width, height) {
+    const content = document.getElementById(divId);
+    const canvasOptions = {
+        scale: 6,
+        useCORS: true,
+        logging: true,
+        width: content.offsetWidth,
+        height: content.offsetHeight
+    };
+    const canvas = await html2canvas(content, canvasOptions);
+    const imgData = canvas.toDataURL('image/jpeg', 1.0);
+    const imgWidth = canvas.width / canvasOptions.scale;
+    const imgHeight = canvas.height / canvasOptions.scale;
+    const widthRatio = width / imgWidth;
+    const heightRatio = height / imgHeight;
+    const ratio = Math.min(widthRatio, heightRatio);
+    const imgScaledWidth = imgWidth * ratio;
+    const imgScaledHeight = imgHeight * ratio;
+    const x = (width - imgScaledWidth) / 2;
+    const y = (height - imgScaledHeight) / 2;
+
+    pdf.addPage();
+    pdf.setFillColor(0, 0, 0); // Đen
+    pdf.rect(0, 0, width, height, 'F');
+    pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
+}
+
 async function generatePDFWithImages1(dataPDF) {
     const button = document.getElementById('tinhToanSo');
     button.classList.add('loading');
@@ -941,6 +972,7 @@ async function generatePDFWithImages1(dataPDF) {
     let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
     imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
 
+
     try {
         await addHtmlContentToPDF(pdf, 'print_pdf3', width, height);
         pdf.addPage();
@@ -948,7 +980,7 @@ async function generatePDFWithImages1(dataPDF) {
             await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
             // Thêm trang mới nếu không phải là ảnh cuối cùng
             if (index < imageNames.length - 1) {
-                pdf.addPage();
+
             }
         }
 
