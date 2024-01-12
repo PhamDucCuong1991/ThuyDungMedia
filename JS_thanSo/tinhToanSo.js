@@ -545,44 +545,43 @@ const soBoSungPDF = {
     </li>`
 }
 const soDamMePDF = {
-    so_1:`<div>
+    so_1: `<div>
     <p><strong>Số 1:</strong> Bạn độc lập, mạnh mẽ, luôn đưa ra những ý tưởng độc đáo. 
     Bạn giỏi tập trung để hoàn thành nhiệm vụ, nên thường đạt được nhiều thành tựu đáng kể.</p>
 </div>`,
-    so_2:`<div>
+    so_2: `<div>
     <p><strong>Số 2:</strong> Bạn rất hợp tác và hòa hợp với những người khác. 
     Ngoài ra bạn có khả năng giảng hòa các cuộc tranh cãi, nên mọi người luôn lắng nghe tiếng nói của bạn.</p>
 </div>`,
-    so_3:`<div>
+    so_3: `<div>
     <p><strong>Số 3:</strong> Bạn hòa đồng và thích giải trí, nên dù ở đâu bạn cũng pha trò và thu hút mọi người.
      Bạn tài năng và luôn cống hiến hết mình cho công việc.</p>
 </div>`,
-    so_4:`<div>
+    so_4: `<div>
     <p><strong>Số 4:</strong> Bạn có tính kỷ luật cao và theo 1 lịch trình nhất định.
      Bạn kiên trì và luôn nỗ lực hết sức để hoàn thành công việc 1 cách cẩn thận.</p>
 </div>`,
-    so_5:`<div>
+    so_5: `<div>
     <p><strong>Số 5:</strong> Bạn dễ dàng thích nghi với mọi thay đổi, hay thường đi du lịch để trải nghiệm và khám phá.
      Khả năng ngôn ngữ linh hoạt giúp bạn thu hút người khác.</p>
 </div>`,
-    so_6:`<div>
+    so_6: `<div>
     <p><strong>Số 6:</strong> Bạn linh hoạt và dễ dàng thích nghi với các tình huống. 
     Bạn có một trái tim hòa đồng, nhân hậu, quan tâm đến mọi người xung quanh,
      nên luôn suy nghĩ tìm cách giúp đỡ những người kém may mắn.</p>
 </div>`,
-    so_7:`<div>
+    so_7: `<div>
     <p><strong>Số 7:</strong> Bạn luôn bình ổn, trí tuệ phát triển và trực giác cao. 
     Bạn thích cân nhắc và tìm hiểu những thứ xung quanh nên bạn có kiến thức rất sâu sắc.</p>
 </div>`,
-    so_8:`<div>
+    so_8: `<div>
     <p><strong>Số 8:</strong> Bạn có động lực mạnh mẽ để hoàn thành công việc hoặc kế hoạch nhằm đảm bảo tiền bạc và địa vị.</p>
 </div>`,
-    so_9:`<div>
+    so_9: `<div>
     <p><strong>Số 9:</strong> Bạn có thể là người yêu thích âm nhạc hoặc nghệ thuật, với xu hướng thay đổi giữa các thái cực cảm xúc.
      Bạn quan tâm đến việc giúp đỡ người khác và giải cứu thế giới hơn bản thân mình.</p>
 </div>`,
 }
-
 
 
 function tinhToanSo() {
@@ -613,25 +612,81 @@ function tinhToanSo() {
     document.getElementById("duongDoi").innerHTML = duongDoiSlide;
     document.getElementById("duongDoi-P").innerHTML = duongDoiSlide;
 
-    let suMenhSlide = document.getElementById("suMenh").innerHTML = getSum(arr);
-    let linhHonSlide = document.getElementById("linhHon").innerHTML = getSum(arrNa);
-    let nhanCachSlide = document.getElementById("nhanCach").innerHTML = getSumOnly(arrPa);
-    let canBangSlide = document.getElementById("canBang").innerHTML = getSumOnly(convertNameToNumbers(getInitials(ten), str));
-    let truongThanhSlide = document.getElementById("truongThanh").innerHTML = getSum([getSum(arrNgaySinh), getSum(arr)]);
-    let ngaySinh1Slide = document.getElementById("ngaySinh").innerHTML = getBirthDayNumber(arrNgaySinh);
-    let thaiDoSlide = document.getElementById("thaiDo").innerHTML = getAttitudeNumber(arrNgaySinh);
-    let tuDuyLyTriSlide = document.getElementById("tuDuyLyTri").innerHTML = (getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str))) % 9 || 9;
-    let vanMenhSlide = document.getElementById("vanMenh").innerHTML = getDestinyNumber(getLastWordNumbers(ten, str));
-    let soThieuSlide = document.getElementById("soThieu").innerHTML = getMissingNumbers(arr);
-    let sucManhTiemThucSlide = document.getElementById("sucManhTiemThuc").innerHTML = (9 - getMissingNumbers(arr).length);
-    let soCamXucSlide = document.getElementById("soCamXuc").innerHTML = getSumOnly(daySoCamXuc);
-    let soTrucGiacSlide = document.getElementById("soTrucGiac").innerHTML = getSumOnly(daySoTrucGiac);
-    let namCaNhanSlide = document.getElementById("namCaNhan").innerHTML = namCaNhanHienTai();
-    let thangCaNhanSlide = document.getElementById("thangCaNhan").innerHTML = thangCaNhan(namCaNhanHienTai());
-    let ketNoiVanMenhSlide = document.getElementById("ketNoiVanMenh").innerHTML = (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
-    let soDamMeSlide = document.getElementById("soDamMe").innerHTML = getDaySoDamMe(arr);
-    let soKetNoiLinhHonSlide = document.getElementById("soKetNoiLinhHon").innerHTML =  (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
-    let soTuDuyTraiNghiemSlide = document.getElementById("soTuDuyTraiNghiem").innerHTML = getSoTuDuyTraiNghiem(ten);
+    let suMenhSlide = getSum(arr);
+    document.getElementById("suMenh").innerHTML = suMenhSlide;
+    document.getElementById("suMenh-P").innerHTML = suMenhSlide;
+
+    let linhHonSlide = getSum(arrNa);
+    document.getElementById("linhHon").innerHTML = linhHonSlide;
+    document.getElementById("linhHon-P").innerHTML = linhHonSlide;
+
+    let nhanCachSlide = getSumOnly(arrPa);
+    document.getElementById("nhanCach").innerHTML = nhanCachSlide;
+    document.getElementById("nhanCach-P").innerHTML = nhanCachSlide;
+
+    let canBangSlide = getSumOnly(convertNameToNumbers(getInitials(ten), str));
+    document.getElementById("canBang").innerHTML = canBangSlide;
+    document.getElementById("canBang-P").innerHTML = canBangSlide;
+
+    let truongThanhSlide = getSum([...arrNgaySinh, ...arr]);
+    document.getElementById("truongThanh").innerHTML = truongThanhSlide;
+    document.getElementById("truongThanh-P").innerHTML = truongThanhSlide;
+
+    let ngaySinh1Slide = getBirthDayNumber(arrNgaySinh);
+    document.getElementById("ngaySinh").innerHTML = ngaySinh1Slide;
+    document.getElementById("ngaySinh-P").innerHTML = ngaySinh1Slide;
+
+    let thaiDoSlide = getAttitudeNumber(arrNgaySinh);
+    document.getElementById("thaiDo").innerHTML = thaiDoSlide;
+    document.getElementById("thaiDo-P").innerHTML = thaiDoSlide;
+
+    let tuDuyLyTriSlide = (getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str))) % 9 || 9;
+    document.getElementById("tuDuyLyTri").innerHTML = tuDuyLyTriSlide;
+    document.getElementById("tuDuyLyTri-P").innerHTML = tuDuyLyTriSlide;
+
+    let vanMenhSlide = getDestinyNumber(getLastWordNumbers(ten, str));
+    document.getElementById("vanMenh").innerHTML = vanMenhSlide;
+    document.getElementById("vanMenh-P").innerHTML = vanMenhSlide;
+
+    let soThieuSlide = getMissingNumbers(arr);
+    document.getElementById("soThieu").innerHTML = soThieuSlide;
+    document.getElementById("soThieu-P").innerHTML = soThieuSlide;
+
+    let sucManhTiemThucSlide = 9 - getMissingNumbers(arr).length;
+    document.getElementById("sucManhTiemThuc").innerHTML = sucManhTiemThucSlide;
+    document.getElementById("sucManhTiemThuc-P").innerHTML = sucManhTiemThucSlide;
+
+    let soCamXucSlide = getSumOnly(daySoCamXuc);
+    document.getElementById("soCamXuc").innerHTML = soCamXucSlide;
+    document.getElementById("soCamXuc-P").innerHTML = soCamXucSlide;
+
+    let soTrucGiacSlide = getSumOnly(daySoTrucGiac);
+    document.getElementById("soTrucGiac").innerHTML = soTrucGiacSlide;
+    document.getElementById("soTrucGiac-P").innerHTML = soTrucGiacSlide;
+
+    let namCaNhanSlide = namCaNhanHienTai();
+    document.getElementById("namCaNhan").innerHTML = namCaNhanSlide;
+    document.getElementById("namCaNhan-P").innerHTML = namCaNhanSlide;
+
+    let thangCaNhanSlide = thangCaNhan(namCaNhanHienTai());
+    document.getElementById("thangCaNhan").innerHTML = thangCaNhanSlide;
+    document.getElementById("thangCaNhan-P").innerHTML = thangCaNhanSlide;
+
+    let ketNoiVanMenhSlide = (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
+    document.getElementById("ketNoiVanMenh").innerHTML = ketNoiVanMenhSlide;
+    document.getElementById("ketNoiVanMenh-P").innerHTML = ketNoiVanMenhSlide;
+
+    let soDamMeSlide = getDaySoDamMe(arr);
+    document.getElementById("soDamMe").innerHTML = soDamMeSlide;
+    document.getElementById("soDamMe-P").innerHTML = soDamMeSlide;
+
+    let soKetNoiLinhHonSlide = (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
+    document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHonSlide;
+    document.getElementById("soKetNoiLinhHon-P").innerHTML = soKetNoiLinhHonSlide;
+
+    let soTuDuyTraiNghiemSlide = getSoTuDuyTraiNghiem(ten);
+    document.getElementById("soTuDuyTraiNghiem").innerHTML = soTuDuyTraiNghiemSlide;
+    document.getElementById("soTuDuyTraiNghiem-P").innerHTML = soTuDuyTraiNghiemSlide;
 
     let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly([so_ngaySinh, so_thangSinh]);
     let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSumOnly([so_ngaySinh, so_namSinh]);
@@ -646,19 +701,18 @@ function tinhToanSo() {
     // $("#showFullName").text(ten);
 
 
-
     getIndexNumberByName(arr)
     getIndexNumberByBirthDay(arrNgaySinh)
 
     if (localStorage.getItem("loggedInUser") === "admin") {
         document.getElementById("show_so_thieu").innerHTML = soThieuSlide;
         for (let i = 0; i < soThieuSlide.length; i++) {
-            let numberTarget = "so_"+ soThieuSlide[i];
+            let numberTarget = "so_" + soThieuSlide[i];
             document.getElementById("show_so_thieu").innerHTML += soBoSungPDF[numberTarget];
         }
         document.getElementById("show_so_dam_me").innerHTML = soDamMeSlide;
         for (let i = 0; i < soDamMeSlide.length; i++) {
-            let numberTarget = "so_"+ soDamMeSlide[i];
+            let numberTarget = "so_" + soDamMeSlide[i];
             document.getElementById("show_noi_dung_so_dam_me").innerHTML += soDamMePDF[numberTarget];
         }
 
@@ -781,11 +835,11 @@ function tinhToanSo() {
 
     function layNamHienTai() {
         let currentDate = new Date();
-        return currentDate.getFullYear() %9 || 9;
+        return currentDate.getFullYear() % 9 || 9;
     }
 
     function namCaNhanHienTai() {
-        return getSumOnly([so_ngaySinh + so_thangSinh,layNamHienTai()])
+        return getSumOnly([so_ngaySinh + so_thangSinh, layNamHienTai()])
     }
 
 
