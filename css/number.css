@@ -122,6 +122,7 @@
     }
     .small-square-text {
         font-size: 1.2vw;
+        color: #b02a37;
     }
 }
 @media (max-width: 960px) {
@@ -169,4 +170,10 @@
     /*color: #5cac38;*/
     color: limegreen;
     margin-top: 10px;
+}
+.ladi-headline1 {
+    text-align: center;
+    /*color: #5cac38;*/
+    color: #b02a37;
+    margin-top: 40px;
 }

@@ -690,16 +690,17 @@ function tinhToanSo() {
 
     let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly([so_ngaySinh, so_thangSinh]);
     let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSumOnly([so_ngaySinh, so_namSinh]);
-    document.getElementById("s_tuoichang3_1").innerHTML = getSumOnly([dinhCao1, dinhCao2]);
-    document.getElementById("s_tuoichang4_1").innerHTML = getSumOnly([so_thangSinh, so_namSinh]);
+    let dinhCao3 = document.getElementById("s_tuoichang3_1").innerHTML = getSumOnly([dinhCao1, dinhCao2]);
+    let dinhCao4 = document.getElementById("s_tuoichang4_1").innerHTML = getSumOnly([so_thangSinh, so_namSinh]);
 
     let thachThuc1 = document.getElementById("s_sothachthuc1_2").innerHTML = (Math.abs(so_ngaySinh - so_thangSinh)) % 9;
     let thachThuc2 = document.getElementById("s_sothachthuc2_2").innerHTML = (Math.abs(so_ngaySinh - so_namSinh)) % 9;
-    document.getElementById("s_sothachthuc3_3").innerHTML = Math.abs(thachThuc1 - thachThuc2);
-    document.getElementById("s_sothachthuc4_4").innerHTML = Math.abs(so_thangSinh - so_namSinh);
+    let thachThuc3 = document.getElementById("s_sothachthuc3_3").innerHTML = Math.abs(thachThuc1 - thachThuc2);
+    let thachThuc4 = document.getElementById("s_sothachthuc4_4").innerHTML = Math.abs(so_thangSinh - so_namSinh);
 
     // $("#showFullName").text(ten);
-
+    $("#showSoDinhCao").append(dinhCao1 + " - " + dinhCao2 + " - " + dinhCao3 + " - " + dinhCao4);
+    $("#showSoThachThuc").append(thachThuc1 + " - " + thachThuc2 + " - " + thachThuc3 + " - " + thachThuc4);
 
     getIndexNumberByName(arr)
     getIndexNumberByBirthDay(arrNgaySinh)
@@ -739,7 +740,7 @@ function tinhToanSo() {
             soKetNoiLinhHon: soKetNoiLinhHonSlide,
             soTuDuyTraiNghiem: soTuDuyTraiNghiemSlide
         }
-        generatePDFWithImages1(dataPDF).then(r => {
+        generatePDFWithImages1(dataPDF, ten).then(r => {
             alert("Tải file thành công!")
         })
     }
@@ -892,6 +893,16 @@ function getIndexNumberByName(array) {
     document.getElementById("name_index7").innerHTML = doubleNumber(7, array);
     document.getElementById("name_index8").innerHTML = doubleNumber(8, array);
     document.getElementById("name_index9").innerHTML = doubleNumber(9, array);
+
+    document.getElementById("name_index1_P").innerHTML = doubleNumber(1, array);
+    document.getElementById("name_index2_P").innerHTML = doubleNumber(2, array);
+    document.getElementById("name_index3_P").innerHTML = doubleNumber(3, array);
+    document.getElementById("name_index4_P").innerHTML = doubleNumber(4, array);
+    document.getElementById("name_index5_P").innerHTML = doubleNumber(5, array);
+    document.getElementById("name_index6_P").innerHTML = doubleNumber(6, array);
+    document.getElementById("name_index7_P").innerHTML = doubleNumber(7, array);
+    document.getElementById("name_index8_P").innerHTML = doubleNumber(8, array);
+    document.getElementById("name_index9_P").innerHTML = doubleNumber(9, array);
 }
 
 function getIndexNumberByBirthDay(array) {
@@ -904,6 +915,16 @@ function getIndexNumberByBirthDay(array) {
     document.getElementById("birthDay_index7").innerHTML = doubleNumber(7, array);
     document.getElementById("birthDay_index8").innerHTML = doubleNumber(8, array);
     document.getElementById("birthDay_index9").innerHTML = doubleNumber(9, array);
+
+    document.getElementById("birthDay_index1_P").innerHTML = doubleNumber(1, array);
+    document.getElementById("birthDay_index2_P").innerHTML = doubleNumber(2, array);
+    document.getElementById("birthDay_index3_P").innerHTML = doubleNumber(3, array);
+    document.getElementById("birthDay_index4_P").innerHTML = doubleNumber(4, array);
+    document.getElementById("birthDay_index5_P").innerHTML = doubleNumber(5, array);
+    document.getElementById("birthDay_index6_P").innerHTML = doubleNumber(6, array);
+    document.getElementById("birthDay_index7_P").innerHTML = doubleNumber(7, array);
+    document.getElementById("birthDay_index8_P").innerHTML = doubleNumber(8, array);
+    document.getElementById("birthDay_index9_P").innerHTML = doubleNumber(9, array);
 }
 
 function doubleNumber(num, array) {
@@ -942,34 +963,7 @@ async function addHtmlContentToPDF(pdf, divId, width, height) {
     pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
 }
 
-async function addHtmlContentToPDFNoBG(pdf, divId, width, height) {
-    const content = document.getElementById(divId);
-    const canvasOptions = {
-        scale: 6,
-        useCORS: true,
-        logging: true,
-        width: content.offsetWidth,
-        height: content.offsetHeight
-    };
-    const canvas = await html2canvas(content, canvasOptions);
-    const imgData = canvas.toDataURL('image/jpeg', 1.0);
-    const imgWidth = canvas.width / canvasOptions.scale;
-    const imgHeight = canvas.height / canvasOptions.scale;
-    const widthRatio = width / imgWidth;
-    const heightRatio = height / imgHeight;
-    const ratio = Math.min(widthRatio, heightRatio);
-    const imgScaledWidth = imgWidth * ratio;
-    const imgScaledHeight = imgHeight * ratio;
-    const x = (width - imgScaledWidth) / 2;
-    const y = (height - imgScaledHeight) / 2;
-
-    pdf.addPage();
-    pdf.setFillColor(0, 0, 0); // Đen
-    pdf.rect(0, 0, width, height, 'F');
-    pdf.addImage(imgData, 'JPEG', x, y, imgScaledWidth, imgScaledHeight);
-}
-
-async function generatePDFWithImages1(dataPDF) {
+async function generatePDFWithImages1(dataPDF, fullName) {
     const button = document.getElementById('tinhToanSo');
     button.classList.add('loading');
     button.textContent = 'Đang tạo file pdf...';
@@ -1028,19 +1022,20 @@ async function generatePDFWithImages1(dataPDF) {
 
 
     try {
+        pdf.addImage('../img/imgDefault', 'JPEG',0,0, width, height);
         await addHtmlContentToPDF(pdf, 'print_pdf3', width, height);
         pdf.addPage();
+
         for (let [index, imageName] of imageNames.entries()) {
             await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
             // Thêm trang mới nếu không phải là ảnh cuối cùng
             if (index < imageNames.length - 1) {
-
+                pdf.addPage();
             }
         }
-
         await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
         await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
-        pdf.save('BaoCaoThanSoHoc.pdf');
+        pdf.save(`BAO CAO TSH CUA ${fullName}.pdf`);
         button.classList.remove('loading');
         button.textContent = 'KHÁM PHÁ BẢN THÂN';
     } catch (error) {
