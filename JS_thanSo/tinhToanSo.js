@@ -270,8 +270,8 @@ function tinhToanSo() {
     $("#showSoDinhCao").append(dinhCao1 + " - " + dinhCao2 + " - " + dinhCao3 + " - " + dinhCao4);
     $("#showSoThachThuc").append(thachThuc1 + " - " + thachThuc2 + " - " + thachThuc3 + " - " + thachThuc4);
 
-    getIndexNumberByName(arr)
-    getIndexNumberByBirthDay(arrNgaySinh)
+    getIndexNumberByName(arr, "name_index");
+    getIndexNumberByName(arrNgaySinh, "birthDay_index");
 
     if (localStorage.getItem("loggedInUser") === "admin") {
         document.getElementById("show_so_thieu").innerHTML = soThieuSlide;
@@ -450,49 +450,13 @@ function tinhToanSo() {
 
 }
 
+function getIndexNumberByName(array, elementID) {
 
-function getIndexNumberByName(array) {
-    document.getElementById("name_index1").innerHTML = doubleNumber(1, array);
-    document.getElementById("name_index2").innerHTML = doubleNumber(2, array);
-    document.getElementById("name_index3").innerHTML = doubleNumber(3, array);
-    document.getElementById("name_index4").innerHTML = doubleNumber(4, array);
-    document.getElementById("name_index5").innerHTML = doubleNumber(5, array);
-    document.getElementById("name_index6").innerHTML = doubleNumber(6, array);
-    document.getElementById("name_index7").innerHTML = doubleNumber(7, array);
-    document.getElementById("name_index8").innerHTML = doubleNumber(8, array);
-    document.getElementById("name_index9").innerHTML = doubleNumber(9, array);
+    for (let i = 1; i <= 9; i++) {
+        document.getElementById(`${elementID}${i}`).innerHTML = doubleNumber(i, array);
+        document.getElementById(`${elementID}${i}_P`).innerHTML = doubleNumber(i, array);
+    }
 
-    document.getElementById("name_index1_P").innerHTML = doubleNumber(1, array);
-    document.getElementById("name_index2_P").innerHTML = doubleNumber(2, array);
-    document.getElementById("name_index3_P").innerHTML = doubleNumber(3, array);
-    document.getElementById("name_index4_P").innerHTML = doubleNumber(4, array);
-    document.getElementById("name_index5_P").innerHTML = doubleNumber(5, array);
-    document.getElementById("name_index6_P").innerHTML = doubleNumber(6, array);
-    document.getElementById("name_index7_P").innerHTML = doubleNumber(7, array);
-    document.getElementById("name_index8_P").innerHTML = doubleNumber(8, array);
-    document.getElementById("name_index9_P").innerHTML = doubleNumber(9, array);
-}
-
-function getIndexNumberByBirthDay(array) {
-    document.getElementById("birthDay_index1").innerHTML = doubleNumber(1, array);
-    document.getElementById("birthDay_index2").innerHTML = doubleNumber(2, array);
-    document.getElementById("birthDay_index3").innerHTML = doubleNumber(3, array);
-    document.getElementById("birthDay_index4").innerHTML = doubleNumber(4, array);
-    document.getElementById("birthDay_index5").innerHTML = doubleNumber(5, array);
-    document.getElementById("birthDay_index6").innerHTML = doubleNumber(6, array);
-    document.getElementById("birthDay_index7").innerHTML = doubleNumber(7, array);
-    document.getElementById("birthDay_index8").innerHTML = doubleNumber(8, array);
-    document.getElementById("birthDay_index9").innerHTML = doubleNumber(9, array);
-
-    document.getElementById("birthDay_index1_P").innerHTML = doubleNumber(1, array);
-    document.getElementById("birthDay_index2_P").innerHTML = doubleNumber(2, array);
-    document.getElementById("birthDay_index3_P").innerHTML = doubleNumber(3, array);
-    document.getElementById("birthDay_index4_P").innerHTML = doubleNumber(4, array);
-    document.getElementById("birthDay_index5_P").innerHTML = doubleNumber(5, array);
-    document.getElementById("birthDay_index6_P").innerHTML = doubleNumber(6, array);
-    document.getElementById("birthDay_index7_P").innerHTML = doubleNumber(7, array);
-    document.getElementById("birthDay_index8_P").innerHTML = doubleNumber(8, array);
-    document.getElementById("birthDay_index9_P").innerHTML = doubleNumber(9, array);
 }
 
 function doubleNumber(num, array) {
