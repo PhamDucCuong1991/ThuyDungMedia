@@ -32,26 +32,30 @@ function login() {
                 $('#idLogin').text('Login');
             }, 24 * 60 * 60 * 1000)
         }
+        $("#username").val("");
+        $("#password").val("");
+        a.prop('checked', false);
 
     } else {
         alert("Tài khoản hoặc mật khẩu không chính xác!");
+        localStorage.clear();
     }
-    $("#username").val("");
-    $("#password").val("");
-    a.prop('checked', false);
+
 }
 
 // Hàm xử lý khi đăng xuất
 function logout() {
-  let a =  window.confirm("Bạn chắc chắn muốn đăng xuất?")
-    if(!a){
-        return
+    if(localStorage.getItem("loggedInUser")!== null){
+        let a =  window.confirm("Bạn chắc chắn muốn đăng xuất?")
+        if(!a){
+            return
+        }
+        isLoggedIn = false;
+        $('#idLogin').text('Login');
+        $('#tm-hello').empty()
+        localStorage.clear();
+        alert("Bạn đã đăng xuất khỏi hệ thống!")
     }
-    isLoggedIn = false;
-    $('#idLogin').text('Login');
-    $('#tm-hello').empty()
-    localStorage.clear();
-    alert("Bạn đã đăng xuất khỏi hệ thống!")
 }
 
 $("#idLogin").on('click', function (event) {
@@ -70,7 +74,7 @@ $('#submit-form').on('click', function () {
     tinhToanSo()
 });
 $("#birthDay,#fullName").on('keypress', function (e) {
-    if (e.which == 13) {
+    if (e.which === 13) {
         tinhToanSo();
     }
 });

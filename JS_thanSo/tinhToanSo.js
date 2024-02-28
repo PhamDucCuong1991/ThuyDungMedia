@@ -974,7 +974,34 @@ async function generatePDFWithImages1(dataPDF, fullName) {
     let height = pdf.internal.pageSize.getHeight();
 
     // Danh sách tên ảnh
-    let imageNames = []
+    const imageNames = getImageNames(dataPDF);
+
+
+    try {
+
+        await addHtmlContentToPDF(pdf, 'print_pdf3', width, height);
+        pdf.addPage();
+        await pdf.deletePage(1);
+        for (let [index, imageName] of imageNames.entries()) {
+
+            await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
+            // Thêm trang mới nếu không phải là ảnh cuối cùng
+            if (index < imageNames.length - 1) {
+                pdf.addPage();
+            }
+        }
+        await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
+        await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
+        pdf.save(`${fullName}.pdf`);
+        button.classList.remove('loading');
+        button.textContent = 'KHÁM PHÁ BẢN THÂN';
+    } catch (error) {
+        console.error("Error generating PDF:", error);
+    }
+}
+
+function getImageNames(dataPDF) {
+    let imageNames = [];
     let imgDuongDoi = dataPDF.duongDoi;
     imageNames.push(`so_duong_doi/imgDuongDoi${imgDuongDoi}.jpg`);
 
@@ -1020,27 +1047,7 @@ async function generatePDFWithImages1(dataPDF, fullName) {
     let imgKetNoiLinhHon = dataPDF.soKetNoiLinhHon;
     imageNames.push(`so_ket_noi_linh_hon/imgKetNoiLinhHon${imgKetNoiLinhHon}.jpg`);
 
-
-    try {
-        pdf.addImage('../img/imgDefault', 'JPEG',0,0, width, height);
-        await addHtmlContentToPDF(pdf, 'print_pdf3', width, height);
-        pdf.addPage();
-
-        for (let [index, imageName] of imageNames.entries()) {
-            await addImageToPDF('../img/img_than_so_pdf/' + imageName, index, width, height, pdf, imageNames.length);
-            // Thêm trang mới nếu không phải là ảnh cuối cùng
-            if (index < imageNames.length - 1) {
-                pdf.addPage();
-            }
-        }
-        await addHtmlContentToPDF(pdf, 'print_pdf1', width, height);
-        await addHtmlContentToPDF(pdf, 'print_pdf2', width, height);
-        pdf.save(`BAO CAO TSH CUA ${fullName}.pdf`);
-        button.classList.remove('loading');
-        button.textContent = 'KHÁM PHÁ BẢN THÂN';
-    } catch (error) {
-        console.error("Error generating PDF:", error);
-    }
+    return imageNames;
 }
 
 // Định nghĩa hàm để thêm ảnh vào PDF
