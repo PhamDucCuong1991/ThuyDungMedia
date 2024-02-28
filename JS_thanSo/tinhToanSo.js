@@ -271,6 +271,8 @@ function tinhToanSo() {
         }
         generatePDFWithImages1(dataPDF, ten).then(r => {
             alert("Tải file thành công!")
+        }).catch(() => {
+            alert("Tải file thất bại!")
         })
     }
 
@@ -410,7 +412,7 @@ function tinhToanSo() {
     }
 
     function updateElementValues(selector, value) {
-        $(selector).each(function() {
+        $(selector).each(function () {
             $(this).text(value);
         });
     }
@@ -474,7 +476,6 @@ async function generatePDFWithImages1(dataPDF, fullName) {
 
     // Danh sách tên ảnh
     const imageNames = getImageNames(dataPDF);
-
 
     try {
 
