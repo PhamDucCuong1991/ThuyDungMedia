@@ -151,7 +151,6 @@ const soDamMePDF = {
 </div>`,
 }
 
-
 function tinhToanSo() {
     const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -177,84 +176,46 @@ function tinhToanSo() {
     getDaySoTrucGiac(ten);  // Lấy ra mảng chữ số trực giác trong tên
 
     let duongDoiSlide = getSum(arrNgaySinh);
-    document.getElementById("duongDoi").innerHTML = duongDoiSlide;
-    document.getElementById("duongDoi-P").innerHTML = duongDoiSlide;
-
     let suMenhSlide = getSum(arr);
-    document.getElementById("suMenh").innerHTML = suMenhSlide;
-    document.getElementById("suMenh-P").innerHTML = suMenhSlide;
-
     let linhHonSlide = getSum(arrNa);
-    document.getElementById("linhHon").innerHTML = linhHonSlide;
-    document.getElementById("linhHon-P").innerHTML = linhHonSlide;
-
     let nhanCachSlide = getSumOnly(arrPa);
-    document.getElementById("nhanCach").innerHTML = nhanCachSlide;
-    document.getElementById("nhanCach-P").innerHTML = nhanCachSlide;
-
     let canBangSlide = getSumOnly(convertNameToNumbers(getInitials(ten), str));
-    document.getElementById("canBang").innerHTML = canBangSlide;
-    document.getElementById("canBang-P").innerHTML = canBangSlide;
-
     let truongThanhSlide = getSum([...arrNgaySinh, ...arr]);
-    document.getElementById("truongThanh").innerHTML = truongThanhSlide;
-    document.getElementById("truongThanh-P").innerHTML = truongThanhSlide;
-
     let ngaySinh1Slide = getBirthDayNumber(arrNgaySinh);
-    document.getElementById("ngaySinh").innerHTML = ngaySinh1Slide;
-    document.getElementById("ngaySinh-P").innerHTML = ngaySinh1Slide;
-
     let thaiDoSlide = getAttitudeNumber(arrNgaySinh);
-    document.getElementById("thaiDo").innerHTML = thaiDoSlide;
-    document.getElementById("thaiDo-P").innerHTML = thaiDoSlide;
-
     let tuDuyLyTriSlide = (getBirthDayNumber(arrNgaySinh) + getDestinyNumber(getLastWordNumbers(ten, str))) % 9 || 9;
-    document.getElementById("tuDuyLyTri").innerHTML = tuDuyLyTriSlide;
-    document.getElementById("tuDuyLyTri-P").innerHTML = tuDuyLyTriSlide;
-
     let vanMenhSlide = getDestinyNumber(getLastWordNumbers(ten, str));
-    document.getElementById("vanMenh").innerHTML = vanMenhSlide;
-    document.getElementById("vanMenh-P").innerHTML = vanMenhSlide;
-
     let soThieuSlide = getMissingNumbers(arr);
-    document.getElementById("soThieu").innerHTML = soThieuSlide;
-    document.getElementById("soThieu-P").innerHTML = soThieuSlide;
-
     let sucManhTiemThucSlide = 9 - getMissingNumbers(arr).length;
-    document.getElementById("sucManhTiemThuc").innerHTML = sucManhTiemThucSlide;
-    document.getElementById("sucManhTiemThuc-P").innerHTML = sucManhTiemThucSlide;
-
     let soCamXucSlide = getSumOnly(daySoCamXuc);
-    document.getElementById("soCamXuc").innerHTML = soCamXucSlide;
-    document.getElementById("soCamXuc-P").innerHTML = soCamXucSlide;
-
     let soTrucGiacSlide = getSumOnly(daySoTrucGiac);
-    document.getElementById("soTrucGiac").innerHTML = soTrucGiacSlide;
-    document.getElementById("soTrucGiac-P").innerHTML = soTrucGiacSlide;
-
     let namCaNhanSlide = namCaNhanHienTai();
-    document.getElementById("namCaNhan").innerHTML = namCaNhanSlide;
-    document.getElementById("namCaNhan-P").innerHTML = namCaNhanSlide;
-
     let thangCaNhanSlide = thangCaNhan(namCaNhanHienTai());
-    document.getElementById("thangCaNhan").innerHTML = thangCaNhanSlide;
-    document.getElementById("thangCaNhan-P").innerHTML = thangCaNhanSlide;
-
     let ketNoiVanMenhSlide = (Math.abs(getSum(arrNgaySinh) - getSum(arr))) % 9 || 9;
-    document.getElementById("ketNoiVanMenh").innerHTML = ketNoiVanMenhSlide;
-    document.getElementById("ketNoiVanMenh-P").innerHTML = ketNoiVanMenhSlide;
-
     let soDamMeSlide = getDaySoDamMe(arr);
-    document.getElementById("soDamMe").innerHTML = soDamMeSlide;
-    document.getElementById("soDamMe-P").innerHTML = soDamMeSlide;
-
     let soKetNoiLinhHonSlide = (Math.abs(getSum(arrNgaySinh) - getSum(arrNa))) % 9 || 9;
-    document.getElementById("soKetNoiLinhHon").innerHTML = soKetNoiLinhHonSlide;
-    document.getElementById("soKetNoiLinhHon-P").innerHTML = soKetNoiLinhHonSlide;
-
     let soTuDuyTraiNghiemSlide = getSoTuDuyTraiNghiem(ten);
-    document.getElementById("soTuDuyTraiNghiem").innerHTML = soTuDuyTraiNghiemSlide;
-    document.getElementById("soTuDuyTraiNghiem-P").innerHTML = soTuDuyTraiNghiemSlide;
+
+    updateElementValues("#duongDoi, #duongDoi-P", duongDoiSlide);
+    updateElementValues("#suMenh, #suMenh-P", suMenhSlide);
+    updateElementValues("#linhHon, #linhHon-P", linhHonSlide);
+    updateElementValues("#nhanCach, #nhanCach-P", nhanCachSlide);
+    updateElementValues("#canBang, #canBang-P", canBangSlide);
+    updateElementValues("#truongThanh, #truongThanh-P", truongThanhSlide);
+    updateElementValues("#ngaySinh, #ngaySinh-P", ngaySinh1Slide);
+    updateElementValues("#thaiDo, #thaiDo-P", thaiDoSlide);
+    updateElementValues("#tuDuyLyTri, #tuDuyLyTri-P", tuDuyLyTriSlide);
+    updateElementValues("#vanMenh, #vanMenh-P", vanMenhSlide);
+    updateElementValues("#soThieu, #soThieu-P", soThieuSlide);
+    updateElementValues("#sucManhTiemThuc, #sucManhTiemThuc-P", sucManhTiemThucSlide);
+    updateElementValues("#soCamXuc, #soCamXuc-P", soCamXucSlide);
+    updateElementValues("#soTrucGiac, #soTrucGiac-P", soTrucGiacSlide);
+    updateElementValues("#namCaNhan, #namCaNhan-P", namCaNhanSlide);
+    updateElementValues("#thangCaNhan, #thangCaNhan-P", thangCaNhanSlide);
+    updateElementValues("#ketNoiVanMenh, #ketNoiVanMenh-P", ketNoiVanMenhSlide);
+    updateElementValues("#soDamMe, #soDamMe-P", soDamMeSlide);
+    updateElementValues("#soKetNoiLinhHon, #soKetNoiLinhHon-P", soKetNoiLinhHonSlide);
+    updateElementValues("#soTuDuyTraiNghiem, #soTuDuyTraiNghiem-P", soTuDuyTraiNghiemSlide);
 
     let dinhCao1 = document.getElementById("s_tuoichang1_1").innerHTML = getSumOnly([so_ngaySinh, so_thangSinh]);
     let dinhCao2 = document.getElementById("s_tuoichang2_1").innerHTML = getSumOnly([so_ngaySinh, so_namSinh]);
@@ -446,6 +407,12 @@ function tinhToanSo() {
         string = string.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         string = string.replace(/Đ/g, "D").replace(/đ/g, "d");
         return string;
+    }
+
+    function updateElementValues(selector, value) {
+        $(selector).each(function() {
+            $(this).text(value);
+        });
     }
 
 }
