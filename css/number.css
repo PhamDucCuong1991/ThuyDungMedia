@@ -11,7 +11,7 @@
 }
 
 .custom-list li {
-    padding: 5px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #ccc;
 }
 
@@ -61,6 +61,30 @@
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
+
+.big-square {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    width: 20vw;
+    height: 16vw;
+    max-width: 100%;
+    margin: auto;
+    color: white;
+}
+
+.big-square1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px 0px;
+    width: 20vw;
+    height: 16vw;
+    max-width: 100%;
+    margin: auto;
+    color: #bb2d3b;
+}
 .hexagon-content {
     display: flex;
     flex-direction: column;
@@ -102,10 +126,16 @@
         font-size: 4vw;
     }
 
+    .small-square-text1 {
+        font-size: 4vw;
+    }
     .text-brown {
         font-size: small;
     }
-
+    .custom-list li {
+        padding: 5px 0;
+        border-bottom: 1px solid #ccc;
+    }
 }
 
 @media (min-width: 769px) {
@@ -115,14 +145,22 @@
     }
 
     .hexagon-text {
-        font-size: 0.8vw; /* Giảm kích cỡ font cho vừa vặn trên màn hình nhỏ */
+        font-size: 0.8vw;
     }
     .hexagon-label{
         font-size: 1.2vw;
     }
     .small-square-text {
         font-size: 1.2vw;
+        color: #fff3cd;
+    }
+    .small-square-text1 {
+        font-size: 1.2vw;
         color: #b02a37;
+    }
+
+    .text-brown {
+        font-size: large;
     }
 }
 @media (max-width: 960px) {
@@ -135,6 +173,13 @@
     .hexagon {
         width: 13vw; /* Tăng kích thước lục giác trên điện thoại để dễ đọc hơn */
         height: 13vw; /* Tương ứng với chiều rộng để giữ tỷ lệ */
+    }
+    .small-square-text {
+        font-size: 1.2vw;
+        color: #fff3cd;
+    }
+    .hexagon-label{
+        padding-top: 25px;
     }
 }
 @media (min-width: 1124px) {
