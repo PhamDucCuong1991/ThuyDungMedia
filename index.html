@@ -112,8 +112,13 @@
                     </div>
                     <div class="text-center">
                         <a href="#" data-page-no="2" class="btn btn-primary tm-intro-btn tm-page-link">
-                            Tìm hiểu ngay hệ sinh thái
+                            Tìm hiểu hệ sinh thái
                         </a>
+                        <a href="./HTML/importFile.html"
+                           target="_blank"
+                           id="importFile"
+                           class="btn btn-primary tm-intro-btn"
+                        >Import File</a>
                     </div>
                 </div>
             </li>
@@ -345,7 +350,8 @@
                                                placeholder="Họ và tên">
                                     </div>
                                     <div class="input-group tm-mb-30">
-                                        <input style="padding-left: 10px" name="user_phone" type="number" id="user_phone"
+                                        <input style="padding-left: 10px" name="user_phone" type="number"
+                                               id="user_phone"
                                                class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
                                                placeholder="Số điện thoại">
                                     </div>
@@ -354,21 +360,21 @@
                                                class="form-control rounded-0 border-top-0 border-end-0 border-start-0"
                                                placeholder="Email của bạn">
                                     </div>
-                                    <textarea style="padding-left: 10px"  id="message" name="message"
+                                    <textarea style="padding-left: 10px" id="message" name="message"
                                               class="textarea form-control rounded-0 border-top-0 border-end-0 border-start-0"
                                               placeholder="Hãy viết vào đây điều mà Bạn muốn Thùy Dung đồng hành cùng với bạn"
                                               rows="3" type="text"></textarea>
 
                                     <div class="form-group tm-mb-30" align="right">
-                                        <input class="btn btn-primary tm-btn-pad-2"  type="submit" value="Gửi Email">
+                                        <input class="btn btn-primary tm-btn-pad-2" type="submit" value="Gửi Email">
 
                                     </div>
                                 </form>
 
-<!--                                <form id="myForm2">-->
-<!--                                    <input type="text" id="inputText" placeholder="Nhập dữ liệu">-->
-<!--                                    <button type="submit">Gửi</button>-->
-<!--                                </form>-->
+                                <!--                                <form id="myForm2">-->
+                                <!--                                    <input type="text" id="inputText" placeholder="Nhập dữ liệu">-->
+                                <!--                                    <button type="submit">Gửi</button>-->
+                                <!--                                </form>-->
                             </div>
 
                         </div>
@@ -483,7 +489,7 @@
 <script type="text/javascript" src="js/email_service.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
-<script >
+<script>
     let firebaseConfig = {
         apiKey: "AIzaSyAdic5sIMHiiw47CVvErovovu0EWfgc7A4",
         authDomain: "thuydungmedia-1efed.firebaseapp.com",
@@ -496,8 +502,8 @@
     // Khởi tạo Firebase
     firebase.initializeApp(firebaseConfig);
 
-    $(document).ready(function() {
-        $('#myForm2').on('submit', function(e) {
+    $(document).ready(function () {
+        $('#myForm2').on('submit', function (e) {
             e.preventDefault();
 
             let inputData = $('#inputText').val();
@@ -508,17 +514,17 @@
             db.collection("formData").add({
                 data: inputData
             })
-                .then(function(docRef) {
+                .then(function (docRef) {
                     console.log("Document written with ID: ", docRef.id);
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     console.error("Error adding document: ", error);
                 });
         });
 
     });
 </script>
-  <script src="js/noCopy.js"></script>
+<script src="js/noCopy.js"></script>
 </body>
 
 </html>
