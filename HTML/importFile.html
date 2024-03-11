@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV Reader</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>XLSX Reader</h2>
+  <input type="file" id="xlsxFileInput">
+  <button onclick="readXLSX()">Load XLSX</button>
+
+  <div>
+    <table  id="userTable">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phone</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+<div class="container">
+  <h2>CSV Reader</h2>
+
+  <input type="file" id="csvFileInput">
+  <button onclick="readCSV()">Load CSV</button>
+  <div>
+    <table id="userTable2">
+      <thead>
+
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<script>
+
+  function readXLSX() {
+    let fileInput = document.getElementById('xlsxFileInput');
+    let file = fileInput.files[0];
+    let reader = new FileReader();
+
+    reader.onload = function (e) {
+      let data = new Uint8Array(e.target.result);
+      let workbook = XLSX.read(data, {type: 'array'});
+      processData(workbook);
+    };
+
+    reader.readAsArrayBuffer(file);
+  }
+
+  function processData(workbook) {
+    let sheet = workbook.Sheets[workbook.SheetNames[0]];
+
+    // Lấy mảng các cell từ sheet
+    let range = XLSX.utils.decode_range(sheet['!ref']);
+    let startRow = 6; // Dòng bắt đầu đọc (dòng số 7)
+
+    let data = [];
+
+    // Lặp qua các dòng của sheet, bắt đầu từ dòng startRow
+    for (let i = startRow; i <= range.e.r; i++) {
+      let rowData = [];
+      for (let j = range.s.c; j <= range.e.c; j++) {
+        let cellAddress = {c: j, r: i};
+        let cellRef = XLSX.utils.encode_cell(cellAddress);
+        let cell = sheet[cellRef];
+        if (cell) {
+          rowData.push(cell.v);
+        } else {
+          rowData.push('');
+        }
+      }
+      data.push(rowData);
+    }
+
+    // Hiển thị dữ liệu
+
+    console.log(data);
+
+    let newArray = [];
+
+    for (let i = 0; i < data.length; i++) {
+      let subArray = data[i];
+      let newSubArray = {
+        id: subArray[0],
+        fullName: subArray[1],
+        birthDay: subArray[4],
+        phoneNumber: subArray[5]
+      };
+      newArray.push(newSubArray);
+    }
+    populateUserTable(newArray);
+    console.log(newArray);
+  }
+
+  function populateUserTable(users) {
+    let tableBody = document.querySelector('#userTable tbody');
+    tableBody.innerHTML = ''; // Clear table body
+
+    // Loop through each user and create table rows
+    users.forEach(user => {
+      let row = document.createElement('tr');
+      row.innerHTML = `
+                <td>${user.id}</td>
+                <td>${user.fullName}</td>
+                <td>${user.birthDay}</td>
+                <td>${user.phoneNumber}</td>
+            `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  function readCSV() {
+    let fileInput = document.getElementById('csvFileInput');
+    let file = fileInput.files[0];
+    let reader = new FileReader();
+    let arrData = [];
+
+    reader.onload = function (e) {
+      let csvData = e.target.result;
+      arrData = processDataCSV(csvData);
+      populateUserTableCSV(arrData);
+    };
+
+    reader.readAsText(file);
+  }
+
+  function processDataCSV(csvData) {
+    let lines = csvData.split('\n');
+    let arrData = [];
+    for (let i = 0; i < lines.length - 1; i++) {
+      let line = lines[i];
+      let fields = line.split(',');
+
+      let fieldAppType = "";
+      switch (fields[11]){
+        case "supperPlus": fieldAppType = "QL Chủ trường"; break;
+        case "plus": fieldAppType = "Chủ trường"; break;
+        case "teacher": fieldAppType = "Giáo viên"; break;
+        case "parent": fieldAppType = "Phụ huynh"; break;
+        default: fieldAppType = fields[11]; break
+      }
+      let rowData = [fields[0], fieldAppType, fields[18], fields[19], fields[22]];
+      arrData.push(rowData);
+    }
+
+    return arrData;
+  }
+
+  function populateUserTableCSV(users) {
+    let tableBody = document.querySelector('#userTable2 tbody');
+
+    tableBody.innerHTML = '';
+
+    users.forEach(user => {
+      let row = document.createElement('tr');
+      row.innerHTML = `
+            <td>${user[0]}</td>
+            <td>${user[1]}</td>
+            <td>${user[2]}</td>
+            <td>${user[3]}</td>
+            <td>${user[4]}</td>`;
+      tableBody.appendChild(row);
+    });
+  }
+</script>
+</body>
+</html>

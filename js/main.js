@@ -21,6 +21,7 @@ function login() {
         $('#tm-hello').append(' ' + '(Chào sếp Dung!)');
         $('#idLogin').text('Logout');
         $('#link-than-so').text('Logout');
+        $('#importFile').show();
         if (isClicked) {
             setTimeout(() => {
                 localStorage.clear();
@@ -52,7 +53,8 @@ function logout() {
         }
         isLoggedIn = false;
         $('#idLogin').text('Login');
-        $('#tm-hello').empty()
+        $('#tm-hello').empty();
+        $('#importFile').hide();
         localStorage.clear();
         alert("Bạn đã đăng xuất khỏi hệ thống!")
     }
