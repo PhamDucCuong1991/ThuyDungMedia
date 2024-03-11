@@ -96,5 +96,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (loaderWrapper) {
       loaderWrapper.classList.add('loaded');
     }
+    $('#importFile').hide();
   });
 });
